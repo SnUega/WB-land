@@ -1,0 +1,29 @@
+:root {
+  /* Brand colors */
+  --violet-1: #A83AFD;
+  --violet-2: #8E5DFF;
+  --violet-3: #AD3AE7;
+  --violet-4: #5613A3;
+  --white: #FFFFFF;
+  --white-25: rgba(255, 255, 255, 0.25);
+  --black: #1C1C1C;
+  --gray-60: #858595;
+
+  /* Layout */
+  --container-max: 1660px;
+  --radius-xl: 120px;
+  --radius-lg: 30px;
+  --gap-hero: 40px;
+
+  /* Font */
+  --font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Shadows */
+  --glass-shadow: -62px 151px 66px rgba(145, 145, 145, 0.01),
+    -34px 85px 55px rgba(145, 145, 145, 0.03),
+    -16px 39px 41px rgba(145, 145, 145, 0.04),
+    -5px 9px 23px rgba(145, 145, 145, 0.05),
+    inset 0 -11px 9px rgba(255, 255, 255, 0.25),
+    inset 0 9px 9px rgba(255, 255, 255, 0.25);
+}
+
