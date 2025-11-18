@@ -35,7 +35,15 @@ class Modal {
     const modal = this.modals.get(modalId);
     if (!modal) return;
     this.currentModal = modal;
-    const scrollY = document.body.dataset.scrollY ? parseInt(document.body.dataset.scrollY) : window.scrollY;
+    
+    let scrollY;
+    if (document.body.dataset.scrollY) {
+      scrollY = parseInt(document.body.dataset.scrollY);
+    } else if (window.lenis) {
+      scrollY = window.lenis.scroll;
+    } else {
+      scrollY = window.scrollY;
+    }
     
     if (window.lenis) {
       window.lenis.stop();
@@ -86,18 +94,20 @@ class Modal {
     }
     
     this.currentModal.classList.remove('is-open');
-    const scrollY = document.body.dataset.scrollY || 0;
+    const scrollY = document.body.dataset.scrollY ? parseInt(document.body.dataset.scrollY) : (window.lenis ? window.lenis.scroll : window.scrollY);
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     document.body.style.overflow = '';
+    
+    const savedScrollY = scrollY;
     delete document.body.dataset.scrollY;
     
     if (window.lenis) {
       window.lenis.start();
-      window.lenis.scrollTo(parseInt(scrollY) || 0, { immediate: true });
+      window.lenis.scrollTo(savedScrollY, { immediate: true });
     } else {
-      window.scrollTo(0, parseInt(scrollY) || 0);
+      window.scrollTo(0, savedScrollY);
     }
     
     this.currentModal = null;
@@ -241,16 +251,25 @@ class FormValidator {
       await new Promise(resolve => setTimeout(resolve, 1000));
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
-      const savedScrollY = document.body.dataset.scrollY || window.scrollY;
+      const savedScrollY = document.body.dataset.scrollY ? parseInt(document.body.dataset.scrollY) : (window.lenis ? window.lenis.scroll : window.scrollY);
       const modal = this.form.closest('.modal');
-      if (modal) {
-        modal.classList.remove('is-open');
-      }
-      this.form.reset();
       const modalInstance = window.modalInstance || new Modal();
-      if (!document.body.dataset.scrollY) {
-        document.body.dataset.scrollY = savedScrollY;
+      
+      if (modal && modalInstance.currentModal === modal) {
+        if (modalInstance.modalRafId) {
+          cancelAnimationFrame(modalInstance.modalRafId);
+          modalInstance.modalRafId = null;
+        }
+        if (modalInstance.modalLenis) {
+          modalInstance.modalLenis.destroy();
+          modalInstance.modalLenis = null;
+        }
+        modal.classList.remove('is-open');
+        modalInstance.currentModal = null;
       }
+      
+      this.form.reset();
+      document.body.dataset.scrollY = savedScrollY;
       modalInstance.open('success');
     } catch (error) {
       console.error('Form submission error:', error);
