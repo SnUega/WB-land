@@ -1,4 +1,3 @@
-/* Hero section styles */
 .hero-section {
   position: relative;
   width: 100vw;
@@ -7,9 +6,7 @@
   gap: 0;
   margin-top: 20px;
   margin-left: calc(-50vw + 50%);
-
 }
-
 .hero-bg {
   position: relative;
   width: 100vw;
@@ -24,7 +21,6 @@
   z-index: 0;
   overflow: hidden;
 }
-
 .hero-bg__balls-layer {
   position: absolute;
   top: 0;
@@ -40,7 +36,6 @@
   z-index: 2;
   pointer-events: none;
 }
-
 .hero__wrapper {
   display: flex;
   flex-direction: row;
@@ -50,13 +45,11 @@
   position: relative;
   z-index: 2;
 }
-
 .hero__left {
   flex: 0 1 50%;
   display: flex;
   flex-direction: column;
 }
-
 .hero__right {
   flex: 0 1 50%;
   position: relative;
@@ -65,7 +58,6 @@
   align-items: flex-start;
   gap: clamp(20px, 2vw, 40px);
 }
-
 .hero__content {
   display: flex;
   flex-direction: column;
@@ -77,13 +69,11 @@
   padding-top: clamp(20px, 3vw, 60px);
   margin-left: calc(clamp(20px, 7vw, 200px) - 1px);
 }
-
 .hero__text {
   display: flex;
   flex-direction: column;
   gap: clamp(15px, 1.67vw, 32px);
 }
-
 .hero__title {
   font-family: Inter, sans-serif;
   font-weight: 700;
@@ -93,11 +83,9 @@
   color: var(--white);
   margin: 0;
 }
-
 .hero__title-nowrap {
   white-space: nowrap;
 }
-
 .hero__desc {
   max-width: min(44.79vw, 860px);
   font-family: Inter, sans-serif;
@@ -108,8 +96,6 @@
   color: var(--white);
   margin: 0;
 }
-
-/* Настройка позиции большой стеклянной карточки (lg-card) */
 .lg-card {
   position: absolute;
   right: clamp(85px, 10.5vw, 255px);
@@ -129,7 +115,6 @@
   overflow: hidden;
   z-index: 1;
 }
-
 .lg-card__blur {
   position: absolute;
   inset: 0;
@@ -137,7 +122,6 @@
   filter: blur(1.69vw);
   pointer-events: none;
 }
-
 .lg-card__content {
   position: relative;
   z-index: 2;
@@ -149,8 +133,6 @@
   padding-top: 0;
   margin-top: clamp(-7px, -0.52vw, -5px);
 }
-
-
 .bars {
   display: flex;
   gap: 0.52vw;
@@ -159,12 +141,9 @@
   height: 11.46vw;
   padding: 0 1.04vw;
 }
-
 .bars--mobile {
   display: none;
 }
-
-/* На десктопе bars--mobile показывается */
 @media (min-width: 481px) {
   .bars--mobile {
     display: flex !important;
@@ -179,7 +158,6 @@
     justify-content: center;
     width: 100%;
   }
-
   .bars--mobile span {
     width: 2vw;
     border-radius: 50px;
@@ -187,8 +165,6 @@
     flex: 0 0 auto;
     min-height: 0.52vw;
   }
-
-  /* Конвертируем высоты bars из px в vw для десктопа (увеличены пропорционально) */
   .bars--mobile span:nth-child(1) { height: 2.33vw !important; }
   .bars--mobile span:nth-child(2) { height: 3.31vw !important; }
   .bars--mobile span:nth-child(3) { height: 4.05vw !important; }
@@ -202,14 +178,12 @@
   .bars--mobile span:nth-child(11) { height: 11.05vw !important; }
   .bars--mobile span:nth-child(12) { height: 9.58vw !important; }
 }
-
 .bars span {
   width: clamp(12px, 2.03vw, 39px);
   border-radius: 50px;
   background: linear-gradient(180deg, #E4CFF2 6.73%, #C27EEF 73.08%);
   flex-shrink: 0;
 }
-
 .lg-card__title {
   font-family: Inter, sans-serif;
   text-align: center;
@@ -219,14 +193,12 @@
   margin: 0;
   order: 2;
 }
-
 .lg-card__cats {
   display: flex;
   gap: 0.52vw;
   justify-content: center;
   order: 3;
 }
-
 .lg-card__cats .cat {
   width: clamp(40px, 5.47vw, 105px);
   height: clamp(40px, 5.47vw, 105px);
@@ -236,7 +208,6 @@
   background-color: #fff;
   flex-shrink: 0;
 }
-
 .lg-card__list {
   font-family: Inter, sans-serif;
   display: flex;
@@ -250,21 +221,17 @@
   list-style: none;
   order: 4;
 }
-
 .lg-card__list li {
   display: flex;
   align-items: flex-start;
   gap: 0.52vw;
 }
-
 .lg-card__list .check {
   width: clamp(12px, 1.25vw, 24px);
   height: clamp(12px, 1.25vw, 24px);
   flex-shrink: 0;
   margin-top: 0.1em;
 }
-
-/* Адаптивные стили для мобильных устройств */
 @media (max-width: 480px) {
   .lg-card {
     position: relative;
@@ -281,13 +248,11 @@
     overflow: visible;
     border-radius: 30px;
   }
-
   .lg-card__content {
     justify-content: flex-start;
     padding-top: 0;
     gap: 0;
   }
-
   .bars--mobile {
     display: flex;
     gap: 1.33vw;
@@ -297,15 +262,12 @@
     padding: 0;
     margin-top: 0;
   }
-
   .bars--mobile span {
     width: 5.78vw;
     border-radius: 50px;
     background: linear-gradient(180deg, #E4CFF2 6.73%, #C27EEF 73.08%);
     flex: 1 1 auto;
   }
-
-  /* Конвертируем высоты bars из px в vw для мобильных */
   .bars--mobile span:nth-child(1) { height: 4.75vw !important; }
   .bars--mobile span:nth-child(2) { height: 6.75vw !important; }
   .bars--mobile span:nth-child(3) { height: 8.25vw !important; }
@@ -318,41 +280,32 @@
   .bars--mobile span:nth-child(10) { height: 17.25vw !important; }
   .bars--mobile span:nth-child(11) { height: 22.5vw !important; }
   .bars--mobile span:nth-child(12) { height: 19.5vw !important; }
-
   .lg-card__title {
     font-size: 6.93vw;
     margin-top: 4vw;
   }
-
   .lg-card__cats {
     margin-top: 4vw;
     gap: 2.9%;
   }
-
   .lg-card__cats .cat {
     width: 14.67vw;
     height: 14.67vw;
     border-radius: 5px;
   }
-
   .lg-card__list {
     font-size: 4vw;
     gap: 2vw;
     margin-top: 6vw;
   }
-
   .lg-card__list li {
     gap: 2.67vw;
   }
-
   .lg-card__list .check {
     width: 4.27vw;
     height: 4.27vw;
   }
-
 }
-
-/* Декоративные элементы */
 .hero__decor {
   position: absolute;
   top: 0;
@@ -363,8 +316,6 @@
   z-index: 1;
   overflow: visible;
 }
-
-/* Настройка позиций ghost слов (десктоп) */
 .hero__ghost {
   position: absolute;
   color: rgba(255, 255, 255, 0.25);
@@ -373,7 +324,6 @@
   pointer-events: none;
   z-index: 1;
 }
-
 .hero__ghost--w {
   left: clamp(30px, 35vw, 670px);
   top: clamp(280px, 43vw, 860px);
@@ -385,7 +335,6 @@
   letter-spacing: 0.02em;
   max-width: 100%;
 }
-
 .hero__ghost--p {
   left: clamp(700px, 85.5vw, 1650px);
   top: clamp(180px, 33vw, 620px);
@@ -393,7 +342,6 @@
   line-height: 135%;
   max-width: 100%;
 }
-
 .hero__ghost--otzyvy {
   left: clamp(490px, 63vw, 1250px);
   top: clamp(90px, 11vw, 200px);
@@ -404,7 +352,6 @@
   line-height: 135%;
   letter-spacing: 0.02em;
 }
-
 .hero__ghost--reyting {
   right: clamp(75px, 9.5vw, 240px);
   top: clamp(50px, 6vw, 150px);
@@ -415,8 +362,6 @@
   line-height: 135%;
   letter-spacing: 0.02em;
 }
-
-/* Product cards */
 .wb-card {
   position: absolute;
   background: #fff;
@@ -426,26 +371,22 @@
   opacity: 0.9;
   flex-shrink: 0;
 }
-
 .wb-card__img {
   background-size: cover;
   background-position: center;
   border-radius: 0.42vw;
   flex-shrink: 0;
 }
-
 .wb-card__body {
   display: flex;
   flex-direction: column;
   gap: 0.31vw;
 }
-
 .price {
   display: flex;
   gap: 0.2vw;
   align-items: center;
 }
-
 .price__icon {
   width: clamp(8px, 0.57vw, 11px);
   height: clamp(8px, 0.57vw, 11px);
@@ -453,14 +394,12 @@
   flex-shrink: 0;
   vertical-align: middle;
 }
-
 .price__sale {
   color: #FF3C3D;
   font-weight: 600;
   font-size: 0.69vw;
   line-height: 140%;
 }
-
 .price__old {
   color: #858595;
   text-decoration: line-through;
@@ -469,22 +408,18 @@
   line-height: 140%;
   letter-spacing: -0.05em;
 }
-
 .rating {
   display: flex;
   gap: 0.31vw;
   align-items: center;
   color: #1C1C1C;
 }
-
 .rating .star {
   color: #FCA85E;
 }
-
 .rating .dot {
   color: #858595;
 }
-
 .wb-card__cta {
   display: flex;
   gap: 0.26vw;
@@ -500,21 +435,17 @@
   cursor: default;
   pointer-events: none;
 }
-
 .wb-card__cta .cart {
   display: inline-block;
   width: clamp(10px, 0.73vw, 14px);
   height: clamp(10px, 0.73vw, 14px);
   flex-shrink: 0;
 }
-
 .wb-card__cta .cart svg {
   width: 100%;
   height: 100%;
   display: block;
 }
-
-/* Настройка позиции большой карточки товара */
 .wb-card--big {
   left: clamp(-210px, -10vw, -40px);
   top: clamp(200px, 17.5vw, 495px);
@@ -528,49 +459,40 @@
   opacity: 0.8;
   z-index: 3;
 }
-
 .wb-card--big .wb-card__img {
   width: clamp(130px, 9vw, 175px);
   height: clamp(120px, 8vw, 160px);
   border-radius: 7px;
 }
-
 .wb-card--big .wb-card__body {
   width: clamp(130px, 9vw, 175px);
   max-width: 100%;
   gap: clamp(2px, 0.27vw, 5px);
 }
-
 .wb-card--big .price {
   gap: clamp(1.5px, 0.19vw, 3.5px);
 }
-
 .wb-card--big .price__icon {
   width: clamp(7px, 0.5vw, 9px);
   height: clamp(7px, 0.5vw, 9px);
   display: inline-block;
   vertical-align: middle;
 }
-
 .wb-card--big .price__sale {
   font-size: clamp(8px, 0.64vw, 12px);
 }
-
 .wb-card--big .price__old {
   font-size: clamp(7px, 0.56vw, 11px);
 }
-
 .wb-card--big .rating {
   gap: clamp(2.5px, 0.29vw, 5.5px);
 }
-
 .wb-card--big .wb-card__note {
   font-size: clamp(9px, 0.48vw, 9px);
   line-height: 140%;
   letter-spacing: -0.02em;
   color: var(--black);
 }
-
 .wb-card--big .wb-card__title {
   font-size: clamp(9px, 0.48vw, 9px);
   line-height: 140%;
@@ -582,33 +504,27 @@
   white-space: nowrap;
   overflow: hidden;
 }
-
 .wb-card--big .wb-card__title-check {
   width: clamp(7px, 0.48vw, 9px);
   height: clamp(7px, 0.48vw, 9px);
   flex-shrink: 0;
   object-fit: contain;
 }
-
 .wb-card--big .wb-card__title span {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .wb-card--big .rating {
   font-size: clamp(9px, 0.48vw, 9px);
   line-height: 140%;
   letter-spacing: -0.02em;
 }
-
 .wb-card--big .wb-card__cta {
   font-size: clamp(9px, 0.48vw, 9px);
   line-height: 140%;
   letter-spacing: -0.02em;
   padding: clamp(3.5px, 0.39vw, 7px) 0;
 }
-
-/* Настройка позиции мини-карточки товара */
 .wb-card--mini {
   right: clamp(145px, calc(145px - 11vw), 0px);
   top: clamp(60px, calc(60px - 2vw), 40px);
@@ -623,14 +539,12 @@
   flex-direction: column;
   gap: clamp(1.5px, 0.19vw, 3.5px);
 }
-
 .wb-card--mini .wb-card__img {
   width: 5.5vw;
   height: 5vw;
   border-radius: 0.22vw;
   flex-shrink: 0;
 }
-
 .wb-card--mini .wb-card__body {
   display: flex;
   flex-direction: column;
@@ -638,27 +552,23 @@
   width: 5.5vw;
   flex: 1 1 auto;
 }
-
 .wb-card--mini .price {
   display: flex;
   gap: 0.106vw;
   align-items: center;
 }
-
 .wb-card--mini .price__icon {
   width: clamp(5px, 0.3vw, 7px);
   height: clamp(5px, 0.3vw, 7px);
   display: inline-block;
   vertical-align: middle;
 }
-
 .wb-card--mini .price__sale {
   color: #FF3C3D;
   font-weight: 600;
   font-size: 0.366vw;
   line-height: 140%;
 }
-
 .wb-card--mini .price__old {
   color: #858595;
   text-decoration: line-through;
@@ -667,14 +577,12 @@
   line-height: 140%;
   letter-spacing: -0.05em;
 }
-
 .wb-card--mini .wb-card__note {
   font-size: 0.276vw;
   line-height: 140%;
   letter-spacing: -0.02em;
   color: var(--black);
 }
-
 .wb-card--mini .wb-card__title {
   font-size: 0.276vw;
   line-height: 140%;
@@ -686,19 +594,16 @@
   align-items: center;
   gap: 0.138vw;
 }
-
 .wb-card--mini .wb-card__title-check {
   width: 0.276vw;
   height: 0.276vw;
   flex-shrink: 0;
   object-fit: contain;
 }
-
 .wb-card--mini .wb-card__title span {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .wb-card--mini .rating {
   display: flex;
   gap: 0.165vw;
@@ -707,7 +612,6 @@
   line-height: 140%;
   letter-spacing: -0.02em;
 }
-
 .wb-card--mini .wb-card__cta {
   border-radius: 0.223vw;
   font-size: 0.276vw;
@@ -715,16 +619,13 @@
   letter-spacing: -0.02em;
   padding: 0.223vw 0;
 }
-
 .wb-card--mini .wb-card__cta .cart {
   width: clamp(7px, 0.39vw, 10px);
   height: clamp(7px, 0.39vw, 10px);
 }
-/* Адаптивность карточек товаров на мобильных */
 @media (max-width: 768px) {
   .wb-card--big,
   .wb-card--mini {
     display: none;
   }
 }
-

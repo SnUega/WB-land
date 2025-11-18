@@ -1,4 +1,3 @@
-/* Sections container */
 .sections-container {
   display: flex;
   flex-direction: column;
@@ -11,4 +10,3 @@
   overflow-y: visible;
   background-color: transparent;
 }
-

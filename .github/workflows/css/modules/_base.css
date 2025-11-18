@@ -1,4 +1,3 @@
-/* Base styles */
 html {
   width: 100%;
   height: 100%;
@@ -7,7 +6,6 @@ html {
   overflow-x: hidden;
   background-color: transparent;
 }
-
 body {
   width: 100%;
   min-height: 100%;
@@ -19,7 +17,6 @@ body {
   background-color: #ffffff;
   color: var(--white);
 }
-
 .button {
   display: inline-flex;
   align-items: center;
@@ -30,7 +27,6 @@ body {
   border: 0;
   text-decoration: none;
 }
-
 .button--glass {
   font-family: var(--font-family);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(217, 217, 217, 0.25) 100%);
@@ -44,7 +40,6 @@ body {
   animation: buttonBreathe 3s ease-in-out infinite;
   will-change: transform;
 }
-
 @keyframes buttonBreathe {
   0%, 100% {
     transform: scale(1);
@@ -53,15 +48,12 @@ body {
     transform: scale(1.02);
   }
 }
-
 .button--glass:hover {
   animation: none;
   transform: scale(1.05);
   transition: all 0.3s ease;
 }
-
 .button--glass:active {
   transform: scale(0.98);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-

@@ -1,4 +1,3 @@
-/* Section 3: Customer Survey */
 .section-3 {
   position: relative;
   width: 100%;
@@ -10,7 +9,6 @@
   height: clamp(600px, 60vw, 945px);
   overflow: hidden;
 }
-
 .section-3__content {
   width: 100%;
   max-width: clamp(320px, 92vw, 1750px);
@@ -24,7 +22,6 @@
   overflow: visible;
   position: relative;
 }
-
 .section-3__title {
   font-family: Inter, sans-serif;
   font-weight: 500;
@@ -35,7 +32,6 @@
   margin: 0 0 clamp(12px, 1.2vw, 18px);
   text-align: center;
 }
-
 .section-3__question {
   font-family: Inter, sans-serif;
   font-weight: 700;
@@ -49,7 +45,6 @@
   margin: 0 0 clamp(8px, 0.8vw, 12px);
   text-align: center;
 }
-
 .section-3__responses {
   font-family: Inter, sans-serif;
   font-weight: 500;
@@ -59,7 +54,6 @@
   margin: 0 0 clamp(25px, 3vw, 45px);
   text-align: center;
 }
-
 .section-3__chart {
   position: relative;
   display: flex;
@@ -70,7 +64,6 @@
   flex: 1;
   min-height: 0;
 }
-
 .section-3__chart-grid {
   position: absolute;
   top: 0;
@@ -82,7 +75,6 @@
   border-top: 2px solid #F1F1F1;
   border-bottom: 2px solid #F1F1F1;
 }
-
 .section-3__chart-grid-line {
   position: absolute;
   top: 0;
@@ -90,7 +82,6 @@
   width: 1px;
   background-color: rgba(0, 0, 0, 0.1);
 }
-
 .section-3__chart-grid-line:nth-child(1) { 
   left: 0%; 
   width: clamp(2px, 0.3vw, 3px);
@@ -107,7 +98,6 @@
 .section-3__chart-grid-line:nth-child(8) { left: 77.78%; }
 .section-3__chart-grid-line:nth-child(9) { left: 88.89%; }
 .section-3__chart-grid-line:nth-child(10) { left: 100%; }
-
 .section-3__chart-axis {
   position: absolute;
   bottom: clamp(-5px, -1vw, -10px);
@@ -120,7 +110,6 @@
   pointer-events: none;
   z-index: 1;
 }
-
 .section-3__chart-axis-label {
   font-family: Inter, sans-serif;
   font-weight: 600;
@@ -130,13 +119,11 @@
   position: absolute;
   transform: translateX(-50%);
 }
-
 .section-3__chart-axis-label:nth-child(1) { left: 0%; }
 .section-3__chart-axis-label:nth-child(2) { left: 22.22%; }
 .section-3__chart-axis-label:nth-child(3) { left: 44.44%; }
 .section-3__chart-axis-label:nth-child(4) { left: 66.67%; }
 .section-3__chart-axis-label:nth-child(5) { left: 88.89%; }
-
 .chart-item {
   display: flex;
   flex-direction: row;
@@ -146,7 +133,6 @@
   position: relative;
   z-index: 1;
 }
-
 .chart-item__label {
   font-family: Inter, sans-serif;
   font-weight: 600;
@@ -162,7 +148,6 @@
   align-items: center;
   justify-content: flex-end;
 }
-
 .chart-item__bar-wrapper {
   flex: 1;
   display: flex;
@@ -173,7 +158,6 @@
   padding-left: 0;
   min-width: 0;
 }
-
 .chart-item__bar {
   height: clamp(20px, 2.5vw, 30px);
   background: #BD60EF;
@@ -182,23 +166,18 @@
   min-width: 2px;
   transform-origin: left center;
 }
-
 .chart-item__bar[data-percent="83.7"] {
   transform: scaleX(0.96);
 }
-
 .chart-item__bar[data-percent="19.8"] {
   transform: scaleX(0.92);
 }
-
 .chart-item__bar[data-percent="1.2"] {
   transform: scaleX(2);
 }
-
 .chart-item__bar:not([data-percent="9.3"]):not([data-percent="19.8"]):not([data-percent="1.2"]):not([data-percent="83.7"]) {
   transform: scaleX(0.95);
 }
-
 .chart-item__value {
   font-family: Inter, sans-serif;
   font-weight: 600;
@@ -210,4 +189,3 @@
   text-align: right;
   flex-shrink: 0;
 }
-
