@@ -26,13 +26,13 @@
       </button>
     </div>
     <nav class="mobile-menu__nav">
-      <a href="#" class="mobile-menu__link">О сервисе</a>
-      <a href="#" class="mobile-menu__link">Как это работает?</a>
-      <a href="#" class="mobile-menu__link">Преимущества</a>
-      <a href="#" class="mobile-menu__link">Отзывы и результаты</a>
-      <a href="#" class="mobile-menu__link">Стоимость услуг</a>
-      <a href="#" class="mobile-menu__link">FAQ</a>
-      <a href="#" class="mobile-menu__link">Контакты</a>
+      <a href="#section-2" class="mobile-menu__link" data-smooth-scroll data-i18n="nav.about">О сервисе</a>
+      <a href="#section-4" class="mobile-menu__link" data-smooth-scroll data-i18n="nav.how">Как это работает?</a>
+      <a href="#section-5" class="mobile-menu__link" data-smooth-scroll data-i18n="nav.advantages">Преимущества</a>
+      <a href="#section-7" class="mobile-menu__link" data-smooth-scroll data-i18n="nav.reviews">Отзывы и результаты</a>
+      <a href="#section-8" class="mobile-menu__link" data-smooth-scroll data-i18n="nav.pricing">Стоимость услуг</a>
+      <a href="#section-9" class="mobile-menu__link" data-smooth-scroll data-i18n="nav.faq">FAQ</a>
+      <a href="#footer" class="mobile-menu__link" data-smooth-scroll data-i18n="nav.contacts">Контакты</a>
     </nav>
     <div class="mobile-menu__contacts">
       <a href="tel:+79133923456" class="mobile-menu__phone">+7 913 392 34 56</a>
@@ -63,13 +63,13 @@
         <header class="header container">
           <div class="header__brand"><img src="img/logo.png" alt="Prodsfera"></div>
           <nav class="header__nav">
-            <a href="#" class="nav__link">О сервисе</a>
-            <a href="#" class="nav__link">Как это работает?</a>
-            <a href="#" class="nav__link">Преимущества</a>
-            <a href="#" class="nav__link">Отзывы и результаты</a>
-            <a href="#" class="nav__link">Стоимость услуг</a>
-            <a href="#" class="nav__link">FAQ</a>
-            <a href="#" class="nav__link">Контакты</a>
+            <a href="#section-2" class="nav__link" data-smooth-scroll data-i18n="nav.about">О сервисе</a>
+            <a href="#section-4" class="nav__link" data-smooth-scroll data-i18n="nav.how">Как это работает?</a>
+            <a href="#section-5" class="nav__link" data-smooth-scroll data-i18n="nav.advantages">Преимущества</a>
+            <a href="#section-7" class="nav__link" data-smooth-scroll data-i18n="nav.reviews">Отзывы и результаты</a>
+            <a href="#section-8" class="nav__link" data-smooth-scroll data-i18n="nav.pricing">Стоимость услуг</a>
+            <a href="#section-9" class="nav__link" data-smooth-scroll data-i18n="nav.faq">FAQ</a>
+            <a href="#footer" class="nav__link" data-smooth-scroll data-i18n="nav.contacts">Контакты</a>
           </nav>
           <div class="header__lang" data-header-lang-dropdown>
             <button class="header__lang-btn" aria-label="Выбор языка">
@@ -91,15 +91,15 @@
           <div class="hero__left">
             <div class="hero__content">
               <div class="hero__text">
-                <h1 class="hero__title">
+                <h1 class="hero__title" data-i18n-html="hero.title">
                   Управление репутацией <span class="hero__title-nowrap">на Wildberries</span>
                 </h1>
-                <p class="hero__desc">
+                <p class="hero__desc" data-i18n="hero.description">
                   Укрепляем репутацию, рейтинг и доверие — чтобы ваши товары оставались в ТОПе
                   выдачи и стабильно росли в продажах с минимальными затратами на продвижение.
                 </p>
               </div>
-              <button class="button button--glass" data-modal-open="feedback">Укрепить репутацию</button>
+              <button class="button button--glass section-6__button" data-modal-open="feedback" data-i18n="hero.cta">Укрепить репутацию</button>
             </div>
           </div>
           <div class="hero__right">
@@ -119,7 +119,7 @@
                   <span style="height:90px"></span>
                   <span style="height:78px"></span>
                 </div>
-                <h3 class="lg-card__title">Продажи с Prodsfera</h3>
+                <h3 class="lg-card__title" data-i18n="lgcard.title">Продажи с Prodsfera</h3>
                 <div class="lg-card__cats">
                   <div class="cat" style="background-image:url('img/child-hoodie.png')" aria-label="Детская одежда"></div>
                   <div class="cat" style="background-image:url('img/boots.png')" aria-label="Сапоги"></div>
@@ -130,15 +130,15 @@
                 <ul class="lg-card__list">
                   <li>
                     <img src="img/svg/Vector.svg" alt="" class="check" aria-hidden="true">
-                    Безопасно для карточки
+                    <span data-i18n="lgcard.item1">Безопасно для карточки</span>
                   </li>
                   <li>
                     <img src="img/svg/Vector.svg" alt="" class="check" aria-hidden="true">
-                    Всё в рамках правил маркетплейса
+                    <span data-i18n="lgcard.item2">Всё в рамках правил маркетплейса</span>
                   </li>
                   <li>
                     <img src="img/svg/Vector.svg" alt="" class="check" aria-hidden="true">
-                    Подходит для новых и действующих товаров
+                    <span data-i18n="lgcard.item3">Подходит для новых и действующих товаров</span>
                   </li>
                 </ul>
               </div>
@@ -161,18 +161,18 @@
                   <span class="price__sale">1 590 ₽</span>
                   <span class="price__old">2 700 ₽</span>
                 </div>
-                <div class="wb-card__note">с WB Кошельком</div>
+                <div class="wb-card__note" data-i18n="card.withWallet">с WB Кошельком</div>
                 <div class="wb-card__title">
                   <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
-                  <span>LAGERA / Косметический набор унив...</span>
+                  <span data-i18n="wbcard.product1">LAGERA / Косметический набор унив...</span>
                 </div>
                 <div class="rating">
                   <span class="star">★</span>
                   <span>4,8</span>
                   <span class="dot">·</span>
-                  <span>668 оценка</span>
+                  <span data-i18n="card.rating">668 оценка</span>
                 </div>
-                <a class="wb-card__cta">
+                <a class="wb-card__cta" data-i18n="wbcard.cta">
                   <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.30497 1.33507C1.07575 1.25866 0.827983 1.38254 0.751572 1.61177C0.675167 1.841 0.79905 2.08876 1.02827 2.16517L1.1828 2.21668C1.57737 2.3482 1.83824 2.43586 2.03042 2.52526C2.2124 2.60991 2.29108 2.67804 2.34149 2.74799C2.3919 2.81793 2.43165 2.91411 2.45442 3.11352C2.47846 3.32411 2.47912 3.59931 2.47912 4.01522V5.5738C2.47911 6.37154 2.4791 7.01455 2.5471 7.5203C2.61768 8.04536 2.76871 8.48747 3.11982 8.83857C3.47094 9.18968 3.91303 9.34071 4.4381 9.41129C4.94383 9.47931 5.58685 9.47931 6.38459 9.47931H10.5C10.7416 9.47931 10.9375 9.28342 10.9375 9.04181C10.9375 8.80013 10.7416 8.60431 10.5 8.60431H6.41662C5.5793 8.60431 4.99531 8.60337 4.55469 8.54411C4.12666 8.48659 3.89999 8.3813 3.73854 8.21989C3.60135 8.08269 3.50473 7.89836 3.44349 7.58347H9.34612C9.90583 7.58347 10.1857 7.58347 10.4048 7.43892C10.624 7.29443 10.7342 7.03724 10.9547 6.5228L11.2046 5.93947C11.6768 4.83767 11.913 4.28676 11.6536 3.89344C11.3943 3.50012 10.7949 3.50012 9.59614 3.50012H3.35124C3.3478 3.32063 3.34026 3.1587 3.32377 3.01427C3.29148 2.73146 3.22113 2.47196 3.05132 2.23636C2.88151 2.00077 2.65758 1.85197 2.39949 1.7319C2.15669 1.61895 1.84792 1.51604 1.48253 1.39426L1.30497 1.33507Z" fill="white"/>
                     <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
@@ -182,54 +182,17 @@
                 </a>
               </div>
             </div>
-            <div class="wb-card wb-card--mini">
-              <div class="wb-card__img" style="background-image:url('img/snickers.png')"></div>
-              <div class="wb-card__body">
-                <div class="price">
-                  <svg class="price__icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_396_114)">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.37121 1.45911C4.26023 1.55369 4.20474 1.60098 4.14547 1.6407C4.00962 1.73176 3.85704 1.79495 3.6966 1.82663C3.6266 1.84045 3.55392 1.84625 3.40857 1.85785C3.04335 1.887 2.86074 1.90157 2.7084 1.95538C2.35603 2.07984 2.07886 2.357 1.9544 2.70937C1.90059 2.86172 1.88602 3.04433 1.85687 3.40954C1.84527 3.5549 1.83948 3.62758 1.82565 3.69757C1.79398 3.85802 1.73078 4.01059 1.63973 4.14645C1.60001 4.20571 1.55271 4.2612 1.45813 4.37219C1.2205 4.65105 1.10167 4.79046 1.032 4.93624C0.870843 5.27344 0.870843 5.66537 1.032 6.00256C1.10168 6.14835 1.2205 6.28775 1.45813 6.56662C1.5527 6.67759 1.60001 6.73309 1.63973 6.79234C1.73078 6.92819 1.79398 7.08077 1.82565 7.24123C1.83948 7.31123 1.84527 7.38392 1.85687 7.52925C1.88602 7.89447 1.90059 8.07708 1.9544 8.22943C2.07886 8.5818 2.35603 8.85898 2.7084 8.98344C2.86074 9.03721 3.04335 9.0518 3.40857 9.08096C3.55392 9.09254 3.6266 9.09837 3.6966 9.11218C3.85704 9.14385 4.00962 9.20706 4.14547 9.29812C4.20474 9.33781 4.26023 9.38512 4.37121 9.47968C4.65007 9.71734 4.78948 9.83615 4.93527 9.90583C5.27246 10.067 5.66439 10.067 6.00158 9.90583C6.14737 9.83615 6.28678 9.71734 6.56564 9.47968C6.67661 9.38512 6.73212 9.33781 6.79136 9.29812C6.92721 9.20706 7.07979 9.14385 7.24025 9.11218C7.31025 9.09837 7.38294 9.09254 7.52827 9.08096C7.8935 9.0518 8.07611 9.03721 8.22846 8.98344C8.58083 8.85898 8.858 8.5818 8.98246 8.22943C9.03624 8.07708 9.05082 7.89447 9.07999 7.52925C9.09156 7.38392 9.09739 7.31123 9.1112 7.24123C9.14288 7.08077 9.20609 6.92819 9.29714 6.79234C9.33684 6.73309 9.38414 6.67759 9.4787 6.56662C9.71637 6.28775 9.83518 6.14835 9.90486 6.00256C10.066 5.66537 10.066 5.27344 9.90486 4.93624C9.83518 4.79046 9.71637 4.65105 9.4787 4.37219C9.38414 4.2612 9.33684 4.20571 9.29714 4.14645C9.20609 4.01059 9.14288 3.85802 9.1112 3.69757C9.09739 3.62758 9.09156 3.5549 9.07999 3.40954C9.05082 3.04433 9.03624 2.86172 8.98246 2.70937C8.858 2.357 8.58083 2.07984 8.22846 1.95538C8.07611 1.90157 7.8935 1.887 7.52827 1.85785C7.38294 1.84625 7.31025 1.84045 7.24025 1.82663C7.07979 1.79495 6.92721 1.73176 6.79136 1.6407C6.73212 1.60098 6.67661 1.55369 6.56564 1.45911C6.28678 1.22147 6.14737 1.10266 6.00158 1.03298C5.66439 0.871819 5.27246 0.871819 4.93527 1.03298C4.78948 1.10265 4.65007 1.22147 4.37121 1.45911ZM7.21428 3.72377C7.35911 3.86862 7.35911 4.10346 7.21428 4.2483L4.24708 7.21548C4.10224 7.36036 3.8674 7.36036 3.72255 7.21548C3.57771 7.07065 3.57771 6.83581 3.72255 6.69098L6.68973 3.72377C6.83461 3.57893 7.06945 3.57893 7.21428 3.72377ZM7.19928 6.70598C7.19928 6.9791 6.97789 7.20049 6.70477 7.20049C6.43161 7.20049 6.21022 6.9791 6.21022 6.70598C6.21022 6.43286 6.43161 6.21142 6.70477 6.21142C6.97789 6.21142 7.19928 6.43286 7.19928 6.70598ZM4.23209 4.72784C4.50521 4.72784 4.72663 4.50643 4.72663 4.2333C4.72663 3.96018 4.50521 3.73877 4.23209 3.73877C3.95896 3.73877 3.73755 3.96018 3.73755 4.2333C3.73755 4.50643 3.95896 4.72784 4.23209 4.72784Z" fill="#FF3C3D"/>
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_396_114">
-                        <rect width="10.9375" height="10.9375" fill="white"/>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="price__sale">1 790 ₽</span>
-                  <span class="price__old">2 900 ₽</span>
-                </div>
-                <div class="wb-card__note">с WB Кошельком</div>
-                <div class="wb-card__title">
-                  <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
-                  <span>KEGVA / Кроссовки женские спортивные р...</span>
-                </div>
-                <div class="rating">
-                  <span class="star">★</span>
-                  <span>4,9</span>
-                  <span class="dot">·</span>
-                  <span>1 234 оценка</span>
-                </div>
-                <a class="wb-card__cta">
-                  <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.30497 1.33507C1.07575 1.25866 0.827983 1.38254 0.751572 1.61177C0.675167 1.841 0.79905 2.08876 1.02827 2.16517L1.1828 2.21668C1.57737 2.3482 1.83824 2.43586 2.03042 2.52526C2.2124 2.60991 2.29108 2.67804 2.34149 2.74799C2.3919 2.81793 2.43165 2.91411 2.45442 3.11352C2.47846 3.32411 2.47912 3.59931 2.47912 4.01522V5.5738C2.47911 6.37154 2.4791 7.01455 2.5471 7.5203C2.61768 8.04536 2.76871 8.48747 3.11982 8.83857C3.47094 9.18968 3.91303 9.34071 4.4381 9.41129C4.94383 9.47931 5.58685 9.47931 6.38459 9.47931H10.5C10.7416 9.47931 10.9375 9.28342 10.9375 9.04181C10.9375 8.80013 10.7416 8.60431 10.5 8.60431H6.41662C5.5793 8.60431 4.99531 8.60337 4.55469 8.54411C4.12666 8.48659 3.89999 8.3813 3.73854 8.21989C3.60135 8.08269 3.50473 7.89836 3.44349 7.58347H9.34612C9.90583 7.58347 10.1857 7.58347 10.4048 7.43892C10.624 7.29443 10.7342 7.03724 10.9547 6.5228L11.2046 5.93947C11.6768 4.83767 11.913 4.28676 11.6536 3.89344C11.3943 3.50012 10.7949 3.50012 9.59614 3.50012H3.35124C3.3478 3.32063 3.34026 3.1587 3.32377 3.01427C3.29148 2.73146 3.22113 2.47196 3.05132 2.23636C2.88151 2.00077 2.65758 1.85197 2.39949 1.7319C2.15669 1.61895 1.84792 1.51604 1.48253 1.39426L1.30497 1.33507Z" fill="white"/>
-                    <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
-                    <path d="M9.625 10.5C10.1082 10.5 10.5 10.8917 10.5 11.375C10.5 11.8582 10.1082 12.25 9.625 12.25C9.14177 12.25 8.75 11.8582 8.75 11.375C8.75 10.8917 9.14177 10.5 9.625 10.5Z" fill="white"/>
-                  </svg>
-                  Завтра
-                </a>
-              </div>
-            </div>
+            <img src="img/wb-card/boots.png" alt="" class="hero__boots-img" aria-hidden="true">
           </div>
         </div>
         <div class="hero__decor" aria-hidden="true">
           <div class="hero__ghost hero__ghost--w">Wildberries</div>
-          <div class="hero__ghost hero__ghost--p">Прибыль</div>
-          <div class="hero__ghost hero__ghost--otzyvy">Отзывы</div>
-          <div class="hero__ghost hero__ghost--reyting">Рейтинг</div>
+          <div class="hero__ghost hero__ghost--p" data-i18n="ghost.profit">Прибыль</div>
+          <div class="hero__ghost hero__ghost--otzyvy" data-i18n="ghost.reviews">Отзывы</div>
+          <div class="hero__ghost hero__ghost--reyting" data-i18n="ghost.rating">Рейтинг</div>
         </div>
       </div>
-      <div class="section-2-bg">
+      <div class="section-2-bg" id="section-2">
         <div class="section-2-bg__balls-layer"></div>
         <svg width="0" height="0" style="position: absolute;">
           <defs>
@@ -241,67 +204,67 @@
         <div class="section-2__content">
           <div class="section-2__header">
             <div class="section-2__header-left">
-              <div class="section-2__subtitle">Что мешает продажам</div>
-              <h2 class="section-2__title">На Wildberries всё решает<br>репутация карточки</h2>
-              <p class="section-2__desc">Ваш товар заслуживает больше продаж — но карточка теряется среди конкурентов?</p>
+              <div class="section-2__subtitle" data-i18n="section2.subtitle">Что мешает продажам</div>
+              <h2 class="section-2__title" data-i18n-html="section2.title">На Wildberries всё решает<br>репутация карточки</h2>
+              <p class="section-2__desc" data-i18n="section2.desc">Ваш товар заслуживает больше продаж — но карточка теряется среди конкурентов?</p>
             </div>
             <div class="section-2__header-right">
-              <p class="section-2__cta">Мы делаем так, чтобы покупатели выбирали<br>вас, а не конкурентов.</p>
+              <p class="section-2__cta" data-i18n="section2.cta">Мы делаем так, чтобы покупатели выбирали вас, а не конкурентов.</p>
             </div>
           </div>
           <div class="section-2__cards">
             <div class="stat-card" data-liquid-glass>
               <div class="stat-card__header">
                 <img src="img/bg-section-2/icon/star.png" alt="" class="stat-card__icon">
-                <span class="stat-card__header-text">отзывы</span>
+                <span class="stat-card__header-text" data-i18n="section2.stat.reviews">отзывы</span>
               </div>
               <div class="stat-card__value-wrapper">
-                <span class="stat-card__value-label">менее</span>
+                <span class="stat-card__value-label" data-i18n="section2.stat.less">менее</span>
                 <div class="stat-card__value-row">
                   <div class="stat-card__value">50</div>
-                  <span class="stat-card__value-suffix">отзывов</span>
+                  <span class="stat-card__value-suffix" data-i18n="section2.stat.reviews.count">отзывов</span>
                 </div>
               </div>
               <ul class="stat-card__list">
-                <li class="stat-card__list-item">Мало отзывов и оценок — покупатели считают товар «непроверенным», повышаются затраты на рекламу (ДРР)</li>
-                <li class="stat-card__list-item">Нет новых отзывов — карточка выглядит заброшенной</li>
-                <li class="stat-card__list-item">Однотипные отзывы снижают доверие и конверсию</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.reviews.problem1">Мало отзывов и оценок — покупатели считают товар «непроверенным», повышаются затраты на рекламу (ДРР)</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.reviews.problem2">Нет новых отзывов — карточка выглядит заброшенной</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.reviews.problem3">Однотипные отзывы снижают доверие и конверсию</li>
               </ul>
             </div>
             <div class="stat-card" data-liquid-glass>
               <div class="stat-card__header">
                 <img src="img/bg-section-2/icon/2users.png" alt="" class="stat-card__icon">
-                <span class="stat-card__header-text">РЕЙТИНГ И КОММУНИКАЦИИ</span>
+                <span class="stat-card__header-text" data-i18n="section2.stat.rating">РЕЙТИНГ И КОММУНИКАЦИИ</span>
               </div>
               <div class="stat-card__value-wrapper">
-                <span class="stat-card__value-label">менее</span>
+                <span class="stat-card__value-label" data-i18n="section2.stat.less">менее</span>
                 <div class="stat-card__value-row">
                   <div class="stat-card__value">4,7</div>
-                  <span class="stat-card__value-suffix">среднего рейтинга</span>
+                  <span class="stat-card__value-suffix" data-i18n="section2.stat.rating.avg">среднего рейтинга</span>
                 </div>
               </div>
               <ul class="stat-card__list">
-                <li class="stat-card__list-item">Средний рейтинг &lt;4,7 — покупатели выбирают конкурентов</li>
-                <li class="stat-card__list-item">Нет ответов продавца — создаётся ощущение безразличия</li>
-                <li class="stat-card__list-item">Мало фото в отзывах — теряется визуальное доверие</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.rating.problem1">Средний рейтинг &lt;4,7 — покупатели выбирают конкурентов</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.rating.problem2">Нет ответов продавца — создаётся ощущение безразличия</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.rating.problem3">Мало фото в отзывах — теряется визуальное доверие</li>
               </ul>
             </div>
             <div class="stat-card" data-liquid-glass>
               <div class="stat-card__header">
                 <img src="img/bg-section-2/icon/bookmar-save.png" alt="" class="stat-card__icon">
-                <span class="stat-card__header-text">КОНКУРЕНТЫ И УВЕЛИЧЕНИЕ</span>
+                <span class="stat-card__header-text" data-i18n="section2.stat.orders">КОНКУРЕНТЫ И УВЕЛИЧЕНИЕ</span>
               </div>
               <div class="stat-card__value-wrapper">
-                <span class="stat-card__value-label">более</span>
+                <span class="stat-card__value-label" data-i18n="section2.stat.more">более</span>
                 <div class="stat-card__value-row">
                   <div class="stat-card__value">70%</div>
-                  <span class="stat-card__value-suffix">конкурентов</span>
+                  <span class="stat-card__value-suffix" data-i18n="section2.stat.orders.count">конкурентов</span>
                 </div>
               </div>
               <ul class="stat-card__list">
-                <li class="stat-card__list-item">Конкуренты обновляют отзывы и оценки быстрее</li>
-                <li class="stat-card__list-item">Покупатели ориентируются на репутацию, а не на цену</li>
-                <li class="stat-card__list-item">Даже качественные товары без отзывов остаются незамеченными</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.orders.problem1">Конкуренты обновляют отзывы и оценки быстрее</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.orders.problem2">Покупатели ориентируются на репутацию, а не на цену</li>
+                <li class="stat-card__list-item" data-i18n="section2.stat.orders.problem3">Даже качественные товары без отзывов остаются незамеченными</li>
               </ul>
             </div>
           </div>
@@ -311,9 +274,9 @@
   </div>
   <section class="section-3">
     <div class="section-3__content">
-      <h2 class="section-3__title">Опрос покупателей</h2>
-      <p class="section-3__question">По каким критериям вы выбираете<br>у кого купить на WB?</p>
-      <p class="section-3__responses"><span class="section-3__responses-number">0</span> ответов</p>
+      <h2 class="section-3__title" data-i18n="section3.title">Опрос покупателей</h2>
+      <p class="section-3__question" data-i18n-html="section3.question">По каким критериям вы выбираете<br>у кого купить на WB?</p>
+      <p class="section-3__responses"><span class="section-3__responses-number">0</span> <span data-i18n="section3.responses">ответов</span></p>
       <div class="section-3__chart">
         <div class="section-3__chart-grid">
           <div class="section-3__chart-grid-line"></div>
@@ -421,7 +384,7 @@
       </div>
     </div>
   </section>
-  <section class="section-4">
+  <section class="section-4" id="section-4">
     <div class="section-4__slider-nav">
       <button class="section-4__slider-btn section-4__slider-btn--prev" aria-label="Предыдущий слайд">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -435,9 +398,9 @@
       </button>
     </div>
     <div class="section-4__content">
-      <h2 class="section-4__title">Этапы продвижения</h2>
-      <p class="section-4__question">Как это работает?</p>
-      <p class="section-4__desc">Всё максимально просто и прозрачно. Вы запускаете продвижение карточки, а мы помогаем ей обрести доверие и внимание покупателей. Каждый шаг под вашим контролем, а результаты видны с первых дней.</p>
+      <h2 class="section-4__title" data-i18n="section4.title">Этапы продвижения</h2>
+      <p class="section-4__question" data-i18n="section4.question">Как это работает?</p>
+      <p class="section-4__desc" data-i18n="section4.desc">Всё максимально просто и прозрачно. Вы запускаете продвижение карточки, а мы помогаем ей обрести доверие и внимание покупателей. Каждый шаг под вашим контролем, а результаты видны с первых дней.</p>
       <div class="section-4__main">
         <div class="section-4__left">
           <div class="section-4__image-wrapper">
@@ -471,9 +434,9 @@
                     </svg>
                   </div>
                   <div class="slider-card__content">
-                    <div class="slider-card__step">Шаг 1</div>
-                    <h3 class="slider-card__title">Добавьте артикул товара<br>на Wildberries</h3>
-                    <p class="slider-card__desc">Введите артикул, добавьте ключевые слова и выберите услугу — от лёгкого старта до комплексной работы с репутацией. Быстро запускайте продвижение без сложных настроек.</p>
+                    <div class="slider-card__step"><span data-i18n="section4.step">Шаг</span> 1</div>
+                    <h3 class="slider-card__title" data-i18n-html="section4.step1.title">Добавьте артикул товара<br>на Wildberries</h3>
+                    <p class="slider-card__desc" data-i18n="section4.step1.desc">Введите артикул, добавьте ключевые слова и выберите услугу — от лёгкого старта до комплексной работы с репутацией. Быстро запускайте продвижение без сложных настроек.</p>
                   </div>
                 </div>
               </div>
@@ -485,9 +448,9 @@
                     </svg>
                   </div>
                   <div class="slider-card__content">
-                    <div class="slider-card__step">Шаг 2</div>
-                    <h3 class="slider-card__title">Настройте количество выкупов и отзывов</h3>
-                    <p class="slider-card__desc">Вы сами решаете, сколько выкупов и отзывов необходимо. Заполняйте график выкупов и выбирайте удобный ПВЗ для получения товара.</p>
+                    <div class="slider-card__step"><span data-i18n="section4.step">Шаг</span> 2</div>
+                    <h3 class="slider-card__title" data-i18n="section4.step2.title">Настройте количество выкупов и отзывов</h3>
+                    <p class="slider-card__desc" data-i18n="section4.step2.desc">Вы сами решаете, сколько выкупов и отзывов необходимо. Заполняйте график выкупов и выбирайте удобный ПВЗ для получения товара.</p>
                   </div>
                 </div>
               </div>
@@ -501,9 +464,9 @@
                     </svg>
                   </div>
                   <div class="slider-card__content">
-                    <div class="slider-card__step">Шаг 3</div>
-                    <h3 class="slider-card__title">Безопасная оплата через банковскую карту</h3>
-                    <p class="slider-card__desc">Привяжите карту в личном кабинете и устанавливайте лимиты. Наши специалисты не имеют доступа к вашим данным — полностью безопасно для вас и товара.</p>
+                    <div class="slider-card__step"><span data-i18n="section4.step">Шаг</span> 3</div>
+                    <h3 class="slider-card__title" data-i18n="section4.step3.title">Безопасная оплата через банковскую карту</h3>
+                    <p class="slider-card__desc" data-i18n="section4.step3.desc">Привяжите карту в личном кабинете и устанавливайте лимиты. Наши специалисты не имеют доступа к вашим данным — полностью безопасно для вас и товара.</p>
                   </div>
                 </div>
               </div>
@@ -520,9 +483,9 @@
                     </svg>
                   </div>
                   <div class="slider-card__content">
-                    <div class="slider-card__step">Шаг 4</div>
-                    <h3 class="slider-card__title">Осуществление выкупов и написание отзывов</h3>
-                    <p class="slider-card__desc">Наши специалисты осуществляют выкупы. В личном кабинете после доставки в ПВЗ будет доступен QR код для получения. Вы забираете заказ из ПВЗ и Вам становится доступно написание отзыва.</p>
+                    <div class="slider-card__step"><span data-i18n="section4.step">Шаг</span> 4</div>
+                    <h3 class="slider-card__title" data-i18n="section4.step4.title">Осуществление выкупов и написание отзывов</h3>
+                    <p class="slider-card__desc" data-i18n="section4.step4.desc">Наши специалисты осуществляют выкупы. В личном кабинете после доставки в ПВЗ будет доступен QR код для получения. Вы забираете заказ из ПВЗ и Вам становится доступно написание отзыва.</p>
                   </div>
                 </div>
               </div>
@@ -534,9 +497,9 @@
                     </svg>
                   </div>
                   <div class="slider-card__content">
-                    <div class="slider-card__step">Шаг 5</div>
-                    <h3 class="slider-card__title">Рост рейтинга и интереса покупателей</h3>
-                    <p class="slider-card__desc">Карточка получает свежие оценки и отзывы, повышается рейтинг, растёт видимость товара и интерес покупателей, что увеличивает продажи.</p>
+                    <div class="slider-card__step"><span data-i18n="section4.step">Шаг</span> 5</div>
+                    <h3 class="slider-card__title" data-i18n="section4.step5.title">Рост рейтинга и интереса покупателей</h3>
+                    <p class="slider-card__desc" data-i18n="section4.step5.desc">Карточка получает свежие оценки и отзывы, повышается рейтинг, растёт видимость товара и интерес покупателей, что увеличивает продажи.</p>
                   </div>
                 </div>
               </div>
@@ -545,11 +508,11 @@
       </div>
     </div>
   </section>
-  <section class="section-5">
+  <section class="section-5" id="section-5">
     <div class="section-5__content">
-      <h2 class="section-5__title">Преимущества</h2>
-      <p class="section-5__question">Мы понимаем продавцов</p>
-      <p class="section-5__desc">Знаем, как больно, когда карточка зависла без заказов, несмотря<br>на качественный товар</p>
+      <h2 class="section-5__title" data-i18n="section5.title">Преимущества</h2>
+      <p class="section-5__question" data-i18n="section5.question">Мы понимаем продавцов</p>
+      <p class="section-5__desc" data-i18n-html="section5.desc">Знаем, как больно, когда карточка зависла без заказов, несмотря<br>на качественный товар</p>
       <div class="section-5__main">
         <div class="section-5__left">
           <div class="section-5__product-img section-5__product-img--cream" style="background-image:url('img/cream.png')"></div>
@@ -570,8 +533,8 @@
               </svg>
             </div>
             <div class="advantage-card__text">
-              <h3 class="advantage-card__title">Безопасно для карточки</h3>
-              <p class="advantage-card__desc">Никаких серых схем — всё в рамках правил Wildberries, с плавным и стабильным ростом.</p>
+              <h3 class="advantage-card__title" data-i18n="section5.advantage1.title">Безопасно для карточки</h3>
+              <p class="advantage-card__desc" data-i18n="section5.advantage1.desc">Никаких серых схем — всё в рамках правил Wildberries, с плавным и стабильным ростом.</p>
             </div>
           </div>
           <div class="section-5__product-img section-5__product-img--scarf" style="background-image:url('img/scarf.png')"></div>
@@ -592,16 +555,16 @@
               <span class="price__sale">6 257 ₽</span>
               <span class="price__old">8 200 ₽</span>
             </div>
-            <div class="wb-card__note">с WB Кошельком</div>
+            <div class="wb-card__note" data-i18n="card.withWallet">с WB Кошельком</div>
             <div class="wb-card__title">
               <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
-              <span>LASD / Сумочка женская из натуральной кожи</span>
+              <span data-i18n="wbcard.product2">LASD / Сумочка женская из натуральной кожи</span>
             </div>
             <div class="rating">
               <span class="star">★</span>
               <span>4,7</span>
               <span class="dot">·</span>
-              <span>542 оценка</span>
+              <span data-i18n="card.rating">542 оценка</span>
             </div>
             <a class="wb-card__cta">
               <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -609,7 +572,7 @@
                 <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
                 <path d="M9.625 10.5C10.1082 10.5 10.5 10.8917 10.5 11.375C10.5 11.8582 10.1082 12.25 9.625 12.25C9.14177 12.25 8.75 11.8582 8.75 11.375C8.75 10.8917 9.14177 10.5 9.625 10.5Z" fill="white"/>
               </svg>
-              Послезавтра
+              <span data-i18n="card.afterTomorrow">Послезавтра</span>
             </a>
           </div>
         </div>
@@ -631,8 +594,8 @@
               </svg>
             </div>
             <div class="advantage-card__text">
-              <h3 class="advantage-card__title">Держим связь и показываем результат</h3>
-              <p class="advantage-card__desc">Отчётность, статистика и поддержка — всегда под рукой.</p>
+              <h3 class="advantage-card__title" data-i18n="section5.advantage2.title">Держим связь и показываем результат</h3>
+              <p class="advantage-card__desc" data-i18n="section5.advantage2.desc">Отчётность, статистика и поддержка — всегда под рукой.</p>
             </div>
           </div>
         </div>
@@ -658,8 +621,8 @@
               </svg>
             </div>
             <div class="advantage-card__text">
-              <h3 class="advantage-card__title">Возвращаем внимание к товару</h3>
-              <p class="advantage-card__desc">Рейтинг растёт, отзывы обновляются,<br>карточка снова в поиске и получает заказы.</p>
+              <h3 class="advantage-card__title" data-i18n="section5.advantage3.title">Возвращаем внимание к товару</h3>
+              <p class="advantage-card__desc" data-i18n-html="section5.advantage3.desc">Рейтинг растёт, отзывы обновляются,<br>карточка снова в поиске и получает заказы.</p>
             </div>
           </div>
           
@@ -680,16 +643,16 @@
               <span class="price__sale">2 435 ₽</span>
               <span class="price__old">6 200 ₽</span>
             </div>
-            <div class="wb-card__note">с WB Кошельком</div>
+            <div class="wb-card__note" data-i18n="card.withWallet">с WB Кошельком</div>
             <div class="wb-card__title">
               <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
-              <span>HOTYY / Ботинки женские демисезонные</span>
+              <span data-i18n="wbcard.product3">HOTYY / Ботинки женские демисезонные</span>
             </div>
             <div class="rating">
               <span class="star">★</span>
               <span>4,1</span>
               <span class="dot">·</span>
-              <span>234 оценка</span>
+              <span data-i18n="card.rating">234 оценка</span>
             </div>
             <a class="wb-card__cta">
               <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -697,7 +660,7 @@
                 <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
                 <path d="M9.625 10.5C10.1082 10.5 10.5 10.8917 10.5 11.375C10.5 11.8582 10.1082 12.25 9.625 12.25C9.14177 12.25 8.75 11.8582 8.75 11.375C8.75 10.8917 9.14177 10.5 9.625 10.5Z" fill="white"/>
               </svg>
-              Послезавтра
+              <span data-i18n="card.afterTomorrow">Послезавтра</span>
             </a>
           </div>
         </div>
@@ -719,8 +682,8 @@
               </svg>
             </div>
             <div class="advantage-card__text">
-              <h3 class="advantage-card__title">Ты не один</h3>
-              <p class="advantage-card__desc">Более 1000 продавцов уже восстановили<br>свои карточки и вышли в стабильные<br>продажи</p>
+              <h3 class="advantage-card__title" data-i18n="section5.advantage4.title">Ты не один</h3>
+              <p class="advantage-card__desc" data-i18n-html="section5.advantage4.desc">Более 1000 продавцов уже восстановили<br>свои карточки и вышли в стабильные<br>продажи</p>
             </div>
           </div>
         </div>
@@ -729,53 +692,791 @@
   </section>
   <section class="section-6">
     <div class="section-6__content">
-      <p class="section-6__subtitle">Наш девиз</p>
-      <h2 class="section-6__title">
+      <p class="section-6__subtitle" data-i18n="section6.subtitle">Наш девиз</p>
+      <h2 class="section-6__title" data-i18n-html="section6.title">
         Мы делаем ставку на репутацию —<br>а не на бесконечные скидки и акции,<br>которые съедают прибыль
       </h2>
-      <button class="button button--glass section-6__button" data-modal-open="order">Начать работу с репутацией</button>
+      <button class="button button--glass section-6__button" data-modal-open="order" data-i18n="section6.cta">Начать работу с репутацией</button>
       <div class="section-6__features">
-        <span class="section-6__feature">Безопасно</span>
-        <span class="section-6__feature">Прозрачно</span>
-        <span class="section-6__feature">Эффективно</span>
+        <span class="section-6__feature" data-i18n="section6.feature1">Безопасно</span>
+        <span class="section-6__feature" data-i18n="section6.feature2">Прозрачно</span>
+        <span class="section-6__feature" data-i18n="section6.feature3">Эффективно</span>
       </div>
     </div>
   </section>
-  <section class="section-7">
+  <section class="section-7" id="section-7">
+    <div class="section-7__balls-layer"></div>
+    <div class="section-7__slider-nav">
+      <button class="section-7__slider-btn section-7__slider-btn--prev" aria-label="Предыдущий слайд">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2071 6.29289C18.5976 5.90237 19.2308 5.90237 19.6213 6.29289C20.0118 6.68342 20.0118 7.31658 19.6213 7.70711L12.9142 14.4142L19.6213 21.1213C20.0118 21.5118 20.0118 22.145 19.6213 22.5355C19.2308 22.926 18.5976 22.926 18.2071 22.5355L10.5858 14.9142C10.1953 14.5237 10.1953 13.8905 10.5858 13.5L18.2071 6.29289Z" fill="#1C1C1C"/>
+        </svg>
+      </button>
+      <button class="section-7__slider-btn section-7__slider-btn--next" aria-label="Следующий слайд">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.79289 6.29289C10.1834 5.90237 10.8166 5.90237 11.2071 6.29289L18.0303 13.1161C18.5185 13.6043 18.5185 14.3957 18.0303 14.8839L11.2071 21.7071C10.8166 22.0976 10.1834 22.0976 9.79289 21.7071C9.40237 21.3166 9.40237 20.6834 9.79289 20.2929L16.0858 14L9.79289 7.70711C9.40237 7.31658 9.40237 6.68342 9.79289 6.29289Z" fill="#1C1C1C"/>
+        </svg>
+      </button>
+    </div>
     <div class="section-7__content">
-      <h2 class="section-7__subtitle">Результаты</h2>
-      <p class="section-7__tilte">Примеры улучшения репутации</p>
+      <h2 class="section-7__subtitle" data-i18n="section7.subtitle">Результаты</h2>
+      <p class="section-7__title" data-i18n="section7.title">Примеры улучшения репутации</p>
+    </div>
+    <div class="section-7__slider">
+      <div class="section-7__slider-track">
+        <div class="section-7__slider-item">
+          <div class="section-7__card">
+              <h3 class="section-7__card-title" data-i18n="section7.card1.title">Детская одежда</h3>
+            <div class="section-7__card-product">
+              <div class="wb-card wb-card--section-5">
+                <div class="wb-card__img" style="background-image:url('img/child-hoodie.png')"></div>
+                <div class="wb-card__body">
+                  <div class="price">
+                    <svg class="price__icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_396_114_s7_1)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.37121 1.45911C4.26023 1.55369 4.20474 1.60098 4.14547 1.6407C4.00962 1.73176 3.85704 1.79495 3.6966 1.82663C3.6266 1.84045 3.55392 1.84625 3.40857 1.85785C3.04335 1.887 2.86074 1.90157 2.7084 1.95538C2.35603 2.07984 2.07886 2.357 1.9544 2.70937C1.90059 2.86172 1.88602 3.04433 1.85687 3.40954C1.84527 3.5549 1.83948 3.62758 1.82565 3.69757C1.79398 3.85802 1.73078 4.01059 1.63973 4.14645C1.60001 4.20571 1.55271 4.2612 1.45813 4.37219C1.2205 4.65105 1.10167 4.79046 1.032 4.93624C0.870843 5.27344 0.870843 5.66537 1.032 6.00256C1.10168 6.14835 1.2205 6.28775 1.45813 6.56662C1.5527 6.67759 1.60001 6.73309 1.63973 6.79234C1.73078 6.92819 1.79398 7.08077 1.82565 7.24123C1.83948 7.31123 1.84527 7.38392 1.85687 7.52925C1.88602 7.89447 1.90059 8.07708 1.9544 8.22943C2.07886 8.5818 2.35603 8.85898 2.7084 8.98344C2.86074 9.03721 3.04335 9.0518 3.40857 9.08096C3.55392 9.09254 3.6266 9.09837 3.6966 9.11218C3.85704 9.14385 4.00962 9.20706 4.14547 9.29812C4.20474 9.33781 4.26023 9.38512 4.37121 9.47968C4.65007 9.71734 4.78948 9.83615 4.93527 9.90583C5.27246 10.067 5.66439 10.067 6.00158 9.90583C6.14737 9.83615 6.28678 9.71734 6.56564 9.47968C6.67661 9.38512 6.73212 9.33781 6.79136 9.29812C6.92721 9.20706 7.07979 9.14385 7.24025 9.11218C7.31025 9.09837 7.38294 9.09254 7.52827 9.08096C7.8935 9.0518 8.07611 9.03721 8.22846 8.98344C8.58083 8.85898 8.858 8.5818 8.98246 8.22943C9.03624 8.07708 9.05082 7.89447 9.07999 7.52925C9.09156 7.38392 9.09739 7.31123 9.1112 7.24123C9.14288 7.08077 9.20609 6.92819 9.29714 6.79234C9.33684 6.73309 9.38414 6.67759 9.4787 6.56662C9.71637 6.28775 9.83518 6.14835 9.90486 6.00256C10.066 5.66537 10.066 5.27344 9.90486 4.93624C9.83518 4.79046 9.71637 4.65105 9.4787 4.37219C9.38414 4.2612 9.33684 4.20571 9.29714 4.14645C9.20609 4.01059 9.14288 3.85802 9.1112 3.69757C9.09739 3.62758 9.09156 3.5549 9.07999 3.40954C9.05082 3.04433 9.03624 2.86172 8.98246 2.70937C8.858 2.357 8.58083 2.07984 8.22846 1.95538C8.07611 1.90157 7.8935 1.887 7.52827 1.85785C7.38294 1.84625 7.31025 1.84045 7.24025 1.82663C7.07979 1.79495 6.92721 1.73176 6.79136 1.6407C6.73212 1.60098 6.67661 1.55369 6.56564 1.45911C6.28678 1.22147 6.14737 1.10266 6.00158 1.03298C5.66439 0.871819 5.27246 0.871819 4.93527 1.03298C4.78948 1.10265 4.65007 1.22147 4.37121 1.45911ZM7.21428 3.72377C7.35911 3.86862 7.35911 4.10346 7.21428 4.2483L4.24708 7.21548C4.10224 7.36036 3.8674 7.36036 3.72255 7.21548C3.57771 7.07065 3.57771 6.83581 3.72255 6.69098L6.68973 3.72377C6.83461 3.57893 7.06945 3.57893 7.21428 3.72377ZM7.19928 6.70598C7.19928 6.9791 6.97789 7.20049 6.70477 7.20049C6.43161 7.20049 6.21022 6.9791 6.21022 6.70598C6.21022 6.43286 6.43161 6.21142 6.70477 6.21142C6.97789 6.21142 7.19928 6.43286 7.19928 6.70598ZM4.23209 4.72784C4.50521 4.72784 4.72663 4.50643 4.72663 4.2333C4.72663 3.96018 4.50521 3.73877 4.23209 3.73877C3.95896 3.73877 3.73755 3.96018 3.73755 4.2333C3.73755 4.50643 3.95896 4.72784 4.23209 4.72784Z" fill="#FF3C3D"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_396_114_s7_1">
+                          <rect width="10.9375" height="10.9375" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="price__sale">1 200 ₽</span>
+                    <span class="price__old">3 200 ₽</span>
+                  </div>
+                  <div class="wb-card__note" data-i18n="card.withWallet">с WB Кошельком</div>
+                  <div class="wb-card__title">
+                    <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
+                    <span data-i18n="wbcard.product4">KEGVA / Комбинезон детский демисезонный</span>
+                  </div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span>4,1</span>
+                    <span class="dot">·</span>
+                    <span data-i18n="card.rating">345 оценка</span>
+                  </div>
+                  <a class="wb-card__cta">
+                    <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.30497 1.33507C1.07575 1.25866 0.827983 1.38254 0.751572 1.61177C0.675167 1.841 0.79905 2.08876 1.02827 2.16517L1.1828 2.21668C1.57737 2.3482 1.83824 2.43586 2.03042 2.52526C2.2124 2.60991 2.29108 2.67804 2.34149 2.74799C2.3919 2.81793 2.43165 2.91411 2.45442 3.11352C2.47846 3.32411 2.47912 3.59931 2.47912 4.01522V5.5738C2.47911 6.37154 2.4791 7.01455 2.5471 7.5203C2.61768 8.04536 2.76871 8.48747 3.11982 8.83857C3.47094 9.18968 3.91303 9.34071 4.4381 9.41129C4.94383 9.47931 5.58685 9.47931 6.38459 9.47931H10.5C10.7416 9.47931 10.9375 9.28342 10.9375 9.04181C10.9375 8.80013 10.7416 8.60431 10.5 8.60431H6.41662C5.5793 8.60431 4.99531 8.60337 4.55469 8.54411C4.12666 8.48659 3.89999 8.3813 3.73854 8.21989C3.60135 8.08269 3.50473 7.89836 3.44349 7.58347H9.34612C9.90583 7.58347 10.1857 7.58347 10.4048 7.43892C10.624 7.29443 10.7342 7.03724 10.9547 6.5228L11.2046 5.93947C11.6768 4.83767 11.913 4.28676 11.6536 3.89344C11.3943 3.50012 10.7949 3.50012 9.59614 3.50012H3.35124C3.3478 3.32063 3.34026 3.1587 3.32377 3.01427C3.29148 2.73146 3.22113 2.47196 3.05132 2.23636C2.88151 2.00077 2.65758 1.85197 2.39949 1.7319C2.15669 1.61895 1.84792 1.51604 1.48253 1.39426L1.30497 1.33507Z" fill="white"/>
+                      <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
+                      <path d="M9.625 10.5C10.1082 10.5 10.5 10.8917 10.5 11.375C10.5 11.8582 10.1082 12.25 9.625 12.25C9.14177 12.25 8.75 11.8582 8.75 11.375C8.75 10.8917 9.14177 10.5 9.625 10.5Z" fill="white"/>
+                    </svg>
+                    <span data-i18n="card.tomorrow">Завтра</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="section-7__card-results">
+              <div class="section-7__card-service">
+                <span class="section-7__card-label" data-i18n="section7.card.service">Услуга:</span>
+                <span class="section-7__card-value" data-i18n="section7.card1.service">Выкупы на WB</span>
+              </div>
+              <div class="section-7__card-reviews">
+                <span class="section-7__card-label" data-i18n="section7.card.reviews">Отзывы:</span>
+                <span class="section-7__card-value" data-i18n="section7.card1.reviews">+ 300 новых отзывов</span>
+              </div>
+              <div class="section-7__card-result">
+                <span class="section-7__card-label" data-i18n="section7.card.result">Результат</span>
+                <div class="section-7__card-desc">
+                  <p class="section-7__card-desc-short" data-i18n-html="section7.card1.desc">Покупатели начали оставлять положительные<br>отзывы, выросло доверие</p>
+                </div>
+              </div>
+              <div class="section-7__card-rating">
+                <span class="section-7__card-label" data-i18n="section7.card.rating">Рейтинг вырос на</span>
+                <div class="section-7__card-rating-values">
+                  <span class="section-7__card-rating-old">2,8%</span>
+                  <span class="section-7__card-rating-new">4,1%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-7__slider-item">
+          <div class="section-7__card">
+              <h3 class="section-7__card-title" data-i18n="section7.card2.title">Косметический набор</h3>
+            <div class="section-7__card-product">
+              <div class="wb-card wb-card--section-5">
+                <div class="wb-card__img" style="background-image:url('img/cream.png')"></div>
+                <div class="wb-card__body">
+                  <div class="price">
+                    <svg class="price__icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_396_114_s7_2)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.37121 1.45911C4.26023 1.55369 4.20474 1.60098 4.14547 1.6407C4.00962 1.73176 3.85704 1.79495 3.6966 1.82663C3.6266 1.84045 3.55392 1.84625 3.40857 1.85785C3.04335 1.887 2.86074 1.90157 2.7084 1.95538C2.35603 2.07984 2.07886 2.357 1.9544 2.70937C1.90059 2.86172 1.88602 3.04433 1.85687 3.40954C1.84527 3.5549 1.83948 3.62758 1.82565 3.69757C1.79398 3.85802 1.73078 4.01059 1.63973 4.14645C1.60001 4.20571 1.55271 4.2612 1.45813 4.37219C1.2205 4.65105 1.10167 4.79046 1.032 4.93624C0.870843 5.27344 0.870843 5.66537 1.032 6.00256C1.10168 6.14835 1.2205 6.28775 1.45813 6.56662C1.5527 6.67759 1.60001 6.73309 1.63973 6.79234C1.73078 6.92819 1.79398 7.08077 1.82565 7.24123C1.83948 7.31123 1.84527 7.38392 1.85687 7.52925C1.88602 7.89447 1.90059 8.07708 1.9544 8.22943C2.07886 8.5818 2.35603 8.85898 2.7084 8.98344C2.86074 9.03721 3.04335 9.0518 3.40857 9.08096C3.55392 9.09254 3.6266 9.09837 3.6966 9.11218C3.85704 9.14385 4.00962 9.20706 4.14547 9.29812C4.20474 9.33781 4.26023 9.38512 4.37121 9.47968C4.65007 9.71734 4.78948 9.83615 4.93527 9.90583C5.27246 10.067 5.66439 10.067 6.00158 9.90583C6.14737 9.83615 6.28678 9.71734 6.56564 9.47968C6.67661 9.38512 6.73212 9.33781 6.79136 9.29812C6.92721 9.20706 7.07979 9.14385 7.24025 9.11218C7.31025 9.09837 7.38294 9.09254 7.52827 9.08096C7.8935 9.0518 8.07611 9.03721 8.22846 8.98344C8.58083 8.85898 8.858 8.5818 8.98246 8.22943C9.03624 8.07708 9.05082 7.89447 9.07999 7.52925C9.09156 7.38392 9.09739 7.31123 9.1112 7.24123C9.14288 7.08077 9.20609 6.92819 9.29714 6.79234C9.33684 6.73309 9.38414 6.67759 9.4787 6.56662C9.71637 6.28775 9.83518 6.14835 9.90486 6.00256C10.066 5.66537 10.066 5.27344 9.90486 4.93624C9.83518 4.79046 9.71637 4.65105 9.4787 4.37219C9.38414 4.2612 9.33684 4.20571 9.29714 4.14645C9.20609 4.01059 9.14288 3.85802 9.1112 3.69757C9.09739 3.62758 9.09156 3.5549 9.07999 3.40954C9.05082 3.04433 9.03624 2.86172 8.98246 2.70937C8.858 2.357 8.58083 2.07984 8.22846 1.95538C8.07611 1.90157 7.8935 1.887 7.52827 1.85785C7.38294 1.84625 7.31025 1.84045 7.24025 1.82663C7.07979 1.79495 6.92721 1.73176 6.79136 1.6407C6.73212 1.60098 6.67661 1.55369 6.56564 1.45911C6.28678 1.22147 6.14737 1.10266 6.00158 1.03298C5.66439 0.871819 5.27246 0.871819 4.93527 1.03298C4.78948 1.10265 4.65007 1.22147 4.37121 1.45911ZM7.21428 3.72377C7.35911 3.86862 7.35911 4.10346 7.21428 4.2483L4.24708 7.21548C4.10224 7.36036 3.8674 7.36036 3.72255 7.21548C3.57771 7.07065 3.57771 6.83581 3.72255 6.69098L6.68973 3.72377C6.83461 3.57893 7.06945 3.57893 7.21428 3.72377ZM7.19928 6.70598C7.19928 6.9791 6.97789 7.20049 6.70477 7.20049C6.43161 7.20049 6.21022 6.9791 6.21022 6.70598C6.21022 6.43286 6.43161 6.21142 6.70477 6.21142C6.97789 6.21142 7.19928 6.43286 7.19928 6.70598ZM4.23209 4.72784C4.50521 4.72784 4.72663 4.50643 4.72663 4.2333C4.72663 3.96018 4.50521 3.73877 4.23209 3.73877C3.95896 3.73877 3.73755 3.96018 3.73755 4.2333C3.73755 4.50643 3.95896 4.72784 4.23209 4.72784Z" fill="#FF3C3D"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_396_114_s7_2">
+                          <rect width="10.9375" height="10.9375" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="price__sale">1 590 ₽</span>
+                    <span class="price__old">2 700 ₽</span>
+                  </div>
+                  <div class="wb-card__note" data-i18n="card.withWallet">с WB Кошельком</div>
+                  <div class="wb-card__title">
+                    <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
+                    <span data-i18n="wbcard.product5">LAGERA / Косметический набор универсальный</span>
+                  </div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span>4,8</span>
+                    <span class="dot">·</span>
+                    <span data-i18n="card.rating">668 оценка</span>
+                  </div>
+                  <a class="wb-card__cta">
+                    <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.30497 1.33507C1.07575 1.25866 0.827983 1.38254 0.751572 1.61177C0.675167 1.841 0.79905 2.08876 1.02827 2.16517L1.1828 2.21668C1.57737 2.3482 1.83824 2.43586 2.03042 2.52526C2.2124 2.60991 2.29108 2.67804 2.34149 2.74799C2.3919 2.81793 2.43165 2.91411 2.45442 3.11352C2.47846 3.32411 2.47912 3.59931 2.47912 4.01522V5.5738C2.47911 6.37154 2.4791 7.01455 2.5471 7.5203C2.61768 8.04536 2.76871 8.48747 3.11982 8.83857C3.47094 9.18968 3.91303 9.34071 4.4381 9.41129C4.94383 9.47931 5.58685 9.47931 6.38459 9.47931H10.5C10.7416 9.47931 10.9375 9.28342 10.9375 9.04181C10.9375 8.80013 10.7416 8.60431 10.5 8.60431H6.41662C5.5793 8.60431 4.99531 8.60337 4.55469 8.54411C4.12666 8.48659 3.89999 8.3813 3.73854 8.21989C3.60135 8.08269 3.50473 7.89836 3.44349 7.58347H9.34612C9.90583 7.58347 10.1857 7.58347 10.4048 7.43892C10.624 7.29443 10.7342 7.03724 10.9547 6.5228L11.2046 5.93947C11.6768 4.83767 11.913 4.28676 11.6536 3.89344C11.3943 3.50012 10.7949 3.50012 9.59614 3.50012H3.35124C3.3478 3.32063 3.34026 3.1587 3.32377 3.01427C3.29148 2.73146 3.22113 2.47196 3.05132 2.23636C2.88151 2.00077 2.65758 1.85197 2.39949 1.7319C2.15669 1.61895 1.84792 1.51604 1.48253 1.39426L1.30497 1.33507Z" fill="white"/>
+                      <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
+                      <path d="M9.625 10.5C10.1082 10.5 10.5 10.8917 10.5 11.375C10.5 11.8582 10.1082 12.25 9.625 12.25C9.14177 12.25 8.75 11.8582 8.75 11.375C8.75 10.8917 9.14177 10.5 9.625 10.5Z" fill="white"/>
+                    </svg>
+                    <span data-i18n="card.tomorrow">Завтра</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="section-7__card-results">
+              <div class="section-7__card-service">
+                <span class="section-7__card-label" data-i18n="section7.card.service">Услуга:</span>
+                <span class="section-7__card-value" data-i18n="section7.card2.service">Отзывы на WB</span>
+              </div>
+              <div class="section-7__card-reviews">
+                <span class="section-7__card-label" data-i18n="section7.card.reviews">Отзывы:</span>
+                <span class="section-7__card-value" data-i18n="section7.card2.reviews">+ 600 новых отзывов</span>
+              </div>
+              <div class="section-7__card-result">
+                <span class="section-7__card-label" data-i18n="section7.card.result">Результат</span>
+                <div class="section-7__card-desc">
+                  <p class="section-7__card-desc-short" data-i18n-html="section7.card2.desc">Появился поток заказов, карточка снова видна в<br>поиске</p>
+                </div>
+              </div>
+              <div class="section-7__card-rating">
+                <span class="section-7__card-label" data-i18n="section7.card.rating">Рейтинг вырос на</span>
+                <div class="section-7__card-rating-values">
+                  <span class="section-7__card-rating-old">2,8%</span>
+                  <span class="section-7__card-rating-new">4,8%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-7__slider-item">
+          <div class="section-7__card">
+              <h3 class="section-7__card-title" data-i18n="section7.card3.title">Наушники Bluetooth</h3>
+            <div class="section-7__card-product">
+              <div class="wb-card wb-card--section-5">
+                <div class="wb-card__img" style="background-image:url('img/slider-pic/headphones.png')"></div>
+                <div class="wb-card__body">
+                  <div class="price">
+                    <svg class="price__icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_396_114_s7_3)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.37121 1.45911C4.26023 1.55369 4.20474 1.60098 4.14547 1.6407C4.00962 1.73176 3.85704 1.79495 3.6966 1.82663C3.6266 1.84045 3.55392 1.84625 3.40857 1.85785C3.04335 1.887 2.86074 1.90157 2.7084 1.95538C2.35603 2.07984 2.07886 2.357 1.9544 2.70937C1.90059 2.86172 1.88602 3.04433 1.85687 3.40954C1.84527 3.5549 1.83948 3.62758 1.82565 3.69757C1.79398 3.85802 1.73078 4.01059 1.63973 4.14645C1.60001 4.20571 1.55271 4.2612 1.45813 4.37219C1.2205 4.65105 1.10167 4.79046 1.032 4.93624C0.870843 5.27344 0.870843 5.66537 1.032 6.00256C1.10168 6.14835 1.2205 6.28775 1.45813 6.56662C1.5527 6.67759 1.60001 6.73309 1.63973 6.79234C1.73078 6.92819 1.79398 7.08077 1.82565 7.24123C1.83948 7.31123 1.84527 7.38392 1.85687 7.52925C1.88602 7.89447 1.90059 8.07708 1.9544 8.22943C2.07886 8.5818 2.35603 8.85898 2.7084 8.98344C2.86074 9.03721 3.04335 9.0518 3.40857 9.08096C3.55392 9.09254 3.6266 9.09837 3.6966 9.11218C3.85704 9.14385 4.00962 9.20706 4.14547 9.29812C4.20474 9.33781 4.26023 9.38512 4.37121 9.47968C4.65007 9.71734 4.78948 9.83615 4.93527 9.90583C5.27246 10.067 5.66439 10.067 6.00158 9.90583C6.14737 9.83615 6.28678 9.71734 6.56564 9.47968C6.67661 9.38512 6.73212 9.33781 6.79136 9.29812C6.92721 9.20706 7.07979 9.14385 7.24025 9.11218C7.31025 9.09837 7.38294 9.09254 7.52827 9.08096C7.8935 9.0518 8.07611 9.03721 8.22846 8.98344C8.58083 8.85898 8.858 8.5818 8.98246 8.22943C9.03624 8.07708 9.05082 7.89447 9.07999 7.52925C9.09156 7.38392 9.09739 7.31123 9.1112 7.24123C9.14288 7.08077 9.20609 6.92819 9.29714 6.79234C9.33684 6.73309 9.38414 6.67759 9.4787 6.56662C9.71637 6.28775 9.83518 6.14835 9.90486 6.00256C10.066 5.66537 10.066 5.27344 9.90486 4.93624C9.83518 4.79046 9.71637 4.65105 9.4787 4.37219C9.38414 4.2612 9.33684 4.20571 9.29714 4.14645C9.20609 4.01059 9.14288 3.85802 9.1112 3.69757C9.09739 3.62758 9.09156 3.5549 9.07999 3.40954C9.05082 3.04433 9.03624 2.86172 8.98246 2.70937C8.858 2.357 8.58083 2.07984 8.22846 1.95538C8.07611 1.90157 7.8935 1.887 7.52827 1.85785C7.38294 1.84625 7.31025 1.84045 7.24025 1.82663C7.07979 1.79495 6.92721 1.73176 6.79136 1.6407C6.73212 1.60098 6.67661 1.55369 6.56564 1.45911C6.28678 1.22147 6.14737 1.10266 6.00158 1.03298C5.66439 0.871819 5.27246 0.871819 4.93527 1.03298C4.78948 1.10265 4.65007 1.22147 4.37121 1.45911ZM7.21428 3.72377C7.35911 3.86862 7.35911 4.10346 7.21428 4.2483L4.24708 7.21548C4.10224 7.36036 3.8674 7.36036 3.72255 7.21548C3.57771 7.07065 3.57771 6.83581 3.72255 6.69098L6.68973 3.72377C6.83461 3.57893 7.06945 3.57893 7.21428 3.72377ZM7.19928 6.70598C7.19928 6.9791 6.97789 7.20049 6.70477 7.20049C6.43161 7.20049 6.21022 6.9791 6.21022 6.70598C6.21022 6.43286 6.43161 6.21142 6.70477 6.21142C6.97789 6.21142 7.19928 6.43286 7.19928 6.70598ZM4.23209 4.72784C4.50521 4.72784 4.72663 4.50643 4.72663 4.2333C4.72663 3.96018 4.50521 3.73877 4.23209 3.73877C3.95896 3.73877 3.73755 3.96018 3.73755 4.2333C3.73755 4.50643 3.95896 4.72784 4.23209 4.72784Z" fill="#FF3C3D"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_396_114_s7_3">
+                          <rect width="10.9375" height="10.9375" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="price__sale">1 390 ₽</span>
+                    <span class="price__old">2 600 ₽</span>
+                  </div>
+                  <div class="wb-card__note" data-i18n="card.withWallet">с WB Кошельком</div>
+                  <div class="wb-card__title">
+                    <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
+                    <span data-i18n="wbcard.product6">LAGERA / Наушники Bluetooth</span>
+                  </div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span>4,8</span>
+                    <span class="dot">·</span>
+                    <span data-i18n="card.rating">458 оценка</span>
+                  </div>
+                  <a class="wb-card__cta" data-i18n="card.afterTomorrow">
+                    <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.30497 1.33507C1.07575 1.25866 0.827983 1.38254 0.751572 1.61177C0.675167 1.841 0.79905 2.08876 1.02827 2.16517L1.1828 2.21668C1.57737 2.3482 1.83824 2.43586 2.03042 2.52526C2.2124 2.60991 2.29108 2.67804 2.34149 2.74799C2.3919 2.81793 2.43165 2.91411 2.45442 3.11352C2.47846 3.32411 2.47912 3.59931 2.47912 4.01522V5.5738C2.47911 6.37154 2.4791 7.01455 2.5471 7.5203C2.61768 8.04536 2.76871 8.48747 3.11982 8.83857C3.47094 9.18968 3.91303 9.34071 4.4381 9.41129C4.94383 9.47931 5.58685 9.47931 6.38459 9.47931H10.5C10.7416 9.47931 10.9375 9.28342 10.9375 9.04181C10.9375 8.80013 10.7416 8.60431 10.5 8.60431H6.41662C5.5793 8.60431 4.99531 8.60337 4.55469 8.54411C4.12666 8.48659 3.89999 8.3813 3.73854 8.21989C3.60135 8.08269 3.50473 7.89836 3.44349 7.58347H9.34612C9.90583 7.58347 10.1857 7.58347 10.4048 7.43892C10.624 7.29443 10.7342 7.03724 10.9547 6.5228L11.2046 5.93947C11.6768 4.83767 11.913 4.28676 11.6536 3.89344C11.3943 3.50012 10.7949 3.50012 9.59614 3.50012H3.35124C3.3478 3.32063 3.34026 3.1587 3.32377 3.01427C3.29148 2.73146 3.22113 2.47196 3.05132 2.23636C2.88151 2.00077 2.65758 1.85197 2.39949 1.7319C2.15669 1.61895 1.84792 1.51604 1.48253 1.39426L1.30497 1.33507Z" fill="white"/>
+                      <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
+                      <path d="M9.625 10.5C10.1082 10.5 10.5 10.8917 10.5 11.375C10.5 11.8582 10.1082 12.25 9.625 12.25C9.14177 12.25 8.75 11.8582 8.75 11.375C8.75 10.8917 9.14177 10.5 9.625 10.5Z" fill="white"/>
+                    </svg>
+                    Послезавтра
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="section-7__card-results">
+              <div class="section-7__card-service">
+                <span class="section-7__card-label" data-i18n="section7.card.service">Услуга:</span>
+                <span class="section-7__card-value" data-i18n="section7.card3.service">Отзывы на WB</span>
+              </div>
+              <div class="section-7__card-reviews">
+                <span class="section-7__card-label" data-i18n="section7.card.reviews">Отзывы:</span>
+                <span class="section-7__card-value" data-i18n="section7.card3.reviews">+ 450 новых отзывов</span>
+              </div>
+              <div class="section-7__card-result">
+                <span class="section-7__card-label" data-i18n="section7.card.result">Результат</span>
+                <div class="section-7__card-desc">
+                  <p class="section-7__card-desc-short" data-i18n="section7.card3.desc.short">Карточка почти не продавалась — рейтинг...</p>
+                  <p class="section-7__card-desc-full" data-i18n="section7.card3.desc.full">Карточка почти не продавалась — рейтинг опустился до 2,2 из-за пары негативных отзывов. После работы с отзывами и обновления описания рейтинг вырос до уверенного уровня, товар снова стал появляться в подборках и рекомендациях.</p>
+                  <button class="section-7__card-read-more">
+                    <span data-i18n="form.readMore">Читать полностью</span>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.21967C0.512563 -0.0732233 0.987437 -0.0732233 1.28033 0.21967L4.75 3.68934L8.21967 0.21967C8.51256 -0.0732233 8.98744 -0.0732233 9.28033 0.21967C9.57322 0.512563 9.57322 0.987437 9.28033 1.28033L5.45711 5.10355C5.06658 5.49408 4.43342 5.49408 4.04289 5.10355L0.21967 1.28033C-0.0732233 0.987437 -0.0732233 0.512563 0.21967 0.21967Z" fill="#1C1C1C"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="section-7__card-rating">
+                <span class="section-7__card-label">Рейтинг вырос на</span>
+                <div class="section-7__card-rating-values">
+                  <span class="section-7__card-rating-old">2,2%</span>
+                  <span class="section-7__card-rating-new">4,8%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-7__slider-item">
+          <div class="section-7__card">
+              <h3 class="section-7__card-title" data-i18n="section7.card4.title">Аромасвеча в стекле</h3>
+            <div class="section-7__card-product">
+              <div class="wb-card wb-card--section-5">
+                <div class="wb-card__img" style="background-image:url('img/slider-pic/candle.png')"></div>
+                <div class="wb-card__body">
+                  <div class="price">
+                    <svg class="price__icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_396_114_s7_4)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.37121 1.45911C4.26023 1.55369 4.20474 1.60098 4.14547 1.6407C4.00962 1.73176 3.85704 1.79495 3.6966 1.82663C3.6266 1.84045 3.55392 1.84625 3.40857 1.85785C3.04335 1.887 2.86074 1.90157 2.7084 1.95538C2.35603 2.07984 2.07886 2.357 1.9544 2.70937C1.90059 2.86172 1.88602 3.04433 1.85687 3.40954C1.84527 3.5549 1.83948 3.62758 1.82565 3.69757C1.79398 3.85802 1.73078 4.01059 1.63973 4.14645C1.60001 4.20571 1.55271 4.2612 1.45813 4.37219C1.2205 4.65105 1.10167 4.79046 1.032 4.93624C0.870843 5.27344 0.870843 5.66537 1.032 6.00256C1.10168 6.14835 1.2205 6.28775 1.45813 6.56662C1.5527 6.67759 1.60001 6.73309 1.63973 6.79234C1.73078 6.92819 1.79398 7.08077 1.82565 7.24123C1.83948 7.31123 1.84527 7.38392 1.85687 7.52925C1.88602 7.89447 1.90059 8.07708 1.9544 8.22943C2.07886 8.5818 2.35603 8.85898 2.7084 8.98344C2.86074 9.03721 3.04335 9.0518 3.40857 9.08096C3.55392 9.09254 3.6266 9.09837 3.6966 9.11218C3.85704 9.14385 4.00962 9.20706 4.14547 9.29812C4.20474 9.33781 4.26023 9.38512 4.37121 9.47968C4.65007 9.71734 4.78948 9.83615 4.93527 9.90583C5.27246 10.067 5.66439 10.067 6.00158 9.90583C6.14737 9.83615 6.28678 9.71734 6.56564 9.47968C6.67661 9.38512 6.73212 9.33781 6.79136 9.29812C6.92721 9.20706 7.07979 9.14385 7.24025 9.11218C7.31025 9.09837 7.38294 9.09254 7.52827 9.08096C7.8935 9.0518 8.07611 9.03721 8.22846 8.98344C8.58083 8.85898 8.858 8.5818 8.98246 8.22943C9.03624 8.07708 9.05082 7.89447 9.07999 7.52925C9.09156 7.38392 9.09739 7.31123 9.1112 7.24123C9.14288 7.08077 9.20609 6.92819 9.29714 6.79234C9.33684 6.73309 9.38414 6.67759 9.4787 6.56662C9.71637 6.28775 9.83518 6.14835 9.90486 6.00256C10.066 5.66537 10.066 5.27344 9.90486 4.93624C9.83518 4.79046 9.71637 4.65105 9.4787 4.37219C9.38414 4.2612 9.33684 4.20571 9.29714 4.14645C9.20609 4.01059 9.14288 3.85802 9.1112 3.69757C9.09739 3.62758 9.09156 3.5549 9.07999 3.40954C9.05082 3.04433 9.03624 2.86172 8.98246 2.70937C8.858 2.357 8.58083 2.07984 8.22846 1.95538C8.07611 1.90157 7.8935 1.887 7.52827 1.85785C7.38294 1.84625 7.31025 1.84045 7.24025 1.82663C7.07979 1.79495 6.92721 1.73176 6.79136 1.6407C6.73212 1.60098 6.67661 1.55369 6.56564 1.45911C6.28678 1.22147 6.14737 1.10266 6.00158 1.03298C5.66439 0.871819 5.27246 0.871819 4.93527 1.03298C4.78948 1.10265 4.65007 1.22147 4.37121 1.45911ZM7.21428 3.72377C7.35911 3.86862 7.35911 4.10346 7.21428 4.2483L4.24708 7.21548C4.10224 7.36036 3.8674 7.36036 3.72255 7.21548C3.57771 7.07065 3.57771 6.83581 3.72255 6.69098L6.68973 3.72377C6.83461 3.57893 7.06945 3.57893 7.21428 3.72377ZM7.19928 6.70598C7.19928 6.9791 6.97789 7.20049 6.70477 7.20049C6.43161 7.20049 6.21022 6.9791 6.21022 6.70598C6.21022 6.43286 6.43161 6.21142 6.70477 6.21142C6.97789 6.21142 7.19928 6.43286 7.19928 6.70598ZM4.23209 4.72784C4.50521 4.72784 4.72663 4.50643 4.72663 4.2333C4.72663 3.96018 4.50521 3.73877 4.23209 3.73877C3.95896 3.73877 3.73755 3.96018 3.73755 4.2333C3.73755 4.50643 3.95896 4.72784 4.23209 4.72784Z" fill="#FF3C3D"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_396_114_s7_4">
+                          <rect width="10.9375" height="10.9375" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="price__sale">690 ₽</span>
+                    <span class="price__old">1 240 ₽</span>
+                  </div>
+                  <div class="wb-card__note" data-i18n="card.withWallet">с WB Кошельком</div>
+                  <div class="wb-card__title">
+                    <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
+                    <span data-i18n="wbcard.product7">LAGERA / Аромасвеча в стекле</span>
+                  </div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span>4,6</span>
+                    <span class="dot">·</span>
+                    <span data-i18n="card.rating">235 оценка</span>
+                  </div>
+                  <a class="wb-card__cta">
+                    <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.30497 1.33507C1.07575 1.25866 0.827983 1.38254 0.751572 1.61177C0.675167 1.841 0.79905 2.08876 1.02827 2.16517L1.1828 2.21668C1.57737 2.3482 1.83824 2.43586 2.03042 2.52526C2.2124 2.60991 2.29108 2.67804 2.34149 2.74799C2.3919 2.81793 2.43165 2.91411 2.45442 3.11352C2.47846 3.32411 2.47912 3.59931 2.47912 4.01522V5.5738C2.47911 6.37154 2.4791 7.01455 2.5471 7.5203C2.61768 8.04536 2.76871 8.48747 3.11982 8.83857C3.47094 9.18968 3.91303 9.34071 4.4381 9.41129C4.94383 9.47931 5.58685 9.47931 6.38459 9.47931H10.5C10.7416 9.47931 10.9375 9.28342 10.9375 9.04181C10.9375 8.80013 10.7416 8.60431 10.5 8.60431H6.41662C5.5793 8.60431 4.99531 8.60337 4.55469 8.54411C4.12666 8.48659 3.89999 8.3813 3.73854 8.21989C3.60135 8.08269 3.50473 7.89836 3.44349 7.58347H9.34612C9.90583 7.58347 10.1857 7.58347 10.4048 7.43892C10.624 7.29443 10.7342 7.03724 10.9547 6.5228L11.2046 5.93947C11.6768 4.83767 11.913 4.28676 11.6536 3.89344C11.3943 3.50012 10.7949 3.50012 9.59614 3.50012H3.35124C3.3478 3.32063 3.34026 3.1587 3.32377 3.01427C3.29148 2.73146 3.22113 2.47196 3.05132 2.23636C2.88151 2.00077 2.65758 1.85197 2.39949 1.7319C2.15669 1.61895 1.84792 1.51604 1.48253 1.39426L1.30497 1.33507Z" fill="white"/>
+                      <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
+                      <path d="M9.625 10.5C10.1082 10.5 10.5 10.8917 10.5 11.375C10.5 11.8582 10.1082 12.25 9.625 12.25C9.14177 12.25 8.75 11.8582 8.75 11.375C8.75 10.8917 9.14177 10.5 9.625 10.5Z" fill="white"/>
+                    </svg>
+                    <span data-i18n="card.tomorrow">Завтра</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="section-7__card-results">
+              <div class="section-7__card-service">
+                <span class="section-7__card-label" data-i18n="section7.card.service">Услуга:</span>
+                <span class="section-7__card-value" data-i18n="section7.card4.service">Выкупы на WB</span>
+              </div>
+              <div class="section-7__card-reviews">
+                <span class="section-7__card-label" data-i18n="section7.card.reviews">Отзывы:</span>
+                <span class="section-7__card-value" data-i18n="section7.card4.reviews">+ 250 новых отзывов</span>
+              </div>
+              <div class="section-7__card-result">
+                <span class="section-7__card-label" data-i18n="section7.card.result">Результат</span>
+                <div class="section-7__card-desc">
+                  <p class="section-7__card-desc-short" data-i18n="section7.card4.desc.short">У карточки было мало отзывов, слабая конверсия...</p>
+                  <p class="section-7__card-desc-full" data-i18n="section7.card4.desc.full">У карточки было мало отзывов, слабая конверсия и почти полное отсутствие заказов. После серии выкупов и свежих отзывов карточка вернулась в ТОП-10 категории, появилась органика и выросло доверие покупателей.</p>
+                  <button class="section-7__card-read-more">
+                    <span data-i18n="form.readMore">Читать полностью</span>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.21967C0.512563 -0.0732233 0.987437 -0.0732233 1.28033 0.21967L4.75 3.68934L8.21967 0.21967C8.51256 -0.0732233 8.98744 -0.0732233 9.28033 0.21967C9.57322 0.512563 9.57322 0.987437 9.28033 1.28033L5.45711 5.10355C5.06658 5.49408 4.43342 5.49408 4.04289 5.10355L0.21967 1.28033C-0.0732233 0.987437 -0.0732233 0.512563 0.21967 0.21967Z" fill="#1C1C1C"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="section-7__card-rating">
+                <span class="section-7__card-label">Рейтинг вырос на</span>
+                <div class="section-7__card-rating-values">
+                  <span class="section-7__card-rating-old">3,8%</span>
+                  <span class="section-7__card-rating-new">4,6%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-7__slider-item">
+          <div class="section-7__card">
+              <h3 class="section-7__card-title" data-i18n="section7.card5.title">Рюкзак городской</h3>
+            <div class="section-7__card-product">
+              <div class="wb-card wb-card--section-5">
+                <div class="wb-card__img" style="background-image:url('img/slider-pic/bag-3.png')"></div>
+                <div class="wb-card__body">
+                  <div class="price">
+                    <svg class="price__icon" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_396_114_s7_5)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.37121 1.45911C4.26023 1.55369 4.20474 1.60098 4.14547 1.6407C4.00962 1.73176 3.85704 1.79495 3.6966 1.82663C3.6266 1.84045 3.55392 1.84625 3.40857 1.85785C3.04335 1.887 2.86074 1.90157 2.7084 1.95538C2.35603 2.07984 2.07886 2.357 1.9544 2.70937C1.90059 2.86172 1.88602 3.04433 1.85687 3.40954C1.84527 3.5549 1.83948 3.62758 1.82565 3.69757C1.79398 3.85802 1.73078 4.01059 1.63973 4.14645C1.60001 4.20571 1.55271 4.2612 1.45813 4.37219C1.2205 4.65105 1.10167 4.79046 1.032 4.93624C0.870843 5.27344 0.870843 5.66537 1.032 6.00256C1.10168 6.14835 1.2205 6.28775 1.45813 6.56662C1.5527 6.67759 1.60001 6.73309 1.63973 6.79234C1.73078 6.92819 1.79398 7.08077 1.82565 7.24123C1.83948 7.31123 1.84527 7.38392 1.85687 7.52925C1.88602 7.89447 1.90059 8.07708 1.9544 8.22943C2.07886 8.5818 2.35603 8.85898 2.7084 8.98344C2.86074 9.03721 3.04335 9.0518 3.40857 9.08096C3.55392 9.09254 3.6266 9.09837 3.6966 9.11218C3.85704 9.14385 4.00962 9.20706 4.14547 9.29812C4.20474 9.33781 4.26023 9.38512 4.37121 9.47968C4.65007 9.71734 4.78948 9.83615 4.93527 9.90583C5.27246 10.067 5.66439 10.067 6.00158 9.90583C6.14737 9.83615 6.28678 9.71734 6.56564 9.47968C6.67661 9.38512 6.73212 9.33781 6.79136 9.29812C6.92721 9.20706 7.07979 9.14385 7.24025 9.11218C7.31025 9.09837 7.38294 9.09254 7.52827 9.08096C7.8935 9.0518 8.07611 9.03721 8.22846 8.98344C8.58083 8.85898 8.858 8.5818 8.98246 8.22943C9.03624 8.07708 9.05082 7.89447 9.07999 7.52925C9.09156 7.38392 9.09739 7.31123 9.1112 7.24123C9.14288 7.08077 9.20609 6.92819 9.29714 6.79234C9.33684 6.73309 9.38414 6.67759 9.4787 6.56662C9.71637 6.28775 9.83518 6.14835 9.90486 6.00256C10.066 5.66537 10.066 5.27344 9.90486 4.93624C9.83518 4.79046 9.71637 4.65105 9.4787 4.37219C9.38414 4.2612 9.33684 4.20571 9.29714 4.14645C9.20609 4.01059 9.14288 3.85802 9.1112 3.69757C9.09739 3.62758 9.09156 3.5549 9.07999 3.40954C9.05082 3.04433 9.03624 2.86172 8.98246 2.70937C8.858 2.357 8.58083 2.07984 8.22846 1.95538C8.07611 1.90157 7.8935 1.887 7.52827 1.85785C7.38294 1.84625 7.31025 1.84045 7.24025 1.82663C7.07979 1.79495 6.92721 1.73176 6.79136 1.6407C6.73212 1.60098 6.67661 1.55369 6.56564 1.45911C6.28678 1.22147 6.14737 1.10266 6.00158 1.03298C5.66439 0.871819 5.27246 0.871819 4.93527 1.03298C4.78948 1.10265 4.65007 1.22147 4.37121 1.45911ZM7.21428 3.72377C7.35911 3.86862 7.35911 4.10346 7.21428 4.2483L4.24708 7.21548C4.10224 7.36036 3.8674 7.36036 3.72255 7.21548C3.57771 7.07065 3.57771 6.83581 3.72255 6.69098L6.68973 3.72377C6.83461 3.57893 7.06945 3.57893 7.21428 3.72377ZM7.19928 6.70598C7.19928 6.9791 6.97789 7.20049 6.70477 7.20049C6.43161 7.20049 6.21022 6.9791 6.21022 6.70598C6.21022 6.43286 6.43161 6.21142 6.70477 6.21142C6.97789 6.21142 7.19928 6.43286 7.19928 6.70598ZM4.23209 4.72784C4.50521 4.72784 4.72663 4.50643 4.72663 4.2333C4.72663 3.96018 4.50521 3.73877 4.23209 3.73877C3.95896 3.73877 3.73755 3.96018 3.73755 4.2333C3.73755 4.50643 3.95896 4.72784 4.23209 4.72784Z" fill="#FF3C3D"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_396_114_s7_5">
+                          <rect width="10.9375" height="10.9375" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="price__sale">3 690 ₽</span>
+                    <span class="price__old">7 890 ₽</span>
+                  </div>
+                  <div class="wb-card__note" data-i18n="card.withWallet">с WB Кошельком</div>
+                  <div class="wb-card__title">
+                    <img src="img/check.png" alt="" class="wb-card__title-check" aria-hidden="true">
+                    <span data-i18n="wbcard.product8">LAGERA / Рюкзак городской</span>
+                  </div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span>4,9</span>
+                    <span class="dot">·</span>
+                    <span>760 оценка</span>
+                  </div>
+                  <a class="wb-card__cta">
+                    <svg class="cart" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.30497 1.33507C1.07575 1.25866 0.827983 1.38254 0.751572 1.61177C0.675167 1.841 0.79905 2.08876 1.02827 2.16517L1.1828 2.21668C1.57737 2.3482 1.83824 2.43586 2.03042 2.52526C2.2124 2.60991 2.29108 2.67804 2.34149 2.74799C2.3919 2.81793 2.43165 2.91411 2.45442 3.11352C2.47846 3.32411 2.47912 3.59931 2.47912 4.01522V5.5738C2.47911 6.37154 2.4791 7.01455 2.5471 7.5203C2.61768 8.04536 2.76871 8.48747 3.11982 8.83857C3.47094 9.18968 3.91303 9.34071 4.4381 9.41129C4.94383 9.47931 5.58685 9.47931 6.38459 9.47931H10.5C10.7416 9.47931 10.9375 9.28342 10.9375 9.04181C10.9375 8.80013 10.7416 8.60431 10.5 8.60431H6.41662C5.5793 8.60431 4.99531 8.60337 4.55469 8.54411C4.12666 8.48659 3.89999 8.3813 3.73854 8.21989C3.60135 8.08269 3.50473 7.89836 3.44349 7.58347H9.34612C9.90583 7.58347 10.1857 7.58347 10.4048 7.43892C10.624 7.29443 10.7342 7.03724 10.9547 6.5228L11.2046 5.93947C11.6768 4.83767 11.913 4.28676 11.6536 3.89344C11.3943 3.50012 10.7949 3.50012 9.59614 3.50012H3.35124C3.3478 3.32063 3.34026 3.1587 3.32377 3.01427C3.29148 2.73146 3.22113 2.47196 3.05132 2.23636C2.88151 2.00077 2.65758 1.85197 2.39949 1.7319C2.15669 1.61895 1.84792 1.51604 1.48253 1.39426L1.30497 1.33507Z" fill="white"/>
+                      <path d="M4.375 10.5C4.85825 10.5 5.25 10.8918 5.25 11.375C5.25 11.8582 4.85825 12.25 4.375 12.25C3.89175 12.25 3.5 11.8582 3.5 11.375C3.5 10.8918 3.89175 10.5 4.375 10.5Z" fill="white"/>
+                      <path d="M9.625 10.5C10.1082 10.5 10.5 10.8917 10.5 11.375C10.5 11.8582 10.1082 12.25 9.625 12.25C9.14177 12.25 8.75 11.8582 8.75 11.375C8.75 10.8917 9.14177 10.5 9.625 10.5Z" fill="white"/>
+                    </svg>
+                    <span data-i18n="card.tomorrow">Завтра</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="section-7__card-results">
+              <div class="section-7__card-service">
+                <span class="section-7__card-label" data-i18n="section7.card.service">Услуга:</span>
+                <span class="section-7__card-value" data-i18n="section7.card5.service">Комплексное продвижение (выкупы + отзывы)</span>
+              </div>
+              <div class="section-7__card-reviews">
+                <span class="section-7__card-label" data-i18n="section7.card.reviews">Отзывы:</span>
+                <span class="section-7__card-value" data-i18n="section7.card5.reviews">+ 700 новых отзывов</span>
+              </div>
+              <div class="section-7__card-result">
+                <span class="section-7__card-label" data-i18n="section7.card.result">Результат</span>
+                <div class="section-7__card-desc">
+                  <p class="section-7__card-desc-short" data-i18n="section7.card5.desc.short">Карточка долго держалась на низком уровне — 3,1,...</p>
+                  <p class="section-7__card-desc-full" data-i18n="section7.card5.desc.full">Карточка долго держалась на низком уровне — 3,1, показы снижались, покупатели обходили стороной. После комплексного продвижения и волны положительных отзывов карточка вернулась в ТОП-5, а количество заказов выросло почти вдвое.</p>
+                  <button class="section-7__card-read-more">
+                    <span data-i18n="form.readMore">Читать полностью</span>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.21967C0.512563 -0.0732233 0.987437 -0.0732233 1.28033 0.21967L4.75 3.68934L8.21967 0.21967C8.51256 -0.0732233 8.98744 -0.0732233 9.28033 0.21967C9.57322 0.512563 9.57322 0.987437 9.28033 1.28033L5.45711 5.10355C5.06658 5.49408 4.43342 5.49408 4.04289 5.10355L0.21967 1.28033C-0.0732233 0.987437 -0.0732233 0.512563 0.21967 0.21967Z" fill="#1C1C1C"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="section-7__card-rating">
+                <span class="section-7__card-label">Рейтинг вырос на</span>
+                <div class="section-7__card-rating-values">
+                  <span class="section-7__card-rating-old">3,1%</span>
+                  <span class="section-7__card-rating-new">4,9%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="button button--glass section-7__button" data-modal-open="feedback" data-i18n="button.more">Улучшить репутацию</button>
+  </section>
+  <section class="section-8" id="section-8">
+    <div class="section-8__content">
+      <p class="section-8__subtitle" data-i18n="section8.subtitle">Цены</p>
+      <h2 class="section-8__title" data-i18n="section8.title">Стоимость услуг продвижения</h2>
+      <div class="section-8__toggle-wrapper">
+        <div class="section-8__toggle-container">
+          <button class="section-8__toggle glass-effect" aria-label="Переключить тип услуги">
+            <span class="section-8__toggle-option section-8__toggle-option--active" data-i18n="section8.toggle.purchases">Выкупы на WB</span>
+            <span class="section-8__toggle-handle"></span>
+            <span class="section-8__toggle-option" data-i18n="section8.toggle.reviews">Отзывы на WB</span>
+          </button>
+        </div>
+      </div>
+      <p class="section-8__description" data-i18n="section8.description">Выкупы помогают карточке получить активность и попасть в ТОП-выдачу</p>
+      <div class="section-8__items">
+        <div class="section-8__item">
+          <div class="section-8__item-content">
+            <div class="section-8__item-left">
+              <span class="section-8__item-prefix" data-i18n="section8.item.prefix">от</span>
+              <span class="section-8__item-value">1 000</span>
+              <span class="section-8__item-unit" data-i18n="section8.item.unit.purchases">выкупов</span>
+            </div>
+            <div class="section-8__item-separator"></div>
+            <div class="section-8__item-right">
+              <span class="section-8__item-price">30</span>
+              <span class="section-8__item-currency" data-i18n="section8.item.currency">руб / шт.</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-8__item">
+          <div class="section-8__item-content">
+            <div class="section-8__item-left">
+              <span class="section-8__item-prefix" data-i18n="section8.item.prefix">от</span>
+              <span class="section-8__item-value">500</span>
+              <span class="section-8__item-unit" data-i18n="section8.item.unit.purchases">выкупов</span>
+            </div>
+            <div class="section-8__item-separator"></div>
+            <div class="section-8__item-right">
+              <span class="section-8__item-price">40</span>
+              <span class="section-8__item-currency" data-i18n="section8.item.currency">руб / шт.</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-8__item">
+          <div class="section-8__item-content">
+            <div class="section-8__item-left">
+              <span class="section-8__item-prefix" data-i18n="section8.item.prefix">от</span>
+              <span class="section-8__item-value">300</span>
+              <span class="section-8__item-unit" data-i18n="section8.item.unit.purchases">выкупов</span>
+            </div>
+            <div class="section-8__item-separator"></div>
+            <div class="section-8__item-right">
+              <span class="section-8__item-price">45</span>
+              <span class="section-8__item-currency" data-i18n="section8.item.currency">руб / шт.</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-8__item">
+          <div class="section-8__item-content">
+            <div class="section-8__item-left">
+              <span class="section-8__item-prefix" data-i18n="section8.item.prefix">от</span>
+              <span class="section-8__item-value">200</span>
+              <span class="section-8__item-unit" data-i18n="section8.item.unit.purchases">выкупов</span>
+            </div>
+            <div class="section-8__item-separator"></div>
+            <div class="section-8__item-right">
+              <span class="section-8__item-price">50</span>
+              <span class="section-8__item-currency" data-i18n="section8.item.currency">руб / шт.</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-8__item">
+          <div class="section-8__item-content">
+            <div class="section-8__item-left">
+              <span class="section-8__item-prefix" data-i18n="section8.item.prefix">от</span>
+              <span class="section-8__item-value">100</span>
+              <span class="section-8__item-unit" data-i18n="section8.item.unit.purchases">выкупов</span>
+            </div>
+            <div class="section-8__item-separator"></div>
+            <div class="section-8__item-right">
+              <span class="section-8__item-price">60</span>
+              <span class="section-8__item-currency" data-i18n="section8.item.currency">руб / шт.</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-8__item">
+          <div class="section-8__item-content">
+            <div class="section-8__item-left">
+              <span class="section-8__item-prefix" data-i18n="section8.item.prefix">от</span>
+              <span class="section-8__item-value">50</span>
+              <span class="section-8__item-unit" data-i18n="section8.item.unit.purchases">выкупов</span>
+            </div>
+            <div class="section-8__item-separator"></div>
+            <div class="section-8__item-right">
+              <span class="section-8__item-price">70</span>
+              <span class="section-8__item-currency" data-i18n="section8.item.currency">руб / шт.</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-8__item">
+          <div class="section-8__item-content">
+            <div class="section-8__item-left">
+              <span class="section-8__item-prefix">до</span>
+              <span class="section-8__item-value">50</span>
+              <span class="section-8__item-unit" data-i18n="section8.item.unit.purchases">выкупов</span>
+            </div>
+            <div class="section-8__item-separator"></div>
+            <div class="section-8__item-right">
+              <span class="section-8__item-price">100</span>
+              <span class="section-8__item-currency" data-i18n="section8.item.currency">руб / шт.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="section-8__minimum" data-i18n="section8.minimum">Минимальный заказ — 5 выкупов</p>
+      <button class="button button--glass section-8__button" data-modal-open="order" data-i18n="section8.button">Заказать услугу</button>
     </div>
   </section>
+  <section class="section-9" id="section-9">
+    <div class="section-9__content">
+      <h2 class="section-9__title">FAQ</h2>
+      <p class="section-9__desc" data-i18n="section9.desc">Частые вопросы продавцов</p>
+      <div class="section-9__accordion">
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">1/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion1.question"> Это безопасно для карточки?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion1.answer">
+            <p>Да, всё выполняется с соблюдением правил Wildberries. Мы не используем методы, которые могут повлиять на рейтинг или вызвать ограничения.</p>
+          </div>
+        </div>
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">2/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion2.question"> Зачем нужны выкупы?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion2.answer">
+            <p>Маркетплейс отслеживает реализацию каждого артикула и выводит в ТОП выдачи самые продаваемые товары. Выкупы напрямую улучшают данный показатель.</p>
+          </div>
+        </div>
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">3/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion3.question"> Зачем нужны отзывы помимо рейтинга и доверия покупателей?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion3.answer">
+            <p>Алгоритмы маркетплейсов построены так, что затраты на продвижение (рекламу) товара, у которого много отзывов (более 50) значительно (минимум на 30%) ниже чем у товара, где мало отзывов.</p>
+          </div>
+        </div>
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">4/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion4.question"> Нужно ли давать доступ к кабинету?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion4.answer">
+            <p>Нет, достаточно ссылки на товар. Мы не запрашиваем доступ к вашему личному кабинету.</p>
+          </div>
+        </div>
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">5/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion5.question"> Каким способом происходит оплата за товар?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion5.answer">
+            <p>С августа 2025 года единственный гарантированный способ при котором отзыв проходит на 90% это привязка банковской карты, ранее не использованной на маркетплейсе (где взять нужное количество карт будет в инструкции после авторизации).</p>
+          </div>
+        </div>
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">6/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion6.question"> Когда появятся изменения?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion6.answer">
+            <p>Изменения видны постепенно. Улучшения рейтинга и доверия покупателей формируются в течение нескольких дней после запуска.</p>
+          </div>
+        </div>
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">7/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion7.question"> Что входит в услугу?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion7.answer">
+            <p>Возможность осуществлять выкупы и оставлять отзывы в необходимом количестве, выбирать нужный Вам ПВЗ для забора товара, самостоятельно принимать решение когда и какой отзыв оставить (например при необходимости перекрыть негативный отзыв).</p>
+          </div>
+        </div>
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">8/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion8.question"> Что делать, если рейтинг упал или появились негативные отзывы?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion8.answer">
+            <p>Мы помогаем восстановить репутацию карточки и разработать стратегию повышения рейтинга.</p>
+          </div>
+        </div>
+        <div class="section-9__accordion-item" data-accordion>
+          <button class="section-9__accordion-item-btn">
+            <span class="section-9__accordion-question"><span class="section-9__accordion-number">9/</span><span class="section-9__accordion-question-text" data-i18n="section9.accordion9.question"> Можно ли ускорить результат?</span></span>
+            <svg class="section-9__accordion-icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="52" height="52" rx="26" stroke="url(#paint0_linear_accordion)" stroke-width="4"/>
+              <path class="section-9__accordion-icon-line-h" d="M22 29H36" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="section-9__accordion-icon-line-v-wrapper">
+                <path class="section-9__accordion-icon-line-v" d="M29 36L29 22" stroke="#BD60EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_accordion" x1="53" y1="29" x2="5" y2="29" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.0336539" stop-color="#F6B0FF"/>
+                  <stop offset="0.528846" stop-color="#7D21CF"/>
+                  <stop offset="0.98" stop-color="#A157FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </button>
+          <div class="section-9__accordion-answer" data-i18n="section9.accordion9.answer">
+            <p>Да, но всё проходит в безопасном темпе, без резких изменений, чтобы сохранить стабильность карточки. 
+              По статистике покупатели чаще выбирают карточки, где <strong>не менее 50 отзывов</strong> и средняя оценка <strong>4,7 и выше</strong> — именно такие товары вызывают доверие и получают больше заказов.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer" id="footer">
+    <div class="footer__content">
+      <h1 class="footer__logo">Prodsfera</h1>
+      <p class="footer__desc" data-i18n="footer.desc">Сервис управления репутацией на Wildberries.</p>
+      <a href="tel:+79133923456" class="footer__phone">+7 913 392 34 56</a>
+      <div class="footer__contacts">
+        <a href="#" class="footer__contact-link">
+          <svg class="footer__contact-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.91872 9.92302C3.62377 8.95913 5.52706 8.15462 7.3054 7.34601C10.3648 6.02159 13.4364 4.72011 16.539 3.50846C17.1427 3.30201 18.2273 3.10015 18.3337 4.01824C18.2754 5.31785 18.0358 6.60984 17.8715 7.90183C17.4545 10.743 16.9724 13.5745 16.5023 16.4064C16.3403 17.3497 15.189 17.838 14.4523 17.2343C12.6819 16.007 10.8978 14.7915 9.14998 13.5357C8.57743 12.9387 9.10836 12.0812 9.61969 11.6548C11.0779 10.1799 12.6243 8.92686 14.0063 7.37577C14.3791 6.45189 13.2776 7.2305 12.9143 7.4691C10.918 8.88097 8.97061 10.379 6.86592 11.6199C5.79084 12.2273 4.53782 11.7082 3.46323 11.3693C2.49974 10.9599 1.08785 10.5474 1.91862 9.92314L1.91872 9.92302Z" fill="rgba(255,255,255,0.25)"/>
+          </svg>
+          <span>Telegram: @REPBOOSTER</span>
+        </a>
+        <a href="#" class="footer__contact-link">
+          <svg class="footer__contact-icon" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.36816 0C10.5881 0.000953496 12.6725 0.860832 14.2393 2.42188C15.8059 3.98281 16.6679 6.05812 16.667 8.26465C16.6649 12.8167 12.9442 16.5204 8.36914 16.5225H8.36523C6.97637 16.522 5.6115 16.1755 4.39941 15.5176L0 16.666L1.17773 12.3867C0.451535 11.1343 0.0697051 9.71333 0.0703125 8.25781C0.0721329 3.70451 3.79429 0.000241858 8.36816 0ZM8.37207 1.39453C4.5677 1.39475 1.47423 4.47339 1.47266 8.25781C1.47212 9.55482 1.83594 10.8183 2.52637 11.9111L2.69043 12.1709L1.99414 14.7041L4.60449 14.0225L4.85645 14.1709C5.91543 14.7963 7.12952 15.1275 8.36719 15.1279H8.37012C12.1715 15.1277 15.266 12.0484 15.2676 8.26367C15.2683 6.42956 14.5512 4.7047 13.249 3.40723C11.9468 2.10975 10.2144 1.39517 8.37207 1.39453ZM5.82812 4.45117C5.9553 4.45737 6.12588 4.40324 6.29395 4.80469C6.4666 5.21755 6.88123 6.23226 6.93359 6.33691C6.98544 6.44021 7.02028 6.56144 6.95117 6.69922C6.88211 6.83673 6.84679 6.92256 6.74316 7.04297C6.63961 7.16331 6.52583 7.31182 6.43262 7.4043C6.32885 7.50716 6.22106 7.61875 6.3418 7.8252C6.46275 8.03178 6.87875 8.70771 7.49512 9.25488C8.28666 9.95751 8.95433 10.1759 9.16211 10.2793C9.36934 10.3826 9.49039 10.3651 9.61133 10.2275C9.73227 10.0898 10.1303 9.62554 10.2686 9.41895C10.4067 9.21256 10.5445 9.24668 10.7344 9.31543C10.9244 9.38431 11.9431 9.88259 12.1514 9.98633C12.3585 10.0895 12.4969 10.1416 12.5488 10.2275C12.6006 10.3136 12.6004 10.7269 12.4277 11.209C12.2548 11.691 11.4267 12.1312 11.0283 12.1904C10.6712 12.2436 10.2192 12.2654 9.72266 12.1084C9.42149 12.0133 9.03475 11.8865 8.54004 11.6738C6.46016 10.7799 5.10171 8.69539 4.99805 8.55762C4.89355 8.41884 4.15137 7.43786 4.15137 6.42285C4.1515 5.40812 4.6866 4.90896 4.87695 4.70215C5.06701 4.49556 5.29244 4.44336 5.43066 4.44336C5.56875 4.44336 5.70743 4.44514 5.82812 4.45117Z" fill="rgba(255,255,255,0.25)"/>
+          </svg>
+          <span>WhatsApp: +7 913 392 34 56</span>
+        </a>
+      </div>
+      <div class="footer__legal">
+        <p class="footer__legal-text" data-i18n="footer.legal">ИП Ларионов А.Л. | ИНН 540445819080 | ОГРНИП 325547600083011</p>
+        <p class="footer__copyright" data-i18n="footer.copyright">© 2025 Prodsfera. Все права защищены</p>
+        <div class="footer__links">
+          <a href="#" class="footer__link" data-i18n="footer.link.privacy">Политика конфиденциальности</a>
+          <span class="footer__link-separator">|</span>
+          <a href="#" class="footer__link" data-i18n="footer.link.terms">Пользовательское соглашение</a>
+          <span class="footer__link-separator">|</span>
+          <a href="./html/offer.html" class="footer__link" data-i18n="footer.link.offer">Договор-оферта</a>
+        </div>
+        <p class="footer__disclaimer" data-i18n="footer.disclaimer">Работаем с открытыми данными и строго в рамках правил платформы</p>
+      </div>
+    </div>
+  </footer>
   <div class="modal" data-modal="feedback">
     <div class="modal__overlay" data-modal-close></div>
     <div class="modal__content">
       <button class="modal__close" aria-label="Закрыть" data-modal-close>
         <span>✕</span>
       </button>
-      <h2 class="modal__title">Оставить заявку</h2>
+      <h2 class="modal__title" data-i18n="modal.feedback.title">Оставить заявку</h2>
       <div class="modal__intro">
-        <p>Мы с Вами свяжемся, затем вышлем договор (через ЭДО, потребуется ЭЦП)</p>
-        <p class="modal__intro-highlight">Заявки принимаются каждый день, но обрабатываются по будням в рабочие часы, т.к. мы работаем через оператора связи (суббота, воскресенье - выходные и номера не выдаются).</p>
-        <p>Для быстрой связи напишите нам в Telegram: <a href="https://t.me/support_site" class="modal__link">@support_site</a></p>
-        <p>Заявка доступна только для юридических лиц (ИП/ООО)</p>
+        <p data-i18n="modal.feedback.intro1">Мы с Вами свяжемся, затем вышлем договор (через ЭДО, потребуется ЭЦП)</p>
+        <p class="modal__intro-highlight" data-i18n="modal.feedback.intro2">Заявки принимаются каждый день, но обрабатываются по будням в рабочие часы, т.к. мы работаем через оператора связи (суббота, воскресенье - выходные и номера не выдаются).</p>
+        <p data-i18n-html="modal.feedback.intro3">Для быстрой связи напишите нам в Telegram: <a href="https://t.me/support_site" class="modal__link">@support_site</a></p>
+        <p data-i18n="modal.feedback.intro4">Заявка доступна только для юридических лиц (ИП/ООО)</p>
       </div>
       <form class="modal__form" data-feedback-form>
         <div class="form__field">
-          <label for="feedback-name" class="form__label">ФИО</label>
+          <label for="feedback-name" class="form__label" data-i18n="form.name">ФИО</label>
           <input 
             type="text" 
             id="feedback-name" 
             name="name" 
             class="form__input" 
             placeholder="Иванов Иван Иванович"
+            data-i18n-placeholder="form.placeholder.name"
             required
             data-validate
           >
           <span class="form__error"></span>
         </div>
         <div class="form__field">
-          <label for="feedback-email" class="form__label">E-mail</label>
+          <label for="feedback-email" class="form__label" data-i18n="form.email">E-mail</label>
           <input 
             type="email" 
             id="feedback-email" 
@@ -788,7 +1489,7 @@
           <span class="form__error"></span>
         </div>
         <div class="form__field">
-          <label for="feedback-phone" class="form__label">Номер телефона</label>
+          <label for="feedback-phone" class="form__label" data-i18n="form.phone">Номер телефона</label>
           <input 
             type="tel" 
             id="feedback-phone" 
@@ -801,20 +1502,21 @@
           <span class="form__error"></span>
         </div>
         <div class="form__field">
-          <label for="feedback-company" class="form__label">Контрагент (название юр.лица)</label>
+          <label for="feedback-company" class="form__label" data-i18n="form.company">Контрагент (название юр.лица)</label>
           <input 
             type="text" 
             id="feedback-company" 
             name="company" 
             class="form__input" 
             placeholder='ООО "Ромашка"'
+            data-i18n-placeholder="form.placeholder.company"
             required
             data-validate
           >
           <span class="form__error"></span>
         </div>
         <div class="form__field">
-          <label for="feedback-telegram" class="form__label">Telegram (необязательно)</label>
+          <label for="feedback-telegram" class="form__label" data-i18n="form.telegram">Telegram (необязательно)</label>
           <input 
             type="text" 
             id="feedback-telegram" 
@@ -835,13 +1537,13 @@
             >
             <span class="form__checkbox-custom"></span>
             <span class="form__checkbox-text">
-              Я согласен на обработку персональных данных и принимаю условия 
-              <a href="#" class="form__link">Политики конфиденциальности</a>.
+              <span data-i18n="form.privacy">Я согласен на обработку персональных данных и принимаю условия</span> 
+              <a href="#" class="form__link" data-i18n="form.privacy.link">Политики конфиденциальности</a>.
             </span>
           </label>
           <span class="form__error"></span>
         </div>
-        <button type="submit" class="form__submit">Отправить</button>
+        <button type="submit" class="form__submit" data-i18n="form.submit">Отправить</button>
       </form>
     </div>
   </div>
@@ -851,32 +1553,42 @@
       <button class="modal__close" aria-label="Закрыть" data-modal-close>
         <span>✕</span>
       </button>
-      <h2 class="modal__title">Заказать</h2>
+      <h2 class="modal__title" data-i18n="modal.order.title">Заказать</h2>
       <form class="modal__form" data-order-form>
         <div class="form__field">
-          <label for="order-service" class="form__label">Выберите услугу</label>
-          <select 
-            id="order-service" 
-            name="service" 
-            class="form__input form__select" 
-            required
-            data-validate
-          >
-            <option value="">Выберите услугу</option>
-            <option value="vykupy">Выкупы с WB</option>
-            <option value="otzyvy">Отзывы</option>
-            <option value="kompleks">Комплексная работа</option>
-          </select>
+          <label for="order-service" class="form__label" data-i18n="form.service">Выберите услугу</label>
+          <div class="form__dropdown" data-form-dropdown>
+            <input 
+              type="hidden" 
+              id="order-service" 
+              name="service" 
+              value=""
+              required
+              data-validate
+            >
+            <button type="button" class="form__dropdown-btn" aria-label="Выберите услугу" data-i18n-aria="form.service">
+              <span class="form__dropdown-current" data-i18n="form.dropdown.select">Выберите услугу</span>
+              <svg class="form__dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.21967C0.512563 -0.0732233 0.987437 -0.0732233 1.28033 0.21967L4.75 3.68934L8.21967 0.21967C8.51256 -0.0732233 8.98744 -0.0732233 9.28033 0.21967C9.57322 0.512563 9.57322 0.987437 9.28033 1.28033L5.45711 5.10355C5.06658 5.49408 4.43342 5.49408 4.04289 5.10355L0.21967 1.28033C-0.0732233 0.987437 -0.0732233 0.512563 0.21967 0.21967Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <ul class="form__dropdown-list">
+              <li><button type="button" class="form__dropdown-option" data-value="vykupy" data-i18n="form.dropdown.purchases">Выкупы с WB</button></li>
+              <li><button type="button" class="form__dropdown-option" data-value="otzyvy" data-i18n="form.dropdown.reviews">Отзывы</button></li>
+              <li><button type="button" class="form__dropdown-option" data-value="kompleks" data-i18n="form.dropdown.complex">Комплексная работа</button></li>
+            </ul>
+          </div>
           <span class="form__error"></span>
         </div>
         <div class="form__field">
-          <label for="order-quantity" class="form__label">Введите количество</label>
+          <label for="order-quantity" class="form__label" data-i18n="form.quantity">Введите количество</label>
           <input 
             type="number" 
             id="order-quantity" 
             name="quantity" 
             class="form__input" 
             placeholder="Минимальный заказ - 5 выкупов"
+            data-i18n-placeholder="form.placeholder.quantity"
             min="5"
             required
             data-validate
@@ -884,10 +1596,10 @@
           <span class="form__error"></span>
         </div>
         <div class="form__field">
-          <div class="form__total">Итого: на сумму <span class="form__total-amount" data-total-amount>500</span> ₽</div>
+          <div class="form__total"><span data-i18n="form.total">Итого: на сумму</span> <span class="form__total-amount" data-total-amount>500</span> ₽</div>
         </div>
         <div class="form__field">
-          <label for="order-phone" class="form__label">Номер телефона</label>
+          <label for="order-phone" class="form__label" data-i18n="form.phone">Номер телефона</label>
           <input 
             type="tel" 
             id="order-phone" 
@@ -901,7 +1613,7 @@
           <span class="form__error"></span>
         </div>
         <div class="form__field">
-          <label for="order-email" class="form__label">E-mail</label>
+          <label for="order-email" class="form__label" data-i18n="form.email">E-mail</label>
           <input 
             type="email" 
             id="order-email" 
@@ -924,24 +1636,29 @@
             >
             <span class="form__checkbox-custom"></span>
             <span class="form__checkbox-text">
-              Я согласен на обработку персональных данных и принимаю условия 
-              <a href="#" class="form__link">Политики конфиденциальности</a>.
+              <span data-i18n="form.privacy">Я согласен на обработку персональных данных и принимаю условия</span> 
+              <a href="#" class="form__link" data-i18n="form.privacy.link">Политики конфиденциальности</a>.
             </span>
           </label>
           <span class="form__error"></span>
         </div>
-        <button type="submit" class="form__submit">Заказать</button>
+        <button type="submit" class="form__submit" data-i18n="form.order">Заказать</button>
       </form>
     </div>
   </div>
   <div class="modal modal--success" data-modal="success">
     <div class="modal__overlay" data-modal-close></div>
     <div class="modal__content modal__content--success">
-      <h2 class="modal__title modal__title--success">Ваша заявка отправлена</h2>
-      <p class="modal__desc">Наш специалист с Вами свяжется в течение 24 часов</p>
-      <button class="modal__close-btn" data-modal-close>Закрыть</button>
+      <h2 class="modal__title modal__title--success" data-i18n="modal.success.title">Ваша заявка отправлена</h2>
+      <p class="modal__desc" data-i18n="modal.success.desc">Наш специалист с Вами свяжется в течение 24 часов</p>
+      <button class="modal__close-btn" data-modal-close data-i18n="button.close">Закрыть</button>
     </div>
   </div>
+  <button class="back-to-top" aria-label="Вернуться наверх" data-back-to-top>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

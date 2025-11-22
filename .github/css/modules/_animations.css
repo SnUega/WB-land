@@ -1,0 +1,3 @@
+/* Animation classes for scroll-triggered animations */
+/* Анимации теперь управляются через GSAP + ScrollTrigger */
+/* CSS классы оставлены для совместимости, но основная логика в JS */

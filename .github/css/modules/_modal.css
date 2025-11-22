@@ -104,6 +104,13 @@
   margin: 8vw 0 5.33vw;
   text-align: center;
 }
+
+/* Уменьшаем верхний отступ заголовка для модального окна "Заказать" на мобильных */
+@media (max-width: 480px) {
+  .modal[data-modal="order"] .modal__title {
+    margin-top: 4vw;
+  }
+}
 .modal__intro {
   margin-bottom: 4vw;
 }
@@ -308,6 +315,13 @@
   text-align: center;
   box-shadow: var(--glass-shadow);
 }
+
+/* Уменьшаем расстояние между политикой конфиденциальности и кнопкой на мобильных */
+@media (max-width: 480px) {
+  .modal[data-modal="order"] .form__submit {
+    margin-top: 1.5vw;
+  }
+}
 .form__submit:hover {
   transform: scale(1.05);
 }
@@ -333,6 +347,130 @@
   .form__select {
     background-position: right 16px center;
     padding-right: 40px;
+  }
+}
+
+/* Кастомный dropdown для формы */
+.form__dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.form__dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 4vw;
+  line-height: 145%;
+  color: #000;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 3.2vw 4vw;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  text-align: left;
+  gap: 8px;
+}
+
+.form__dropdown-btn:focus {
+  outline: none;
+  border-color: #8B7FF5;
+}
+
+.form__dropdown-current {
+  flex: 1;
+  text-align: left;
+  color: #000;
+}
+
+.form__dropdown-current:empty::before {
+  content: 'Выберите услугу';
+  color: #999;
+}
+
+.form__dropdown-arrow {
+  width: 10px;
+  height: 6px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  color: #1C1C1C;
+}
+
+.form__dropdown.is-open .form__dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.form__dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: #fff;
+  border: 2px solid #8B7FF5;
+  border-radius: 12px;
+  padding: 4px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  list-style: none;
+  margin: 4px 0 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.form__dropdown.is-open .form__dropdown-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.form__dropdown-option {
+  display: block;
+  width: 100%;
+  padding: 3.2vw 4vw;
+  background: transparent;
+  border: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 4vw;
+  line-height: 145%;
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form__dropdown-option:hover {
+  background: rgba(139, 127, 245, 0.1);
+}
+
+.form__dropdown-option.is-selected {
+  background: rgba(139, 127, 245, 0.15);
+  font-weight: 600;
+}
+
+.form__dropdown.is-error .form__dropdown-btn {
+  border-color: #FF3C3D;
+  color: #FF3C3D;
+  background: #F1F1F1;
+}
+
+@media (min-width: 481px) {
+  .form__dropdown-btn {
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+  .form__dropdown-option {
+    font-size: 15px;
+    padding: 12px 16px;
   }
 }
 .form__total {
@@ -432,6 +570,66 @@
     padding: 40px;
     max-width: 600px;
   }
+}
+
+/* iPad Air (1180x820) - горизонтальная ориентация */
+@media (max-width: 1180px) and (min-width: 1025px) and (orientation: landscape) {
+  .modal[data-modal="order"] .modal__content {
+    padding: 30px 25px;
+    max-height: 85vh;
+  }
+  .modal[data-modal="order"] .modal__title {
+    font-size: 28px;
+    margin: 20px 0 16px;
+  }
+  .modal[data-modal="order"] .modal__form {
+    gap: 16px;
+  }
+  .modal[data-modal="order"] .form__field {
+    gap: 6px;
+  }
+  .modal[data-modal="order"] .form__submit {
+    padding: 16px 24px;
+    margin-top: 6px;
+    font-size: 14px;
+  }
+}
+
+/* iPad mini (1024x768) - горизонтальная ориентация */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .modal[data-modal="order"] .modal__content {
+    padding: 25px 20px;
+    max-height: 85vh;
+  }
+  .modal[data-modal="order"] .modal__title {
+    font-size: 24px;
+    margin: 16px 0 12px;
+  }
+  .modal[data-modal="order"] .modal__form {
+    gap: 14px;
+  }
+  .modal[data-modal="order"] .form__field {
+    gap: 5px;
+  }
+  .modal[data-modal="order"] .form__label {
+    font-size: 13px;
+  }
+  .modal[data-modal="order"] .form__input,
+  .modal[data-modal="order"] .form__dropdown-btn {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+  .modal[data-modal="order"] .form__submit {
+    padding: 14px 20px;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+  .modal[data-modal="order"] .form__checkbox-text {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 481px) {
   .modal__close {
     top: 16px;
     right: 16px;

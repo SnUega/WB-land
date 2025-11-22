@@ -15,7 +15,7 @@
 }
 .section-2-bg__balls-layer {
   position: absolute;
-  top: 14.5%;
+  top: clamp(0%, 3%, 5%);
   left: 0;
   right: 0;
   bottom: 0;
@@ -36,7 +36,7 @@
   z-index: 2;
   padding-top: clamp(60px, 8vw, 120px);
   padding-left: calc(clamp(20px, 7vw, 200px) - 1px);
-  padding-right: clamp(0px, 11vw, 145px);
+  padding-right: calc(clamp(20px, 7vw, 200px) - 1px);
 }
 .section-2__header {
   display: flex;
@@ -91,23 +91,23 @@
   line-height: 150%;
   color: var(--white);
   margin: 0;
-  max-width: clamp(400px, 35vw, 600px);
+  max-width: clamp(300px, 25vw, 500px);
   text-align: right;
 }
 .section-2__cards {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: clamp(20px, 2.5vw, 40px);
+  gap: clamp(10px, 1.2vw, 25px);
   margin-top: clamp(30px, 4vw, 60px);
   width: 100%;
 }
 .stat-card {
   position: relative;
   flex: 0 0 auto;
-  width: clamp(260px, 25vw, 560px);
+  width: clamp(285px, 28vw, 610px);
   height: clamp(292px, 27.2vw, 616px);
-  padding: clamp(28px, 3.5vw, 40px) clamp(32px, 3.8vw, 48px);
+  padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 40px) clamp(28px, 3.5vw, 40px) clamp(28px, 3.5vw, 44px);
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(217, 217, 217, 0.8) 100%);
@@ -130,21 +130,23 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: clamp(6px, 0.8vw, 10px);
-  margin-bottom: clamp(28px, 3.5vw, 44px);
+  gap: clamp(10px, 1.2vw, 14px);
+  margin-bottom: clamp(20px, 2.5vw, 35px);
+  margin-top: clamp(8px,0.9vw, 19px);
 }
 .stat-card__icon {
   width: clamp(24px, 3vw, 32px);
   height: clamp(24px, 3vw, 32px);
   flex-shrink: 0;
   object-fit: contain;
+  margin-left: clamp(-6px, -0.6vw, -2px);
 }
 .stat-card__header-text {
   font-family: Inter, sans-serif;
   font-weight: 600;
   font-size: clamp(14px, 1.2vw, 17px);
   line-height: 140%;
-  background: linear-gradient(270deg, #F6B0FF 3.37%, #7D21CF 52.88%, #A157FF 98%);
+  background: linear-gradient(270deg, #764b85 3.37%, #7D21CF 52.88%, #A157FF 98%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -158,11 +160,12 @@
   align-items: flex-start;
   margin-bottom: clamp(20px, 2.5vw, 30px);
   gap: clamp(4px, 0.6vw, 8px);
+  padding-left: clamp(-8px, -0.8vw, -2px);
 }
 .stat-card__value-row {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: baseline;
   gap: clamp(5px, 0.8vw, 10px);
 }
 .stat-card__value-label {
@@ -175,7 +178,7 @@
 .stat-card__value {
   font-family: Inter, sans-serif;
   font-weight: 700;
-  font-size: clamp(56px, 7vw, 96px);
+  font-size: clamp(46px, 6vw, 82px);
   line-height: 1;
   color: #A83AFD;
   margin: 0;
@@ -184,8 +187,8 @@
   font-family: Inter, sans-serif;
   font-weight: 600;
   font-size: clamp(16px, 1.5vw, 20px);
-  line-height: 140%;
-  background: linear-gradient(270deg, #F6B0FF 3.37%, #7D21CF 52.88%, #A157FF 98%);
+  line-height: 1;
+  background: linear-gradient(270deg, #aa66b3 3.37%, #7D21CF 52.88%, #A157FF 98%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -207,7 +210,7 @@
   line-height: 150%;
   color: var(--black);
   position: relative;
-  padding-left: clamp(24px, 3vw, 36px);
+  padding-left: clamp(18px, 2.2vw, 28px);
 }
 .stat-card__list-item::before {
   content: '>';
@@ -217,4 +220,215 @@
   font-weight: 700;
   font-size: 1.2em;
   line-height: inherit;
+}
+
+/* Адаптация для брейкпоинтов */
+
+/* MacBook (1440px - 1600px) - горизонтальная ориентация */
+@media (min-width: 1440px) and (max-width: 1600px) and (orientation: landscape) {
+  .section-2-bg__balls-layer {
+    top: clamp(-8%, -5%, -2%);
+    background-size: 105%;
+  }
+  .section-2__cta {
+    max-width: clamp(340px, 28vw, 480px);
+    font-size: clamp(15px, 1.4vw, 19px);
+    white-space: pre-line;
+    line-height: 1.5;
+    margin-left: clamp(-70px, -5vw, -30px);
+  }
+  .stat-card__header {
+    margin-bottom: clamp(15px, 2vw, 28px);
+  }
+  .stat-card__list {
+    gap: clamp(4px, 0.6vw, 8px);
+  }
+  .stat-card {
+    padding-left: clamp(16px, 2vw, 24px);
+    height: clamp(320px, 30vw, 680px);
+  }
+  .stat-card__value-wrapper {
+    padding-left: clamp(4px, 0.5vw, 8px);
+    margin-bottom: clamp(10px, 1.2vw, 18px);
+  }
+  .stat-card__icon {
+    margin-left: clamp(-3px, -0.3vw, 0px);
+  }
+  .stat-card__list-item {
+    font-size: clamp(12px, 1.1vw, 15px);
+    padding-left: clamp(22px, 2.5vw, 32px);
+  }
+  .stat-card__list-item::before {
+    left: clamp(4px, 0.5vw, 8px);
+  }
+}
+
+/* iPad Pro (1366x1024) - горизонтальная ориентация */
+@media (max-width: 1366px) and (min-width: 1181px) and (orientation: landscape) {
+  .section-2-bg {
+    min-height: clamp(95vh, 97vh, 101vh);
+  }
+  .section-2-bg__balls-layer {
+    top: clamp(-15%, -12%, -8%);
+    background-size: 114%;
+  }
+  .section-2__cta {
+    max-width: clamp(280px, 24vw, 380px);
+    font-size: clamp(14px, 1.3vw, 18px);
+    white-space: pre-line;
+    line-height: 1.5;
+  }
+  .section-2__content {
+    padding-left: calc(clamp(15px, 5vw, 150px) - 1px);
+    padding-right: calc(clamp(15px, 5vw, 150px) - 1px);
+  }
+  .section-2__cards {
+    gap: clamp(10px, 1.2vw, 25px);
+    margin-top: clamp(60px, 7vw, 100px);
+  }
+  .stat-card__header {
+    gap: clamp(10px, 1.2vw, 14px);
+    margin-bottom: clamp(15px, 2vw, 28px);
+  }
+  .stat-card__icon {
+    margin-left: clamp(-6px, -0.6vw, -2px);
+  }
+  .stat-card {
+    width: clamp(290px, 28.5vw, 615px);
+    height: clamp(320px, 30vw, 650px);
+    padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 35px) clamp(24px, 3vw, 36px) clamp(22px, 3.2vw, 38px);
+  }
+  .stat-card__value-wrapper {
+    padding-left: clamp(-8px, -0.8vw, -2px);
+    margin-bottom: clamp(10px, 1.2vw, 18px);
+  }
+  .stat-card__value {
+    font-size: clamp(35px, 4.5vw, 64px);
+  }
+  .stat-card__header-text {
+    font-size: clamp(12px, 1.1vw, 15px);
+  }
+  .stat-card__value-label {
+    font-size: clamp(12px, 1.1vw, 14px);
+  }
+  .stat-card__value-suffix {
+    font-size: clamp(14px, 1.3vw, 18px);
+    line-height: 1;
+  }
+  .stat-card__list-item {
+    font-size: clamp(11px, 1vw, 14px);
+    padding-left: clamp(16px, 2vw, 24px);
+  }
+}
+
+/* iPad Air (1180x820) - горизонтальная ориентация */
+@media (max-width: 1180px) and (min-width: 1025px) and (orientation: landscape) {
+  .section-2-bg {
+    min-height: clamp(105vh, 108vh, 110vh);
+  }
+  .section-2-bg__balls-layer {
+    top: clamp(-15%, -12%, -8%);
+    background-size: 113%;
+  }
+  .section-2__cta {
+    max-width: clamp(250px, 21vw, 340px);
+    font-size: clamp(13px, 1.2vw, 17px);
+    white-space: pre-line;
+    line-height: 1.5;
+  }
+  .section-2__content {
+    padding-left: calc(clamp(15px, 5vw, 150px) - 1px);
+    padding-right: calc(clamp(15px, 5vw, 150px) - 1px);
+  }
+  .section-2__cards {
+    gap: clamp(10px, 1.2vw, 25px);
+  }
+  .stat-card__header {
+    gap: clamp(10px, 1.2vw, 14px);
+    margin-bottom: clamp(15px, 2vw, 28px);
+  }
+  .stat-card__icon {
+    margin-left: clamp(-6px, -0.6vw, -2px);
+  }
+  .stat-card {
+    width: clamp(290px, 28.5vw, 615px);
+    height: clamp(340px, 32vw, 680px);
+    padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 35px) clamp(24px, 3vw, 36px) clamp(22px, 3.2vw, 38px);
+  }
+  .stat-card__value-wrapper {
+    padding-left: clamp(-8px, -0.8vw, -2px);
+  }
+  .stat-card__value {
+    font-size: clamp(31px, 4vw, 58px);
+  }
+  .stat-card__header-text {
+    font-size: clamp(11px, 1vw, 14px);
+  }
+  .stat-card__value-label {
+    font-size: clamp(11px, 1vw, 13px);
+  }
+  .stat-card__value-suffix {
+    font-size: clamp(13px, 1.2vw, 17px);
+    line-height: 1;
+  }
+  .stat-card__list-item {
+    font-size: clamp(10px, 0.95vw, 13px);
+    padding-left: clamp(16px, 2vw, 24px);
+  }
+}
+
+/* iPad mini (1024x768) - горизонтальная ориентация */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .section-2-bg {
+    min-height: clamp(95vh, 100vh, 103vh);
+  }
+  .section-2-bg__balls-layer {
+    top: clamp(-20%, -17%, -12%);
+    background-size: 113%;
+  }
+  .section-2__cta {
+    max-width: clamp(220px, 19vw, 300px);
+    font-size: clamp(12px, 1.1vw, 16px);
+    white-space: pre-line;
+    line-height: 1.5;
+  }
+  .section-2__content {
+    padding-left: calc(clamp(15px, 5vw, 150px) - 1px);
+    padding-right: calc(clamp(15px, 5vw, 150px) - 1px);
+  }
+  .section-2__cards {
+    gap: clamp(10px, 1.2vw, 25px);
+  }
+  .stat-card__header {
+    gap: clamp(10px, 1.2vw, 14px);
+  }
+  .stat-card__icon {
+    margin-left: clamp(-6px, -0.6vw, -2px);
+  }
+  .stat-card {
+    width: clamp(290px, 28.5vw, 615px);
+    height: clamp(320px, 30vw, 650px);
+    padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 35px) clamp(24px, 3vw, 36px) clamp(22px, 3.2vw, 38px);
+  }
+  .stat-card__value-wrapper {
+    padding-left: clamp(-8px, -0.8vw, -2px);
+    margin-bottom: clamp(15px, 2vw, 25px);
+  }
+  .stat-card__value {
+    font-size: clamp(27px, 3.5vw, 52px);
+  }
+  .stat-card__header-text {
+    font-size: clamp(10px, 0.95vw, 13px);
+  }
+  .stat-card__value-label {
+    font-size: clamp(10px, 0.95vw, 12px);
+  }
+  .stat-card__value-suffix {
+    font-size: clamp(12px, 1.1vw, 16px);
+    line-height: 1;
+  }
+  .stat-card__list-item {
+    font-size: clamp(10px, 1vw, 13px);
+    padding-left: clamp(16px, 2vw, 24px);
+  }
 }

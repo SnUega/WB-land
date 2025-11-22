@@ -5,20 +5,40 @@
   right: 0;
   bottom: 0;
   background: #fff;
-  z-index: 1000;
+  z-index: 1100;
   transform: translateY(-100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
   display: none;
   flex-direction: column;
 }
+
+/* Планшеты в горизонтальной ориентации (768px - 1366px) */
+@media (min-width: 769px) and (max-width: 1366px) and (orientation: landscape) {
+  .mobile-menu {
+    display: flex;
+    left: auto;
+    right: 0;
+    width: 33.333vw;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  }
+  .mobile-menu.is-open {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 768px) {
   .mobile-menu {
     display: flex;
   }
 }
-.mobile-menu.is-open {
-  transform: translateY(0);
+/* Для мобильных - выплывает сверху */
+@media (max-width: 768px) {
+  .mobile-menu.is-open {
+    transform: translateY(0);
+  }
 }
 .mobile-menu__header {
   display: flex;
@@ -118,6 +138,53 @@
   flex-direction: column;
   padding: 0 4vw;
   flex: 1;
+  position: relative;
+  overflow-y: auto;
+}
+.mobile-menu__scroll-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  animation: scrollHintBounce 2s ease-in-out infinite;
+}
+.mobile-menu__scroll-hint svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.mobile-menu__scroll-hint svg path {
+  stroke: currentColor;
+}
+@keyframes scrollHintBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+/* Планшеты в горизонтальной ориентации - показываем подсказку */
+@media (min-width: 769px) and (max-width: 1366px) and (orientation: landscape) {
+  .mobile-menu__scroll-hint {
+    display: flex;
+  }
+}
+/* Скрываем на мобильных */
+@media (max-width: 768px) {
+  .mobile-menu__scroll-hint {
+    display: none;
+  }
 }
 .mobile-menu__link {
   font-family: var(--font-family);
@@ -135,6 +202,12 @@
 .mobile-menu__contacts {
   padding: 8vw 4vw;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* Планшеты - меньше padding */
+@media (min-width: 769px) and (max-width: 1366px) and (orientation: landscape) {
+  .mobile-menu__contacts {
+    padding: 2vw 4vw;
+  }
 }
 .mobile-menu__phone {
   display: block;

@@ -161,6 +161,21 @@
   background: var(--white);
   border-radius: 2px;
 }
+/* Планшеты в горизонтальной ориентации (768px - 1366px) */
+@media (min-width: 769px) and (max-width: 1366px) and (orientation: landscape) {
+  .header__nav {
+    display: none;
+  }
+  .header__lang {
+    display: none;
+  }
+  .header__burger {
+    display: flex;
+    margin-right: clamp(50px, 6.5vw, 130px);
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .header__nav {
     display: none;

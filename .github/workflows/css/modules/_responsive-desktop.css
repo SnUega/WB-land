@@ -1,0 +1,156 @@
+/* 
+ * Адаптивность для десктопных брейкпоинтов в горизонтальной ориентации
+ * Базовый размер: MacBook 1440x900
+ * 
+ * Брейкпоинты:
+ * - iPad Pro: 1366x1024 (коэффициент: 0.949)
+ * - iPad Air: 1180x820 (коэффициент: 0.819)
+ * - iPad mini: 1024x768 (коэффициент: 0.711)
+ * 
+ * Использование: точечные изменения через медиа-запросы в соответствующих модулях
+ */
+
+/* iPad Pro (1366x1024) - горизонтальная ориентация */
+@media (max-width: 1366px) and (min-width: 1181px) and (orientation: landscape) {
+  :root {
+    --scale-current: var(--scale-ipad-pro);
+  }
+}
+
+/* iPad Air (1180x820) - горизонтальная ориентация */
+@media (max-width: 1180px) and (min-width: 1025px) and (orientation: landscape) {
+  :root {
+    --scale-current: var(--scale-ipad-air);
+  }
+}
+
+/* iPad mini (1024x768) - горизонтальная ориентация */
+@media (max-width: 1024px) and (orientation: landscape) {
+  :root {
+    --scale-current: var(--scale-ipad-mini);
+  }
+}
+
+/* ============================================
+   ИСПРАВЛЕНИЯ ПРОБЛЕМ АДАПТИВНОСТИ
+   Все изменения применяются только для планшетов,
+   на десктопе (1440px+) ничего не изменится
+   ============================================ */
+
+/* iPad Pro (1366x1024) - горизонтальная ориентация */
+@media (max-width: 1366px) and (min-width: 1181px) and (orientation: landscape) {
+  /* Section-8: Замена фиксированной высоты на clamp */
+  .section-8 {
+    height: clamp(1000px, 92vw, 1330px);
+  }
+  
+  /* Section-7: Добавление адаптивного padding */
+  .section-7 {
+    padding: clamp(30px, 4vw, 60px) clamp(20px, 5vw, 100px);
+  }
+  
+  /* Section-2: Исправление font-size с маленьким диапазоном */
+  .section-2__subtitle {
+    font-size: clamp(20px, 1.6vw, 24px);
+  }
+  .section-2__desc {
+    font-size: clamp(20px, 1.6vw, 24px);
+  }
+  
+  /* Section-2: Исправление top: 14.5% на clamp */
+  .section-2-bg__balls-layer {
+    top: clamp(0%, 2%, 4%);
+  }
+  
+  /* Header: Исправление фиксированных значений */
+  .nav__link::after {
+    bottom: clamp(-3px, -0.3vw, -5px);
+  }
+  .header__lang-list {
+    right: clamp(-5px, -0.5vw, -8px);
+  }
+  
+  /* Section-3: Исправление width: 1px на clamp */
+  .section-3__chart-grid-line {
+    width: clamp(1px, 0.1vw, 2px);
+  }
+}
+
+/* iPad Air (1180x820) - горизонтальная ориентация */
+@media (max-width: 1180px) and (min-width: 1025px) and (orientation: landscape) {
+  /* Section-8: Замена фиксированной высоты на clamp */
+  .section-8 {
+    height: clamp(900px, 85vw, 1330px);
+  }
+  
+  /* Section-7: Добавление адаптивного padding */
+  .section-7 {
+    padding: clamp(25px, 3.5vw, 50px) clamp(20px, 5vw, 100px);
+  }
+  
+  /* Section-2: Исправление font-size с маленьким диапазоном */
+  .section-2__subtitle {
+    font-size: clamp(20px, 1.6vw, 24px);
+  }
+  .section-2__desc {
+    font-size: clamp(20px, 1.6vw, 24px);
+  }
+  
+  /* Section-2: Исправление top: 14.5% на clamp */
+  .section-2-bg__balls-layer {
+    top: clamp(0%, 2%, 4%);
+  }
+  
+  /* Header: Исправление фиксированных значений */
+  .nav__link::after {
+    bottom: clamp(-3px, -0.3vw, -5px);
+  }
+  .header__lang-list {
+    right: clamp(-5px, -0.5vw, -8px);
+  }
+  
+  /* Section-3: Исправление width: 1px на clamp */
+  .section-3__chart-grid-line {
+    width: clamp(1px, 0.1vw, 2px);
+  }
+}
+
+/* iPad mini (1024x768) - горизонтальная ориентация */
+@media (max-width: 1024px) and (orientation: landscape) {
+  /* Section-8: Замена фиксированной высоты на clamp */
+  .section-8 {
+    height: clamp(800px, 78vw, 1330px);
+  }
+  
+  /* Section-7: Добавление адаптивного padding */
+  .section-7 {
+    padding: clamp(20px, 3vw, 40px) clamp(20px, 5vw, 100px);
+  }
+  
+  /* Section-2: Исправление font-size с маленьким диапазоном */
+  .section-2__subtitle {
+    font-size: clamp(20px, 1.6vw, 24px);
+  }
+  .section-2__desc {
+    font-size: clamp(20px, 1.6vw, 24px);
+  }
+  
+  /* Section-2: Исправление top: 14.5% на clamp */
+  .section-2-bg__balls-layer {
+    top: clamp(0%, 2%, 4%);
+  }
+  
+  /* Header: Исправление фиксированных значений */
+  .nav__link::after {
+    bottom: clamp(-3px, -0.3vw, -5px);
+  }
+  .header__lang-list {
+    right: clamp(-5px, -0.5vw, -8px);
+  }
+  
+  /* Section-3: Исправление width: 1px на clamp */
+  .section-3__chart-grid-line {
+    width: clamp(1px, 0.1vw, 2px);
+  }
+}
+

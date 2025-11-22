@@ -9,7 +9,7 @@
   align-items: center;
   height: clamp(600px, 75vw, 1230px);
   overflow: visible;
-  border-radius: clamp(60px, 8vw, 120px);
+  border-radius: 120px;
 }
 .section-4__content {
   width: 100%;
@@ -340,4 +340,62 @@
   letter-spacing: 0.02em;
   color: #1C1C1C;
   margin: 0;
+}
+
+/* Адаптация для брейкпоинтов */
+
+/* MacBook (1440px - 1600px) - горизонтальная ориентация */
+@media (min-width: 1440px) and (max-width: 1600px) and (orientation: landscape) {
+  .section-4 {
+    height: clamp(650px, 78vw, 1280px);
+  }
+}
+
+/* iPad Pro (1366x1024) - горизонтальная ориентация */
+@media (max-width: 1366px) and (min-width: 1181px) and (orientation: landscape) {
+  .section-4 {
+    height: clamp(650px, 78vw, 1280px);
+  }
+}
+
+/* iPad Air (1180x820) - горизонтальная ориентация */
+@media (max-width: 1180px) and (min-width: 1025px) and (orientation: landscape) {
+  .section-4 {
+    height: clamp(710px, 82vw, 1360px);
+  }
+  .section-4__slider {
+    top: clamp(10px, 2vw, 360px);
+  }
+  .section-4__slider-item {
+    width: clamp(300px, 32vw, 420px);
+  }
+  .slider-card__icon {
+    margin-bottom: clamp(18px, 2.2vw, 32px);
+  }
+  .slider-card__title {
+    font-size: clamp(16px, 2vw, 22px);
+  }
+}
+
+/* iPad mini (1024x768) - горизонтальная ориентация */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .section-4 {
+    height: clamp(780px, 85vw, 1460px);
+  }
+  .section-4__slider {
+    top: clamp(-10px, 0.5vw, 300px);
+  }
+  .section-4__slider-item {
+    width: clamp(300px, 32vw, 420px);
+    height: clamp(330px, 38vw, 460px);
+  }
+  .slider-card {
+    min-height: clamp(330px, 38vw, 460px);
+  }
+  .slider-card__icon {
+    margin-bottom: clamp(18px, 2.2vw, 30px);
+  }
+  .slider-card__title {
+    font-size: clamp(16px, 2vw, 22px);
+  }
 }

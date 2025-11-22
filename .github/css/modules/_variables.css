@@ -18,4 +18,39 @@
     -5px 9px 23px rgba(145, 145, 145, 0.05),
     inset 0 -11px 9px rgba(255, 255, 255, 0.25),
     inset 0 9px 9px rgba(255, 255, 255, 0.25);
+  
+  /* Typography clamp values */
+  --font-size-subtitle: clamp(14px, 1.5vw, 20px);
+  --font-size-title: clamp(32px, 4.5vw, 55px);
+  --font-size-description: clamp(16px, 1.5vw, 20px);
+  --font-size-prefix: clamp(16px, 1.5vw, 20px);
+  --font-size-value: clamp(28px, 2.8vw, 40px);
+  --font-size-unit: clamp(16px, 1.5vw, 20px);
+  --font-size-price: clamp(28px, 2.8vw, 40px);
+  --font-size-currency: clamp(16px, 1.5vw, 20px);
+  --font-size-minimum: clamp(18px, 1.8vw, 24px);
+  --font-size-toggle-option: clamp(14px, 1.2vw, 17px);
+  
+  /* Spacing clamp values */
+  --spacing-section-padding: clamp(40px, 5.3vw, 80px);
+  --spacing-subtitle-top: clamp(40px, 5vw, 80px);
+  --spacing-subtitle-bottom: clamp(4px, 0.5vw, 8px);
+  --spacing-item-gap: clamp(15px, 2vw, 25px);
+  
+  /* Animation values */
+  --animation-translate-y: clamp(-60px, -5vw, -80px);
+  --animation-translate-y-positive: clamp(60px, 5vw, 80px);
+  --animation-translate-x: clamp(-60px, -5vw, -80px);
+  --animation-translate-x-positive: clamp(60px, 5vw, 80px);
+  
+  /* Gradients */
+  --gradient-purple: linear-gradient(270deg, #F6B0FF 3.37%, #7D21CF 52.88%, #A157FF 98%);
+  --gradient-glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(217, 217, 217, 0.8) 100%);
+  --gradient-conic-border: conic-gradient(from 102.75deg at 50% 52.91%, rgba(249, 249, 249, 0.5) -32.95deg, rgba(156, 156, 156, 0.5) 10.52deg, rgba(156, 156, 156, 0.35) 32.12deg, rgba(255, 255, 255, 0.5) 60.28deg, rgba(255, 255, 255, 0.5) 107.79deg, rgba(156, 156, 156, 0.35) 187.59deg, #F9F9F9 207.58deg, rgba(255, 255, 255, 0.5) 287.31deg, rgba(249, 249, 249, 0.5) 327.05deg, rgba(156, 156, 156, 0.5) 370.52deg);
+  
+  /* Responsive scaling coefficients for desktop breakpoints */
+  --scale-ipad-pro: 0.949;    /* 1366/1440 */
+  --scale-ipad-air: 0.819;    /* 1180/1440 */
+  --scale-ipad-mini: 0.711;   /* 1024/1440 */
+  --scale-current: 1;         /* Current scale (set via media queries) */
 }

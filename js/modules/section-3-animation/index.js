@@ -16,45 +16,103 @@ class Section3Animation {
     const responsesNumber = this.section.querySelector('.section-3__responses-number');
     const bars = this.section.querySelectorAll('.chart-item__bar');
     const values = this.section.querySelectorAll('.chart-item__value');
-    gsap.set(bars, { width: '0%' });
+    // Reset function to be called on each animation
+    const resetAnimation = () => {
+      gsap.set(bars, { width: '0%' });
+      if (responsesNumber) {
+        responsesNumber.setAttribute('data-target', '86');
+        responsesNumber.textContent = '0';
+      }
+      values.forEach((valueEl) => {
+        const originalText = valueEl.getAttribute('data-original-text') || valueEl.textContent;
+        valueEl.setAttribute('data-original-text', originalText);
+        let zeroText = originalText.replace(/[\d.]+/g, '0');
+        valueEl.textContent = zeroText;
+      });
+    };
+    
+    // Initial reset
+    resetAnimation();
     if (responsesNumber) {
-      responsesNumber.setAttribute('data-target', '86');
-      responsesNumber.textContent = '0';
-    }
-    values.forEach((valueEl) => {
-      const originalText = valueEl.textContent;
-      valueEl.setAttribute('data-original-text', originalText);
-      let zeroText = originalText.replace(/[\d.]+/g, '0');
-      valueEl.textContent = zeroText;
-    });
-    if (responsesNumber) {
+      let responsesNumberTween = null;
       const responsesNumberObj = { value: 0 };
-      gsap.to(responsesNumberObj, {
-        value: 86,
-        duration: 2.6,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: this.section,
-          start: 'top 75%',
-          end: 'bottom 25%',
-          toggleActions: 'play none none none',
-          once: true,
+      
+      const animateNumber = () => {
+        if (responsesNumberTween) {
+          responsesNumberTween.kill();
+        }
+        responsesNumberObj.value = 0;
+        responsesNumber.textContent = '0';
+        responsesNumberTween = gsap.to(responsesNumberObj, {
+          value: 86,
+          duration: 2.6,
+          ease: 'none',
+          onUpdate: () => {
+            responsesNumber.textContent = Math.floor(responsesNumberObj.value);
+          },
+        });
+      };
+      
+      ScrollTrigger.create({
+        trigger: this.section,
+        start: 'top 80%',
+        end: 'bottom top',
+        onEnter: () => {
+          resetAnimation();
+          animateNumber();
         },
-        onUpdate: () => {
-          responsesNumber.textContent = Math.floor(responsesNumberObj.value);
+        onEnterBack: () => {
+          resetAnimation();
+          animateNumber();
         },
+        onLeave: () => {
+          if (responsesNumberTween) {
+            responsesNumberTween.kill();
+          }
+          responsesNumberObj.value = 0;
+          responsesNumber.textContent = '0';
+        },
+        onLeaveBack: () => {
+          if (responsesNumberTween) {
+            responsesNumberTween.kill();
+          }
+          responsesNumberObj.value = 0;
+          responsesNumber.textContent = '0';
+        },
+        once: false,
       });
     }
     const barsTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: this.section,
-        start: 'top 75%',
-        end: 'bottom 25%',
-        toggleActions: 'play none none none',
-        once: true,
-      },
+      paused: true,
     });
     barsTl.to({}, { duration: 1.5 });
+    
+    ScrollTrigger.create({
+      trigger: this.section,
+      start: 'top 80%',
+      end: 'bottom top',
+      onEnter: () => {
+        barsTl.progress(0);
+        barsTl.restart();
+        resetAnimation();
+      },
+      onEnterBack: () => {
+        barsTl.progress(0);
+        barsTl.restart();
+        resetAnimation();
+      },
+      onLeave: () => {
+        barsTl.pause();
+        barsTl.progress(0);
+        resetAnimation();
+      },
+      onLeaveBack: () => {
+        barsTl.pause();
+        barsTl.progress(0);
+        resetAnimation();
+      },
+      once: false,
+    });
     bars.forEach((bar, index) => {
       const percent = bar.getAttribute('data-percent');
       const valueElement = values[index];

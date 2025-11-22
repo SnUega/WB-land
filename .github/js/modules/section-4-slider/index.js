@@ -14,7 +14,6 @@ class Section4Slider {
     this.scrollTimeout = null;
     this.currentOffset = 0;
     this.targetOffset = 0;
-    this.scrollSpeed = 0.6;
     this.animationFrameId = null;
     this.lerpSpeed = 0.08;
     this.cardWidth = 0;
@@ -31,7 +30,7 @@ class Section4Slider {
       this.calculateDimensions();
       this.setupSliderPositioning();
       this.setupEventListeners();
-      this.initCardAnimations();
+      // this.initCardAnimations(); // Анимации появления временно отключены
       this.updateSliderPosition();
     }, 100);
     window.addEventListener('resize', () => {
@@ -63,6 +62,25 @@ class Section4Slider {
     this.slider.style.marginLeft = '0';
     this.slider.style.marginRight = '0';
   }
+  getBreakpoint() {
+    const width = window.innerWidth;
+    const isLandscape = window.innerHeight < window.innerWidth;
+    
+    if (!isLandscape) return 'desktop';
+    
+    if (width <= 1024) return 'mini';
+    if (width >= 1025 && width <= 1180) return 'air';
+    if (width >= 1181 && width <= 1366) return 'pro';
+    if (width >= 1440 && width <= 1600) return 'macbook';
+    
+    return 'desktop';
+  }
+  getEffectiveVisibleCards() {
+    const breakpoint = this.getBreakpoint();
+    // Для Air и mini используем 2 видимые карточки (4 шага)
+    // Для Pro, MacBook и десктоп - 3 видимые карточки (3 шага)
+    return (breakpoint === 'air' || breakpoint === 'mini') ? 2 : 3;
+  }
   calculateDimensions() {
     if (this.items.length === 0) return;
     const firstCard = this.items[0];
@@ -82,23 +100,7 @@ class Section4Slider {
     if (this.nextBtn) {
       this.nextBtn.addEventListener('click', () => this.scrollToNext());
     }
-    this.items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        if (this.lenis) {
-          this.lenis.stop();
-        }
-      });
-      item.addEventListener('mouseleave', () => {
-        if (this.lenis) {
-          this.lenis.start();
-        }
-      });
-      item.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        this.handleWheel(e);
-      }, { passive: false });
-    });
+    // Mouse enter/leave handlers removed - no need to stop/start lenis since wheel is disabled
     this.slider.addEventListener('touchstart', (e) => {
       this.touchStartX = e.touches[0].clientX;
     }, { passive: true });
@@ -112,29 +114,6 @@ class Section4Slider {
       this.handleSwipe();
     }, { passive: true });
   }
-  handleWheel(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (this.lenis) {
-      this.lenis.stop();
-    }
-    if (this.targetOffset === undefined || this.currentOffset === undefined) {
-      this.calculateDimensions();
-      const baseMaxIndex = this.items.length - this.visibleCards;
-      const fullStep = this.cardWidth + this.cardGap;
-      const partialStep = fullStep * 0.2;
-      this.targetOffset = this.currentIndex * fullStep;
-      if (this.currentIndex > baseMaxIndex) {
-        this.targetOffset = baseMaxIndex * fullStep + partialStep;
-      }
-      this.currentOffset = this.targetOffset;
-    }
-    const delta = e.deltaY * this.scrollSpeed;
-    const maxOffset = this.getMaxOffset();
-    this.targetOffset = Math.max(0, Math.min(maxOffset, this.targetOffset + delta));
-    this.updateSliderPositionSmooth();
-    return false;
-  }
   handleSwipe() {
     const swipeDistance = this.touchStartX - this.touchEndX;
     if (Math.abs(swipeDistance) > this.minSwipeDistance) {
@@ -146,7 +125,8 @@ class Section4Slider {
     }
   }
   scrollToNext() {
-    const maxIndex = this.items.length - this.visibleCards;
+    const effectiveVisibleCards = this.getEffectiveVisibleCards();
+    const maxIndex = this.items.length - effectiveVisibleCards;
     if (this.currentIndex < maxIndex) {
       this.currentIndex++;
       this.updateSliderPosition();
@@ -162,9 +142,21 @@ class Section4Slider {
     if (!this.cardWidth) {
       this.calculateDimensions();
     }
-    const baseMaxIndex = this.items.length - this.visibleCards;
+    const effectiveVisibleCards = this.getEffectiveVisibleCards();
+    const baseMaxIndex = this.items.length - effectiveVisibleCards;
     const fullStep = this.cardWidth + this.cardGap;
-    const partialStep = fullStep * 0.2;
+    const breakpoint = this.getBreakpoint();
+    
+    // Увеличиваем offset на последнем шаге для разных брейкпоинтов
+    let partialStep = fullStep * 0.2;
+    if (breakpoint === 'mini') {
+      partialStep = fullStep * 0.33;
+    } else if (breakpoint === 'pro') {
+      partialStep = fullStep * 0.85;
+    } else if (breakpoint === 'macbook') {
+      partialStep = fullStep * 0.75;
+    }
+    
     return baseMaxIndex * fullStep + partialStep;
   }
   updateSliderPosition() {
@@ -172,18 +164,43 @@ class Section4Slider {
     if (!this.cardWidth) {
       this.calculateDimensions();
     }
-    const baseMaxIndex = this.items.length - this.visibleCards;
+    const effectiveVisibleCards = this.getEffectiveVisibleCards();
+    const baseMaxIndex = this.items.length - effectiveVisibleCards;
     const fullStep = this.cardWidth + this.cardGap;
-    const partialStep = fullStep * 0.2;
+    const breakpoint = this.getBreakpoint();
+    
+    // Увеличиваем offset на последнем шаге для разных брейкпоинтов
+    let partialStep = fullStep * 0.2;
+    if (breakpoint === 'mini') {
+      partialStep = fullStep * 0.33;
+    } else if (breakpoint === 'pro') {
+      partialStep = fullStep * 0.85;
+    } else if (breakpoint === 'macbook') {
+      partialStep = fullStep * 0.75;
+    }
+    
+    // Дополнительный offset для каждого шага в зависимости от брейкпоинта
+    let stepBonus = 0;
+    if (breakpoint === 'mini') {
+      // Для mini увеличиваем все шаги на 22px
+      stepBonus = 22;
+    } else if (breakpoint === 'pro') {
+      // Для pro добавляем по 9px к каждому шагу
+      stepBonus = 9;
+    } else if (breakpoint === 'macbook') {
+      // Для macbook добавляем по 12-13px к каждому шагу
+      stepBonus = 12.5;
+    }
+    
     let offset;
     if (this.currentIndex === 0) {
       offset = 0;
     } else if (this.currentIndex === 1) {
-      offset = fullStep * 1.1;
+      offset = fullStep * 1.1 + (stepBonus * this.currentIndex);
     } else if (this.currentIndex === baseMaxIndex) {
-      offset = baseMaxIndex * fullStep + partialStep;
+      offset = baseMaxIndex * fullStep + partialStep + (stepBonus * this.currentIndex);
     } else {
-      offset = this.currentIndex * fullStep;
+      offset = this.currentIndex * fullStep + (stepBonus * this.currentIndex);
     }
     this.targetOffset = offset;
     this.currentOffset = offset;
@@ -265,7 +282,8 @@ class Section4Slider {
       this.prevBtn.style.cursor = this.currentIndex === 0 ? 'not-allowed' : 'pointer';
     }
     if (this.nextBtn) {
-      const maxIndex = this.items.length - this.visibleCards;
+      const effectiveVisibleCards = this.getEffectiveVisibleCards();
+      const maxIndex = this.items.length - effectiveVisibleCards;
       this.nextBtn.disabled = this.currentIndex >= maxIndex;
       this.nextBtn.style.opacity = this.currentIndex >= maxIndex ? '0.5' : '1';
       this.nextBtn.style.cursor = this.currentIndex >= maxIndex ? 'not-allowed' : 'pointer';

@@ -93,22 +93,54 @@ class Modal {
       this.modalLenis = null;
     }
     
+    // Сохраняем позицию скролла ПЕРЕД удалением стилей
+    const savedScrollY = document.body.dataset.scrollY 
+      ? parseInt(document.body.dataset.scrollY) 
+      : (window.lenis ? window.lenis.scroll : window.scrollY);
+    
+    // Удаляем класс модального окна
     this.currentModal.classList.remove('is-open');
-    const scrollY = document.body.dataset.scrollY ? parseInt(document.body.dataset.scrollY) : (window.lenis ? window.lenis.scroll : window.scrollY);
+    
+    // Удаляем сохраненную позицию
+    delete document.body.dataset.scrollY;
+    
+    // Восстанавливаем стили body
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     document.body.style.overflow = '';
     
-    const savedScrollY = scrollY;
-    delete document.body.dataset.scrollY;
-    
+    // Восстанавливаем позицию скролла
+    // Используем синхронную установку скролла для предотвращения сброса
     if (window.lenis) {
+      // Если используется Lenis, сначала запускаем его и устанавливаем позицию
       window.lenis.start();
-      window.lenis.scrollTo(savedScrollY, { immediate: true });
-    } else {
+      window.lenis.scrollTo(savedScrollY, { 
+        immediate: true,
+        duration: 0
+      });
+      // Также устанавливаем нативный скролл для надежности
       window.scrollTo(0, savedScrollY);
+      document.documentElement.scrollTop = savedScrollY;
+    } else {
+      // Если Lenis не используется, просто устанавливаем нативный скролл
+      window.scrollTo(0, savedScrollY);
+      document.documentElement.scrollTop = savedScrollY;
     }
+    
+    // Дополнительная проверка через RAF для гарантии
+    requestAnimationFrame(() => {
+      if (window.lenis && Math.abs(window.lenis.scroll - savedScrollY) > 1) {
+        window.lenis.scrollTo(savedScrollY, { 
+          immediate: true,
+          duration: 0
+        });
+      }
+      if (Math.abs(window.scrollY - savedScrollY) > 1) {
+        window.scrollTo(0, savedScrollY);
+        document.documentElement.scrollTop = savedScrollY;
+      }
+    });
     
     this.currentModal = null;
   }
@@ -139,22 +171,23 @@ class FormValidator {
   validateField(field) {
     const value = field.type === 'checkbox' ? field.checked : field.value.trim();
     const name = field.name;
+    const translations = window.translations;
     let error = '';
     if (field.hasAttribute('required')) {
       if (field.type === 'checkbox' && !value) {
         if (name === 'privacy') {
-          error = 'Необходимо согласиться с политикой конфиденциальности';
+          error = translations.get('form.error.privacy');
         } else {
-          error = 'Это поле обязательно для заполнения';
+          error = translations.get('form.error.required');
         }
       } else if (field.type !== 'checkbox' && !value) {
-        error = 'Это поле обязательно для заполнения';
+        error = translations.get('form.error.required');
       }
     }
     if (!error && field.type === 'email' && value) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(value)) {
-        error = 'Введите корректный email адрес';
+        error = translations.get('form.error.email');
       }
     }
     if (!error && field.type === 'tel' && value) {
@@ -183,13 +216,13 @@ class FormValidator {
         }
       }
       if (!isValid) {
-        error = 'Введите корректный номер телефона (например: +7 999 123 45 67)';
+        error = translations.get('form.error.phone');
       }
     }
     if (!error && name === 'name' && value) {
       const words = value.trim().split(/\s+/);
       if (words.length < 2) {
-        error = 'Введите полное имя (минимум имя и фамилия)';
+        error = translations.get('form.error.name');
       }
     }
     if (!error && name === 'quantity') {
@@ -197,13 +230,13 @@ class FormValidator {
       } else {
         const quantity = parseInt(value, 10);
         if (isNaN(quantity) || quantity < 5) {
-          error = 'Минимальный заказ - 5 выкупов';
+          error = translations.get('form.error.quantity');
         }
       }
     }
     if (!error && field.tagName === 'SELECT' && field.hasAttribute('required')) {
       if (!value || value === '') {
-        error = 'Это поле обязательно для заполнения';
+        error = translations.get('form.error.required');
       }
     }
     if (error) {
@@ -242,19 +275,28 @@ class FormValidator {
   }
   async submit() {
     const submitBtn = this.form.querySelector('.form__submit');
-    const originalText = submitBtn.textContent;
+    const translations = window.translations;
+    // Сохраняем оригинальный текст из data-i18n, если есть
+    const originalTextKey = submitBtn.getAttribute('data-i18n');
+    const originalText = originalTextKey ? translations.get(originalTextKey) : submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Отправка...';
+    submitBtn.textContent = translations.get('form.sending');
     const formData = new FormData(this.form);
     const data = Object.fromEntries(formData.entries());
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
-      const savedScrollY = document.body.dataset.scrollY ? parseInt(document.body.dataset.scrollY) : (window.lenis ? window.lenis.scroll : window.scrollY);
+      
+      // Сохраняем позицию скролла перед закрытием модального окна
+      const savedScrollY = document.body.dataset.scrollY 
+        ? parseInt(document.body.dataset.scrollY) 
+        : (window.lenis ? window.lenis.scroll : window.scrollY);
+      
       const modal = this.form.closest('.modal');
       const modalInstance = window.modalInstance || new Modal();
       
+      // Закрываем текущее модальное окно, сохраняя позицию
       if (modal && modalInstance.currentModal === modal) {
         if (modalInstance.modalRafId) {
           cancelAnimationFrame(modalInstance.modalRafId);
@@ -266,14 +308,58 @@ class FormValidator {
         }
         modal.classList.remove('is-open');
         modalInstance.currentModal = null;
+        
+        // Восстанавливаем стили body
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        
+        // Восстанавливаем позицию скролла
+        // Используем синхронную установку скролла для предотвращения сброса
+        if (window.lenis) {
+          // Если используется Lenis, сначала запускаем его и устанавливаем позицию
+          window.lenis.start();
+          window.lenis.scrollTo(savedScrollY, { 
+            immediate: true,
+            duration: 0
+          });
+          // Также устанавливаем нативный скролл для надежности
+          window.scrollTo(0, savedScrollY);
+          document.documentElement.scrollTop = savedScrollY;
+        } else {
+          // Если Lenis не используется, просто устанавливаем нативный скролл
+          window.scrollTo(0, savedScrollY);
+          document.documentElement.scrollTop = savedScrollY;
+        }
+        
+        // Дополнительная проверка через RAF для гарантии
+        requestAnimationFrame(() => {
+          if (window.lenis && Math.abs(window.lenis.scroll - savedScrollY) > 1) {
+            window.lenis.scrollTo(savedScrollY, { 
+              immediate: true,
+              duration: 0
+            });
+          }
+          if (Math.abs(window.scrollY - savedScrollY) > 1) {
+            window.scrollTo(0, savedScrollY);
+            document.documentElement.scrollTop = savedScrollY;
+          }
+        });
       }
       
       this.form.reset();
-      document.body.dataset.scrollY = savedScrollY;
+      
+      // Открываем модальное окно успеха, сохраняя позицию скролла
+      // Не перезаписываем dataset.scrollY, чтобы позиция сохранилась
+      if (!document.body.dataset.scrollY) {
+        document.body.dataset.scrollY = savedScrollY;
+      }
       modalInstance.open('success');
     } catch (error) {
       console.error('Form submission error:', error);
-      submitBtn.textContent = 'Ошибка отправки';
+      const translations = window.translations;
+      submitBtn.textContent = translations.get('form.error.sending');
       submitBtn.style.background = 'linear-gradient(180deg, #FF3C3D 0%, #e63939 100%)';
       setTimeout(() => {
         submitBtn.textContent = originalText;

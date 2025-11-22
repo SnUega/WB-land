@@ -21,7 +21,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(12px, 1.04vw, 20px) clamp(24px, 2.08vw, 40px);
+  padding: 0;
   border-radius: 50px;
   cursor: pointer;
   border: 0;
@@ -29,29 +29,93 @@ body {
 }
 .button--glass {
   font-family: var(--font-family);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(217, 217, 217, 0.25) 100%);
-  box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(22.91px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(217, 217, 217, 0.8) 100%);
+  border: none;
+  position: relative;
+  box-shadow: -4.58px 9.16px 22.91px 0px rgba(145, 145, 145, 0.05),
+              -16.04px 38.95px 41.24px 0px rgba(145, 145, 145, 0.04),
+              -34.37px 84.77px 54.99px 0px rgba(145, 145, 145, 0.03),
+              -61.86px 151.22px 66.44px 0px rgba(145, 145, 145, 0.01),
+              -96.23px 235.99px 71.03px 0px rgba(145, 145, 145, 0),
+              0px 9.16px 9.16px 0px rgba(255, 255, 255, 0.25) inset,
+              0px -11.46px 9.16px 0px rgba(255, 255, 255, 0.25) inset;
+  backdrop-filter: blur(45.82278823852539px);
+  -webkit-backdrop-filter: blur(45.82278823852539px);
   color: var(--white);
   font-weight: 500;
   font-size: clamp(14px, 0.89vw, 18px);
   line-height: 150%;
   letter-spacing: 0.02em;
+  width: clamp(200px, 18vw, 260px);
+  height: clamp(50px, 4.5vw, 66px);
+  border-radius: 50px;
   animation: buttonBreathe 3s ease-in-out infinite;
   will-change: transform;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.button--glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 2px;
+  background: conic-gradient(from 102.75deg at 50% 52.91%, rgba(249, 249, 249, 0.5) -32.95deg, rgba(156, 156, 156, 0.5) 10.52deg, rgba(156, 156, 156, 0.35) 32.12deg, rgba(255, 255, 255, 0.5) 60.28deg, rgba(255, 255, 255, 0.5) 107.79deg, rgba(156, 156, 156, 0.35) 187.59deg, #F9F9F9 207.58deg, rgba(255, 255, 255, 0.5) 287.31deg, rgba(249, 249, 249, 0.5) 327.05deg, rgba(156, 156, 156, 0.5) 370.52deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+.button--glass > * {
+  position: relative;
+  z-index: 2;
+}
+.glass-effect {
+  background: var(--gradient-glass-bg);
+  backdrop-filter: blur(45.82278823852539px);
+  -webkit-backdrop-filter: blur(45.82278823852539px);
+  box-shadow: -4.58px 9.16px 22.91px 0px rgba(145, 145, 145, 0.05),
+              -16.04px 38.95px 41.24px 0px rgba(145, 145, 145, 0.04),
+              -34.37px 84.77px 54.99px 0px rgba(145, 145, 145, 0.03),
+              -61.86px 151.22px 66.44px 0px rgba(145, 145, 145, 0.01),
+              -96.23px 235.99px 71.03px 0px rgba(145, 145, 145, 0),
+              0px 9.16px 9.16px 0px rgba(255, 255, 255, 0.25) inset,
+              0px -11.46px 9.16px 0px rgba(255, 255, 255, 0.25) inset;
+  position: relative;
+  overflow: hidden;
+}
+.glass-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: var(--gradient-conic-border);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+.glass-effect > * {
+  position: relative;
+  z-index: 2;
 }
 @keyframes buttonBreathe {
   0%, 100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.02);
+    transform: scale(1.04);
   }
 }
 .button--glass:hover {
   animation: none;
   transform: scale(1.05);
-  transition: all 0.3s ease;
+  transition: transform 1.2s ease;
 }
 .button--glass:active {
   transform: scale(0.98);

@@ -14,7 +14,7 @@ class SectionHeadingsAnimation {
       if (headingSelectors.length === 0) return;
       const headings = headingSelectors
         .map((selector) => section.querySelector(selector))
-        .filter((el) => el !== null);
+        .filter((el) => el !== null && !el.dataset.animationDisabled);
       if (headings.length === 0) return;
       gsap.set(headings, {
         opacity: 0,

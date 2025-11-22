@@ -1,23 +1,35 @@
-class HeaderLangDropdown {
+class HeaderLang {
   constructor() {
     this.langDropdown = document.querySelector('[data-header-lang-dropdown]');
     this.langBtn = this.langDropdown?.querySelector('.header__lang-btn');
     this.langList = this.langDropdown?.querySelector('.header__lang-list');
     this.langOptions = this.langDropdown?.querySelectorAll('[data-lang]');
-    this.currentLang = 'rus';
     this.init();
   }
+
   init() {
     if (!this.langDropdown || !this.langBtn || !this.langList) return;
+
+    // Initialize current language from translations
+    if (window.translations) {
+      const currentLang = window.translations.getCurrentLang();
+      this.updateCurrentLang(currentLang);
+    }
+
+    // Toggle dropdown
     this.langBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      this.toggle();
+      this.toggleDropdown();
     });
+
+    // Close dropdown on outside click
     document.addEventListener('click', (e) => {
       if (!this.langDropdown.contains(e.target)) {
-        this.close();
+        this.closeDropdown();
       }
     });
+
+    // Handle language selection
     if (this.langOptions) {
       this.langOptions.forEach(option => {
         option.addEventListener('click', (e) => {
@@ -27,24 +39,44 @@ class HeaderLangDropdown {
         });
       });
     }
+
+    // Listen for language changes from other modules
+    window.addEventListener('languageChanged', (e) => {
+      this.updateCurrentLang(e.detail.lang);
+    });
   }
-  toggle() {
+
+  toggleDropdown() {
     this.langDropdown.classList.toggle('is-open');
   }
-  close() {
+
+  closeDropdown() {
     this.langDropdown.classList.remove('is-open');
   }
+
   selectLang(lang) {
-    if (this.currentLang === lang) {
-      this.close();
+    const currentLang = window.translations?.getCurrentLang() || 'rus';
+    if (currentLang === lang) {
+      this.closeDropdown();
       return;
     }
-    this.currentLang = lang;
+
+    // Change language through translations module
+    if (window.translations) {
+      window.translations.setLanguage(lang);
+    }
+
+    this.updateCurrentLang(lang);
+    this.closeDropdown();
+  }
+
+  updateCurrentLang(lang) {
     const langText = lang.toUpperCase();
     const currentLangEl = this.langDropdown.querySelector('.header__lang-current');
     if (currentLangEl) {
       currentLangEl.textContent = langText;
     }
+
     if (this.langOptions) {
       this.langOptions.forEach(option => {
         if (option.getAttribute('data-lang') === lang) {
@@ -54,15 +86,15 @@ class HeaderLangDropdown {
         }
       });
     }
-    this.close();
-    console.log('Language changed to:', lang);
   }
 }
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    new HeaderLangDropdown();
+    new HeaderLang();
   });
 } else {
-  new HeaderLangDropdown();
+  new HeaderLang();
 }
-export default HeaderLangDropdown;
+
+export default HeaderLang;
