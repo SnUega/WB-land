@@ -45,9 +45,10 @@ class SectionHeadingsAnimation {
           }
         }, 300);
       } else {
+        const isMobile = window.innerWidth <= 768;
         ScrollTrigger.create({
           trigger: section,
-          start: 'top 75%',
+          start: isMobile ? 'top 85%' : 'top 75%',
           end: 'bottom 25%',
           onEnter: () => {
             if (tl.progress() === 0) {
@@ -94,9 +95,10 @@ class SectionHeadingsAnimation {
             delay
           );
         });
+        const isMobile = window.innerWidth <= 768;
         ScrollTrigger.create({
           trigger: section2Content,
-          start: 'top 75%',
+          start: isMobile ? 'top 85%' : 'top 75%',
           end: 'bottom 25%',
           onEnter: () => {
             if (tl2.progress() === 0) {

@@ -1,7 +1,3 @@
-/**
- * Модуль плавной прокрутки через Lenis
- * Обрабатывает клики по ссылкам с data-smooth-scroll
- */
 class SmoothScroll {
   constructor() {
     this.lenis = null;
@@ -9,12 +5,10 @@ class SmoothScroll {
   }
 
   init() {
-    // Ждем инициализации Lenis
     if (window.lenis) {
       this.lenis = window.lenis;
       this.setupListeners();
     } else {
-      // Если Lenis еще не инициализирован, ждем
       const checkLenis = setInterval(() => {
         if (window.lenis) {
           this.lenis = window.lenis;
@@ -23,7 +17,6 @@ class SmoothScroll {
         }
       }, 100);
 
-      // Таймаут на случай, если Lenis не загрузится
       setTimeout(() => {
         clearInterval(checkLenis);
         if (!this.lenis) {
@@ -35,7 +28,6 @@ class SmoothScroll {
   }
 
   setupListeners() {
-    // Обработка всех ссылок с data-smooth-scroll
     const links = document.querySelectorAll('[data-smooth-scroll]');
     
     links.forEach(link => {
@@ -54,14 +46,12 @@ class SmoothScroll {
           return;
         }
 
-        // Закрываем мобильное меню, если открыто
         const mobileMenu = document.querySelector('.mobile-menu');
         if (mobileMenu && mobileMenu.classList.contains('is-open')) {
           const closeBtn = document.querySelector('[data-menu-close]');
           if (closeBtn) {
             closeBtn.click();
           } else {
-            // Fallback: закрываем через класс
             mobileMenu.classList.remove('is-open');
             const burger = document.querySelector('[data-burger]');
             if (burger) {
@@ -71,15 +61,13 @@ class SmoothScroll {
           }
         }
 
-        // Плавная прокрутка через Lenis
         if (this.lenis) {
           this.lenis.scrollTo(targetElement, {
             duration: 1.5,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            offset: -20, // Небольшой отступ сверху
+            offset: -20,
           });
         } else {
-          // Fallback на нативную прокрутку
           targetElement.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
@@ -90,7 +78,6 @@ class SmoothScroll {
   }
 
   setupNativeScroll() {
-    // Fallback для нативной плавной прокрутки
     const links = document.querySelectorAll('[data-smooth-scroll]');
     
     links.forEach(link => {
@@ -109,7 +96,6 @@ class SmoothScroll {
           return;
         }
 
-        // Закрываем мобильное меню
         const mobileMenu = document.querySelector('.mobile-menu');
         if (mobileMenu && mobileMenu.classList.contains('is-open')) {
           const closeBtn = document.querySelector('[data-menu-close]');
@@ -125,7 +111,6 @@ class SmoothScroll {
           }
         }
 
-        // Нативная плавная прокрутка
         targetElement.scrollIntoView({
           behavior: 'smooth',
           block: 'start',

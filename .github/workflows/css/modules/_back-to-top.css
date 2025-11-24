@@ -15,8 +15,8 @@
               -96.23px 235.99px 71.03px 0px rgba(145, 145, 145, 0),
               0px 9.16px 9.16px 0px rgba(255, 255, 255, 0.25) inset,
               0px -11.46px 9.16px 0px rgba(255, 255, 255, 0.25) inset;
-  backdrop-filter: blur(45.82278823852539px);
-  -webkit-backdrop-filter: blur(45.82278823852539px);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
   color: var(--black);
   cursor: pointer;
   display: flex;

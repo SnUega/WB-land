@@ -23,7 +23,7 @@
   position: relative;
 }
 .section-3__title {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(14px, 1.4vw, 20px);
   line-height: 120%;
@@ -33,7 +33,7 @@
   text-align: center;
 }
 .section-3__question {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(32px, 4.5vw, 55px);
   line-height: 120%;
@@ -46,7 +46,7 @@
   text-align: center;
 }
 .section-3__responses {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(14px, 1.2vw, 17px);
   line-height: 140%;
@@ -111,7 +111,7 @@
   z-index: 1;
 }
 .section-3__chart-axis-label {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(12px, 1.4vw, 17px);
   line-height: 140%;
@@ -134,7 +134,7 @@
   z-index: 1;
 }
 .chart-item__label {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(12px, 1.2vw, 17px);
   line-height: 140%;
@@ -148,16 +148,24 @@
   align-items: center;
   justify-content: flex-end;
 }
-.chart-item__bar-wrapper {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: clamp(2px, 0.3vw, 4px);
-  position: relative;
-  margin-left: 0;
-  padding-left: 0;
-  min-width: 0;
-}
+  .chart-item__bar-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: clamp(2px, 0.3vw, 4px);
+    position: relative;
+    margin-left: 0;
+    padding-left: 0;
+    min-width: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .chart-item__bar-wrapper {
+      margin-left: 0;
+      padding-left: 0;
+      gap: clamp(8px, 2vw, 12px);
+    }
+  }
 .chart-item__bar {
   height: clamp(20px, 2.5vw, 30px);
   background: #BD60EF;
@@ -179,7 +187,7 @@
   transform: scaleX(0.95);
 }
 .chart-item__value {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(12px, 1.4vw, 17px);
   line-height: 140%;
@@ -276,5 +284,100 @@
   }
   .section-3__chart {
     padding-top: clamp(16px, 1.6vw, 28px);
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .section-3 {
+    height: auto;
+    min-height: auto;
+    padding: 0;
+  }
+  
+  .section-3__content {
+    height: auto;
+    min-height: auto;
+    padding: clamp(30px, 6vw, 50px) clamp(20px, 5vw, 40px) clamp(20px, 4vw, 35px);
+  }
+  
+  .section-3__title {
+    font-size: clamp(12px, 3vw, 16px);
+    margin-bottom: clamp(8px, 2vw, 12px);
+  }
+  
+  .section-3__question {
+    font-size: clamp(28px, 7vw, 42px);
+    margin-bottom: clamp(6px, 1.5vw, 10px);
+  }
+  
+  .section-3__responses {
+    font-size: clamp(12px, 2.8vw, 16px);
+    margin-bottom: clamp(20px, 5vw, 35px);
+  }
+  
+  .section-3__chart {
+    gap: clamp(8px, 2vw, 12px);
+    padding: clamp(4px, 1vw, 8px) 0;
+  }
+  
+  .section-3__chart-grid {
+    left: clamp(75px, 18.5vw, 125px);
+    right: clamp(5px, 1.5vw, 15px);
+    bottom: clamp(2px, 0.5vw, 6px);
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+  
+  .section-3__chart-grid-line:nth-child(1) {
+    width: clamp(1.5px, 0.4vw, 2px);
+  }
+  
+  .section-3__chart-axis {
+    bottom: clamp(-18px, -4.5vw, -12px);
+    left: clamp(75px, 18.5vw, 125px);
+    right: clamp(5px, 1.5vw, 15px);
+    height: clamp(12px, 2.5vw, 18px);
+  }
+  
+  .section-3__chart-axis-label {
+    font-size: clamp(10px, 2.2vw, 14px);
+  }
+  
+  .chart-item {
+    height: clamp(12px, 3vw, 18px);
+  }
+  
+  .chart-item__label {
+    font-size: clamp(6px, 1.8vw, 10px);
+    width: clamp(75px, 18.5vw, 125px);
+    padding-right: clamp(6px, 1.5vw, 10px);
+  }
+  
+  .chart-item__bar {
+    height: clamp(12px, 3vw, 18px);
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .chart-item__bar[data-percent="83.7"] {
+    transform: scaleX(1.15);
+  }
+  
+  .chart-item__bar[data-percent="19.8"] {
+    transform: scaleX(1.1);
+  }
+  
+  .chart-item__bar[data-percent="1.2"] {
+    transform: scaleX(2.5);
+  }
+  
+  .chart-item__bar:not([data-percent="9.3"]):not([data-percent="19.8"]):not([data-percent="1.2"]):not([data-percent="83.7"]) {
+    transform: scaleX(1.12);
+  }
+  
+  .chart-item__value {
+    font-size: clamp(10px, 2.5vw, 14px);
+    min-width: clamp(75px, 18vw, 110px);
+    margin-left: clamp(4px, 1vw, 8px);
   }
 }

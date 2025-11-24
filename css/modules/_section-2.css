@@ -53,7 +53,7 @@
   margin-top: calc((clamp(16px, 1.4vw, 20px) * 1.4) * -1);
 }
 .section-2__subtitle {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(20px, 1.6vw, 21px);
   line-height: 140%;
@@ -61,7 +61,7 @@
   margin: 0;
 }
 .section-2__title {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(28px, 3vw, 56px);
   line-height: 120%;
@@ -70,7 +70,7 @@
   margin: 0;
 }
 .section-2__desc {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(20px, 1.6vw, 21px);
   line-height: 150%;
@@ -85,7 +85,7 @@
   padding-top: calc(clamp(5px, 1vw, 15px) + clamp(28px, 3vw, 56px) * 1.2 / 2 - clamp(16px, 1.5vw, 20px) * 1.5 / 2);
 }
 .section-2__cta {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 150%;
@@ -101,6 +101,19 @@
   gap: clamp(10px, 1.2vw, 25px);
   margin-top: clamp(30px, 4vw, 60px);
   width: 100%;
+}
+
+/* На десктопе слайдер не нужен - скрываем его структуру */
+.section-2__slider {
+  display: contents;
+}
+
+.section-2__slider-track {
+  display: contents;
+}
+
+.section-2__pagination {
+  display: none;
 }
 .stat-card {
   position: relative;
@@ -142,7 +155,7 @@
   margin-left: clamp(-6px, -0.6vw, -2px);
 }
 .stat-card__header-text {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(14px, 1.2vw, 17px);
   line-height: 140%;
@@ -169,14 +182,14 @@
   gap: clamp(5px, 0.8vw, 10px);
 }
 .stat-card__value-label {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(14px, 1.2vw, 16px);
   line-height: 140%;
   color: #A83AFD;
 }
 .stat-card__value {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(46px, 6vw, 82px);
   line-height: 1;
@@ -184,7 +197,7 @@
   margin: 0;
 }
 .stat-card__value-suffix {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1;
@@ -204,7 +217,7 @@
   flex: 1;
 }
 .stat-card__list-item {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(13px, 1.2vw, 16px);
   line-height: 150%;
@@ -430,5 +443,230 @@
   .stat-card__list-item {
     font-size: clamp(10px, 1vw, 13px);
     padding-left: clamp(16px, 2vw, 24px);
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .section-2-bg {
+    margin-top: 20px;
+    min-height: 95vh;
+    height: auto;
+    background-image: url('../../img/bg-section-2/portrait/sec-2-bg-mobile.png');
+  }
+  
+  .section-2-bg__balls-layer {
+    background-image: url('../../img/bg-section-2/portrait/balls-sec-2-mobile.png');
+    background-position: 80% 35%;
+    background-size: 135% auto;
+  }
+  
+  .section-2__header {
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(20px, 5vw, 40px);
+  }
+  
+  .section-2__header-left {
+    text-align: center;
+    align-items: center;
+    margin-top: 0;
+    width: 100%;
+  }
+  
+  .section-2__subtitle {
+    font-size: clamp(14px, 3.5vw, 18px);
+    text-align: center;
+  }
+  
+  .section-2__title {
+    font-size: clamp(23px, 4.5vw, 42px);
+    text-align: center;
+  }
+  
+  .section-2__desc {
+    font-size: clamp(16px, 3.2vw, 20px);
+    text-align: center;
+  }
+  
+  /* Делаем content flex-контейнером для изменения порядка */
+  .section-2__content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Используем display: contents на header, чтобы header-right мог быть переупорядочен */
+  .section-2__header {
+    order: 1;
+    display: contents;
+  }
+  
+  /* header-left получает order: 1 */
+  .section-2__header-left {
+    order: 1;
+  }
+  
+  /* Перемещаем header-right под карточки и центрируем */
+  .section-2__header-right {
+    order: 3;
+    justify-content: center;
+    padding-top: 0;
+    width: 100%;
+    margin-top: clamp(30px, 6vw, 50px);
+  }
+  
+  .section-2__cta {
+    text-align: center;
+    max-width: 100%;
+    font-size: clamp(24px, 3.5vw, 34px);
+  }
+  
+  /* Карточки получают order: 2, чтобы быть между header-left и header-right */
+  .section-2__cards {
+    order: 2;
+    width: 100%;
+    overflow: visible;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    /* Предотвращаем прокрутку страницы при свайпе по секции карточек */
+    touch-action: pan-y pinch-zoom;
+  }
+  
+  /* Слайдер для мобильных */
+  .section-2__slider {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    /* Разрешаем только вертикальную прокрутку и зум, горизонтальный свайп обрабатывается JS */
+    touch-action: pan-y pinch-zoom;
+  }
+  
+  .section-2__slider-track {
+    /* Разрешаем горизонтальный свайп для track */
+    touch-action: pan-x pan-y;
+  }
+  
+  .section-2__slider-track {
+    display: flex;
+    flex-direction: row;
+    will-change: transform;
+    gap: 20px; /* Отступ между карточками для корректного перелистывания */
+  }
+  
+  /* Карточки в слайдере - фиксированная ширина */
+  .section-2__slider-track .stat-card {
+    flex: 0 0 100%; /* Карточка занимает всю ширину слайдера */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: clamp(340px, 80vw, 430px);
+    padding: clamp(28px, 7vw, 36px) clamp(18px, 4.5vw, 24px);
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin: 0;
+    /* Добавляем легкое opacity и blur для фона */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(217, 217, 217, 0.55) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+  
+  .stat-card__header-text {
+    font-size: clamp(12px, 3.5vw, 18px);
+  }
+  
+  /* Пагинация */
+  .section-2__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: clamp(24px, 6vw, 32px);
+    padding: 0;
+    width: 100%;
+  }
+  
+  .section-2__pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    flex-shrink: 0;
+    outline: none;
+  }
+  
+  .section-2__pagination-dot--active {
+    width: 32px;
+    /* Активная пагинация в цвет фона карточки */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(217, 217, 217, 0.75) 100%);
+  }
+  
+  .section-2__pagination-dot:hover,
+  .section-2__pagination-dot:focus {
+    background: rgba(255, 255, 255, 0.7);
+  }
+  
+  .section-2__pagination-dot--active:hover,
+  .section-2__pagination-dot--active:focus {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(217, 217, 217, 0.9) 100%);
+  }
+  
+  .stat-card__header {
+    margin-bottom: clamp(12px, 3vw, 18px);
+    margin-top: 0;
+    gap: clamp(8px, 2vw, 12px);
+  }
+  
+  .stat-card__icon {
+    width: clamp(22px, 5.5vw, 30px);
+    height: clamp(22px, 5.5vw, 30px);
+    margin-left: 0;
+  }
+  
+  .stat-card__header-text {
+    font-size: clamp(11px, 3.4vw, 16px);
+  }
+  
+  .stat-card__value-wrapper {
+    margin-bottom: clamp(12px, 3vw, 18px);
+    gap: clamp(4px, 1vw, 6px);
+    padding-left: 0;
+  }
+  
+  .stat-card__value-row {
+    gap: clamp(4px, 1vw, 8px);
+  }
+  
+  .stat-card__value-label {
+    font-size: clamp(15px, 4vw, 20px);
+  }
+  
+  .stat-card__value {
+    font-size: clamp(52px, 13vw, 80px);
+  }
+  
+  .stat-card__value-suffix {
+    font-size: clamp(18px, 4.5vw, 24px);
+  }
+  
+  .stat-card__list {
+    gap: clamp(6px, 1.5vw, 10px);
+  }
+  
+  .stat-card__list-item {
+    font-size: clamp(14px, 4vw, 20px);
+    padding-left: clamp(16px, 4vw, 24px);
+    line-height: 140%;
+  }
+  
+  .stat-card__list-item::before {
+    left: 0;
+    font-size: 1.1em;
   }
 }

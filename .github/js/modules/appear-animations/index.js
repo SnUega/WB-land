@@ -9,53 +9,29 @@ class AppearAnimations {
   }
 
   init() {
-    // Hero section animations (first)
     this.initHeroAnimations();
-    
-    // LG card animations (second)
     this.initLgCard();
-    
-    // WB cards animations (third, with delay after lg-card)
     this.initWbCards();
-    
-    // Section-2 animations
     this.initSection2();
-    
-    // Section-3 animations (headers only, charts already animated)
     this.initSection3Headers();
-    
-    // Section-4 animations
     this.initSection4();
-    
-    // Section-5 animations
     this.initSection5();
-    
-    // Section-6 animations
     this.initSection6();
-    
-    // Section-7 animations
     this.initSection7();
-    
-    // Section-8 animations
     this.initSection8();
-    
-    // Section-9 animations
     this.initSection9();
-    
-    // Footer animations
     this.initFooter();
   }
 
-  /**
-   * Create reusable ScrollTrigger handlers for single element animations
-   * Elements reset only when completely out of viewport (end: 'bottom top')
-   */
   createAnimationHandler(config) {
+    const isMobile = window.innerWidth <= 768;
+    const defaultTriggerStart = isMobile ? 'top 90%' : 'top 80%';
+    
     const {
       element,
       initialProps,
       animateProps,
-      triggerStart = 'top 80%',
+      triggerStart = defaultTriggerStart,
       triggerEnd = 'bottom top',
       delay = 0,
       once = false,
@@ -86,9 +62,7 @@ class AppearAnimations {
       handlers.onLeave = () => {
         gsap.killTweensOf(element);
         if (onLeaveCallback) {
-          // Execute callback first (fade out), then reset
           onLeaveCallback();
-          // Reset after fade out completes
           gsap.delayedCall(0.4, () => {
             gsap.set(element, initialProps);
           });
@@ -99,9 +73,7 @@ class AppearAnimations {
       handlers.onLeaveBack = () => {
         gsap.killTweensOf(element);
         if (onLeaveCallback) {
-          // Execute callback first (fade out), then reset
           onLeaveCallback();
-          // Reset after fade out completes
           gsap.delayedCall(0.4, () => {
             gsap.set(element, initialProps);
           });
@@ -120,10 +92,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Universal function to animate headers with cascade effect
-   * Used for all header animations (hero, section-2, section-3, section-4, lg-card)
-   */
   animateHeadersCascade(headers, config = {}) {
     const {
       direction = 'bottom', // 'bottom' or 'right'
@@ -139,7 +107,6 @@ class AppearAnimations {
     const validHeaders = headers.filter(el => el !== null);
     if (validHeaders.length === 0) return;
 
-    // Get distance - support both function and number
     const getDistance = () => {
       if (typeof distance === 'function') return distance();
       if (distance !== null) return distance;
@@ -148,7 +115,6 @@ class AppearAnimations {
 
     const dist = getDistance();
     
-    // Helper to get initial and animate props
     const getProps = (index) => {
       const initialProps = direction === 'bottom' 
         ? { opacity: 0, y: dist }
@@ -161,16 +127,13 @@ class AppearAnimations {
       return { initialProps, animateProps };
     };
 
-    // Set initial state for all headers
     validHeaders.forEach((el) => {
       const { initialProps } = getProps(0);
       gsap.set(el, initialProps);
     });
 
-    // Use provided trigger or first header
     const trigger = triggerElement || validHeaders[0];
     
-    // Common animation function
     const animateHeaders = () => {
       validHeaders.forEach((el, index) => {
         gsap.killTweensOf(el);
@@ -180,18 +143,15 @@ class AppearAnimations {
       });
     };
 
-    // Common reset function with smooth fade out
     const resetHeaders = () => {
       validHeaders.forEach((el) => {
         gsap.killTweensOf(el);
-        // Smooth fade out animation
         const dist = getDistance();
         const fadeOutProps = direction === 'bottom' 
           ? { opacity: 0, y: dist * 0.3, duration: 0.4, ease: 'power1.in' }
           : { opacity: 0, x: dist * 0.3, duration: 0.4, ease: 'power1.in' };
         
         gsap.to(el, fadeOutProps).then(() => {
-          // Reset to initial state after fade out
           const { initialProps } = getProps(0);
           gsap.set(el, initialProps);
         });
@@ -210,10 +170,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Hero section: title and desc
-   * Slide from right with fade, uses universal cascade function
-   */
   initHeroAnimations() {
     const heroTitle = document.querySelector('.hero__title');
     const heroDesc = document.querySelector('.hero__desc');
@@ -238,14 +194,10 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * LG card: complex animations
-   */
   initLgCard() {
     const lgCard = document.querySelector('.lg-card');
     if (!lgCard) return;
 
-    // LG card itself - bubble effect
     this.createAnimationHandler({
       element: lgCard,
       initialProps: { opacity: 0, scale: 0.85 },
@@ -255,10 +207,8 @@ class AppearAnimations {
       once: false
     });
 
-    // Bars - animate from zero height
     this.initLgCardBars(lgCard);
 
-    // Cats and title - slide from bottom with cascade
     const cats = lgCard.querySelector('.lg-card__cats');
     const title = lgCard.querySelector('.lg-card__title');
     
@@ -270,7 +220,6 @@ class AppearAnimations {
       duration: 1.0
     });
 
-    // List items with cascade - slide from left
     const listItems = lgCard.querySelectorAll('.lg-card__list li');
     listItems.forEach((item, index) => {
       const distance = window.innerWidth < 768 ? -30 : window.innerWidth > 1920 ? -40 : -35;
@@ -298,9 +247,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Animate check icon with drawing effect
-   */
   animateCheckIcon(check, delay = 0) {
     gsap.set(check, {
       opacity: 0,
@@ -316,9 +262,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * LG card bars: animate from zero height using scaleY
-   */
   initLgCardBars(lgCard) {
     const barsContainer = lgCard.querySelector('.bars');
     if (!barsContainer) return;
@@ -365,9 +308,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * WB cards: bubble effect
-   */
   initWbCards() {
     const allWbCards = document.querySelectorAll('.wb-card');
     const wbCards = Array.from(allWbCards).filter((card) => {
@@ -385,7 +325,6 @@ class AppearAnimations {
         delay: 0.3,
         once: false,
         onLeaveCallback: () => {
-          // Smooth fade out for wb-cards
           gsap.to(card, {
             opacity: 0,
             scale: 0.8,
@@ -397,9 +336,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-2 animations
-   */
   initSection2() {
     const section2Content = document.querySelector('.section-2__content');
     if (!section2Content) return;
@@ -408,10 +344,6 @@ class AppearAnimations {
     this.initSection2Cards(section2Content);
   }
 
-  /**
-   * Section-2 headers: same animation as hero (right to left) with cascade
-   * Uses universal cascade function
-   */
   initSection2Headers(section2) {
     const headerLeft = section2.querySelector('.section-2__header-left');
     if (!headerLeft) return;
@@ -440,9 +372,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-2 cards: simultaneously, from slight scale up with bottom to top shift and fade
-   */
   initSection2Cards(section2) {
     const cards = section2.querySelectorAll('.stat-card');
     if (cards.length === 0) return;
@@ -473,9 +402,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Animate content inside section-2 cards: cascade top to bottom
-   */
   animateSection2CardContent(card, baseDelay = 0) {
     const header = card.querySelector('.stat-card__header');
     const valueWrapper = card.querySelector('.stat-card__value-wrapper');
@@ -502,10 +428,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-3 headers: slide from bottom with fade and cascade
-   * Uses universal cascade function
-   */
   initSection3Headers() {
     const section3 = document.querySelector('.section-3');
     if (!section3) return;
@@ -527,9 +449,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-4 animations
-   */
   initSection4() {
     const section4 = document.querySelector('.section-4');
     if (!section4) return;
@@ -538,10 +457,6 @@ class AppearAnimations {
     this.initSection4SliderCards(section4);
   }
 
-  /**
-   * Section-4 headers: slide from bottom with fade and cascade
-   * Uses universal cascade function
-   */
   initSection4Headers(section4) {
     const title = section4.querySelector('.section-4__title');
     const question = section4.querySelector('.section-4__question');
@@ -560,9 +475,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-4 slider cards: bubble effect with cascade (same as wb-cards but with increased amplitude)
-   */
   initSection4SliderCards(section4) {
     const sliderItems = section4.querySelectorAll('.section-4__slider-item');
     if (sliderItems.length === 0) return;
@@ -571,7 +483,6 @@ class AppearAnimations {
       const card = item.querySelector('.slider-card');
       if (!card) return;
 
-      // Bubble effect with increased amplitude
       this.createAnimationHandler({
         element: card,
         initialProps: { opacity: 0, scale: 0.2 },
@@ -584,23 +495,14 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-5 animations
-   */
   initSection5() {
     const section5 = document.querySelector('.section-5');
     if (!section5) return;
 
-    // Headers: same animation as section-3 and section-4
     this.initSection5Headers(section5);
-    
-    // Elements with bubble effect in cascade groups
     this.initSection5Elements(section5);
   }
 
-  /**
-   * Section-5 headers: same animation as section-3 and section-4
-   */
   initSection5Headers(section5) {
     const title = section5.querySelector('.section-5__title');
     const question = section5.querySelector('.section-5__question');
@@ -618,10 +520,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-5 elements: bubble effect with precise cascade order
-   * Exclude: woman.png, scarf.png, bag-1.png
-   */
   initSection5Elements(section5) {
     // Define elements in exact order with their delays
     const elements = [
@@ -660,23 +558,14 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-6 animations
-   */
   initSection6() {
     const section6 = document.querySelector('.section-6');
     if (!section6) return;
 
-    // Headers: same animation as section-3, 4, 5
     this.initSection6Headers(section6);
-    
-    // Features: embossed text effect animation
     this.initSection6Features(section6);
   }
 
-  /**
-   * Section-6 headers: same animation as section-3, 4, 5
-   */
   initSection6Headers(section6) {
     const subtitle = section6.querySelector('.section-6__subtitle');
     const title = section6.querySelector('.section-6__title');
@@ -693,10 +582,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-6 features: embossed text effect (appear from scale up with pressing effect)
-   * All features animate simultaneously
-   */
   initSection6Features(section6) {
     const features = section6.querySelectorAll('.section-6__feature');
     if (features.length === 0) return;
@@ -747,32 +632,17 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-7 animations
-   */
   initSection7() {
     const section7 = document.querySelector('.section-7');
     if (!section7) return;
 
-    // Headers: same animation as hero and section-2 (right to left)
     this.initSection7Headers(section7);
-    
-    // Slider cards: bubble effect, only on first appearance
     this.initSection7SliderCards(section7);
-    
-    // Product cards inside slider: bubble effect (reuse common animation)
     this.initSection7ProductCards(section7);
-    
-    // Card titles: appear from bottom like peeking over a fence
     this.initSection7CardTitles(section7);
-    
-    // Card results: cascade from top to bottom
     this.initSection7CardResults(section7);
   }
 
-  /**
-   * Section-7 headers: same animation as hero and section-2 (right to left)
-   */
   initSection7Headers(section7) {
     const subtitle = section7.querySelector('.section-7__subtitle');
     const title = section7.querySelector('.section-7__title');
@@ -780,7 +650,6 @@ class AppearAnimations {
     
     if (headers.length === 0) return;
 
-    // Get adaptive distance function from hero
     const getHeroDistance = () => {
       const baseDistance = 50;
       const viewportWidth = window.innerWidth;
@@ -802,9 +671,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-7 slider cards: bubble effect with reduced amplitude, only on first appearance
-   */
   initSection7SliderCards(section7) {
     const sliderCards = section7.querySelectorAll('.section-7__card');
     if (sliderCards.length === 0) return;
@@ -814,13 +680,13 @@ class AppearAnimations {
         element: card,
         initialProps: {
           opacity: 0,
-          scale: 0.65 // Increased from 0.5 to make cards larger at start
+          scale: 0.65
         },
         animateProps: {
           opacity: 1,
           scale: 1,
           duration: 1.8,
-          ease: 'back.out(1.0)', // Reduced amplitude further to prevent overlap
+          ease: 'back.out(1.0)',
           delay: index * 0.08
         },
         triggerStart: 'top 85%',
@@ -829,9 +695,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-7 product cards: reuse common bubble animation
-   */
   initSection7ProductCards(section7) {
     const productCards = section7.querySelectorAll('.section-7__card-product .wb-card--section-5');
     if (productCards.length === 0) return;
@@ -856,9 +719,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-7 card titles: appear from bottom like peeking over a fence/curtain
-   */
   initSection7CardTitles(section7) {
     const cardTitles = section7.querySelectorAll('.section-7__card-title');
     if (cardTitles.length === 0) return;
@@ -896,9 +756,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-7 card results: cascade from top to bottom with fade
-   */
   initSection7CardResults(section7) {
     const resultsContainers = section7.querySelectorAll('.section-7__card-results');
     if (resultsContainers.length === 0) return;
@@ -908,7 +765,6 @@ class AppearAnimations {
       const resultItems = Array.from(resultsContainer.children);
       if (resultItems.length === 0) return;
 
-      // Set initial state for all items
       resultItems.forEach((item) => {
         gsap.set(item, {
           opacity: 0,
@@ -916,7 +772,6 @@ class AppearAnimations {
         });
       });
 
-      // Use container as trigger for unified cascade
       const animateResults = () => {
         resultItems.forEach((item, index) => {
           gsap.killTweensOf(item);
@@ -925,7 +780,7 @@ class AppearAnimations {
             y: 0,
             duration: 0.8,
             ease: 'power2.out',
-            delay: 0.4 + (index * 0.15) // Start after card and title appear
+            delay: 0.4 + (index * 0.15)
           });
         });
       };
@@ -939,25 +794,16 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-8 animations
-   */
   initSection8() {
     const section8 = document.querySelector('.section-8');
     if (!section8) return;
 
-    // Headers: same animation as sections 3, 4, 5, 6 (bottom to top)
     this.initSection8Headers(section8);
   }
 
-  /**
-   * Section-8 headers: same animation as sections 3, 4, 5, 6
-   * Note: description is excluded from animation
-   */
   initSection8Headers(section8) {
     const subtitle = section8.querySelector('.section-8__subtitle');
     const title = section8.querySelector('.section-8__title');
-    // description excluded from animation per user request
 
     const headers = [subtitle, title].filter(el => el !== null);
     if (headers.length === 0) return;
@@ -969,21 +815,14 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-9 animations
-   */
   initSection9() {
     const section9 = document.querySelector('.section-9');
     if (!section9) return;
 
-    // Headers: same animation as sections 3, 4, 5, 6, 8
     this.initSection9Headers(section9);
     this.initSection9Accordion(section9);
   }
 
-  /**
-   * Section-9 headers: same animation as sections 3, 4, 5, 6, 8
-   */
   initSection9Headers(section9) {
     const title = section9.querySelector('.section-9__title');
     const desc = section9.querySelector('.section-9__desc');
@@ -998,26 +837,22 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Section-9 accordion items: bubble effect with cascade from top to bottom
-   */
   initSection9Accordion(section9) {
     const accordionItems = section9.querySelectorAll('.section-9__accordion-item');
     if (accordionItems.length === 0) return;
 
     accordionItems.forEach((item, index) => {
-      const delay = index * 0.05; // Cascade from top to bottom (reduced delay)
+      const delay = index * 0.05;
 
       this.createAnimationHandler({
         element: item,
         initialProps: { opacity: 0, scale: 0.2 },
         animateProps: { opacity: 1, scale: 1, duration: 1.8, ease: 'back.out(1.4)' },
-        triggerStart: 'top 90%', // Start earlier
+        triggerStart: 'top 90%',
         triggerEnd: 'top top',
         delay: delay,
         once: true,
         onLeaveCallback: () => {
-          // Smooth fade out
           gsap.to(item, {
             opacity: 0,
             scale: 0.8,
@@ -1029,9 +864,6 @@ class AppearAnimations {
     });
   }
 
-  /**
-   * Footer animations: cascade from top to bottom with fade and slight scale
-   */
   initFooter() {
     const footer = document.querySelector('.footer');
     if (!footer) return;

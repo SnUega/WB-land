@@ -16,7 +16,6 @@ class Section3Animation {
     const responsesNumber = this.section.querySelector('.section-3__responses-number');
     const bars = this.section.querySelectorAll('.chart-item__bar');
     const values = this.section.querySelectorAll('.chart-item__value');
-    // Reset function to be called on each animation
     const resetAnimation = () => {
       gsap.set(bars, { width: '0%' });
       if (responsesNumber) {
@@ -31,7 +30,6 @@ class Section3Animation {
       });
     };
     
-    // Initial reset
     resetAnimation();
     if (responsesNumber) {
       let responsesNumberTween = null;

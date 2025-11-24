@@ -10,26 +10,22 @@ class HeaderLang {
   init() {
     if (!this.langDropdown || !this.langBtn || !this.langList) return;
 
-    // Initialize current language from translations
     if (window.translations) {
       const currentLang = window.translations.getCurrentLang();
       this.updateCurrentLang(currentLang);
     }
 
-    // Toggle dropdown
     this.langBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       this.toggleDropdown();
     });
 
-    // Close dropdown on outside click
     document.addEventListener('click', (e) => {
       if (!this.langDropdown.contains(e.target)) {
         this.closeDropdown();
       }
     });
 
-    // Handle language selection
     if (this.langOptions) {
       this.langOptions.forEach(option => {
         option.addEventListener('click', (e) => {
@@ -40,7 +36,6 @@ class HeaderLang {
       });
     }
 
-    // Listen for language changes from other modules
     window.addEventListener('languageChanged', (e) => {
       this.updateCurrentLang(e.detail.lang);
     });
@@ -61,7 +56,6 @@ class HeaderLang {
       return;
     }
 
-    // Change language through translations module
     if (window.translations) {
       window.translations.setLanguage(lang);
     }

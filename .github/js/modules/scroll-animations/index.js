@@ -5,28 +5,13 @@ class ScrollAnimations {
   }
 
   init() {
-    // Headings animations
     this.initHeadings();
-    
-    // Section-3 graphs and numbers (repeat on each viewport entry)
     this.initRepeatAnimations();
-    
-    // Cards section-2
     this.initSection2Cards();
-    
-    // Cards section-7 slider
     this.initSection7Cards();
-    
-    // Section-6 features
     this.initSection6Features();
-    
-    // Badges section-5
     this.initSection5Badges();
-    
-    // Product cards (wb-card) - bubble effect
     this.initProductCards();
-    
-    // Other cards (only first appearance)
     this.initCardsOnce();
   }
 
@@ -36,7 +21,6 @@ class ScrollAnimations {
       return this.observers.get(key);
     }
 
-    // Track if this is the first check to add delay for initially visible elements
     let isFirstCheck = true;
     const initialCheck = () => {
       setTimeout(() => {
@@ -69,7 +53,6 @@ class ScrollAnimations {
             }
           }
         } else if (repeat) {
-          // Reset animation when element leaves viewport for repeat animations
           entry.target.classList.remove('is-visible');
         }
       });
@@ -80,7 +63,6 @@ class ScrollAnimations {
   }
 
   initHeadings() {
-    // Use specific selectors to avoid conflicts with GSAP animations
     const headingSelectors = [
       '.section-2__subtitle', '.section-2__title', '.section-2__desc',
       '.section-3__title', '.section-3__question', '.section-3__responses',
@@ -95,7 +77,6 @@ class ScrollAnimations {
     headingSelectors.forEach(selector => {
       const elements = document.querySelectorAll(selector);
       elements.forEach(el => {
-        // Disable GSAP animations for these headings
         el.dataset.animationDisabled = 'true';
         headings.push(el);
       });
@@ -104,30 +85,23 @@ class ScrollAnimations {
     headings.forEach((heading) => {
       const classList = Array.from(heading.classList);
       
-      // Special cases
       const isHeroHeading = (heading.classList.contains('hero__title') || heading.classList.contains('hero__desc'));
       const isSection2Heading = heading.classList.contains('section-2__subtitle') || heading.classList.contains('section-2__title') || heading.classList.contains('section-2__desc');
       const isSection7Heading = heading.classList.contains('section-7__title');
       
-      // Determine alignment and add appropriate class
-      let animationClass = 'animate-heading-center'; // default: bottom to top
+      let animationClass = 'animate-heading-center';
       
       if (isHeroHeading) {
-        // Hero: right to left
         animationClass = 'animate-heading-right';
       } else if (isSection7Heading) {
-        // Section-7: right to left with more smoothness and offset
         animationClass = 'animate-heading-right-smooth';
       } else if (isSection2Heading) {
-        // Section-2: top to bottom
         animationClass = 'animate-heading-top';
       }
-      // All others (3,4,5,6,8): bottom to top (default)
       
       heading.classList.add(animationClass);
     });
 
-    // Track if this is the first check to add delay for initially visible elements
     let isFirstCheck = true;
     const initialCheck = () => {
       setTimeout(() => {
@@ -143,33 +117,29 @@ class ScrollAnimations {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Check if element is in hero section for longer delay
           const isHeroElement = entry.target.closest('.hero-section');
           const delayTime = isHeroElement ? 400 : 100;
           
-          // Reset animation state first
           entry.target.classList.remove('is-visible');
-          // Force reflow to ensure animation resets
           void entry.target.offsetWidth;
           
-          // If first check and element is already visible, add delay
           const shouldDelay = isFirstCheck && entry.boundingClientRect.top < window.innerHeight;
           if (shouldDelay) {
             setTimeout(() => {
               entry.target.classList.add('is-visible');
             }, delayTime);
           } else {
-            // Add visible class to trigger animation immediately
             entry.target.classList.add('is-visible');
           }
         } else {
-          // Reset when leaving viewport for repeat animations (all headings should repeat)
           entry.target.classList.remove('is-visible');
-          // Force reflow to ensure animation resets for next time
           void entry.target.offsetWidth;
         }
       });
-    }, { threshold: 0.1, rootMargin: '50px 0px' });
+    }, { 
+      threshold: 0.1, 
+      rootMargin: window.innerWidth <= 768 ? '150px 0px' : '50px 0px' 
+    });
 
     headings.forEach((heading) => {
       observer.observe(heading);
@@ -177,14 +147,12 @@ class ScrollAnimations {
   }
 
   initRepeatAnimations() {
-    // Section-3 graphs and numbers
     const section3Elements = document.querySelectorAll('.section-3__chart, .section-3__responses-number, .section-3__chart-grid, .section-3__chart-axis');
     
     section3Elements.forEach((el) => {
       el.classList.add('animate-repeat-on-scroll');
     });
 
-    // Track if this is the first check to add delay for initially visible elements
     let isFirstCheck = true;
     const initialCheck = () => {
       setTimeout(() => {
@@ -200,26 +168,24 @@ class ScrollAnimations {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Reset animation state first
           entry.target.classList.remove('is-visible');
-          // Force reflow to ensure animation resets
           void entry.target.offsetWidth;
           
-          // If first check and element is already visible, add small delay
           if (isFirstCheck && entry.boundingClientRect.top < window.innerHeight) {
             setTimeout(() => {
               entry.target.classList.add('is-visible');
             }, 100);
           } else {
-            // Add visible class to trigger animation immediately
             entry.target.classList.add('is-visible');
           }
         } else {
-          // Reset when leaving viewport for repeat animations
           entry.target.classList.remove('is-visible');
         }
       });
-    }, { threshold: 0.1, rootMargin: '50px 0px' });
+    }, { 
+      threshold: 0.1, 
+      rootMargin: window.innerWidth <= 768 ? '150px 0px' : '50px 0px' 
+    });
 
     section3Elements.forEach((el) => {
       observer.observe(el);
@@ -234,7 +200,10 @@ class ScrollAnimations {
     });
 
     const observer = this.createObserver(
-      { threshold: 0.1, rootMargin: '100px 0px' },
+      { 
+        threshold: 0.1, 
+        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+      },
       (element) => {
         element.classList.add('is-visible');
       },
@@ -273,7 +242,6 @@ class ScrollAnimations {
             const index = Array.from(entry.target.parentElement.parentElement.querySelectorAll('.section-7__slider-item')).indexOf(entry.target.parentElement);
             const delay = index * 100;
             
-            // If first check and element is already visible, add small delay
             if (isFirstCheck && entry.boundingClientRect.top < window.innerHeight) {
               setTimeout(() => {
                 entry.target.classList.add('is-visible');
@@ -288,7 +256,10 @@ class ScrollAnimations {
           }
         }
       });
-    }, { threshold: 0.1, rootMargin: '100px 0px' });
+    }, { 
+      threshold: 0.1, 
+      rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+    });
 
     cards.forEach((card) => {
       observer.observe(card);
@@ -303,16 +274,19 @@ class ScrollAnimations {
     });
 
     const observer = this.createObserver(
-      { threshold: 0.1, rootMargin: '100px 0px' },
+      { 
+        threshold: 0.1, 
+        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+      },
       (element) => {
         const features = Array.from(document.querySelectorAll('.section-6__feature'));
         const index = features.indexOf(element);
-        const delay = index * 80; // Cascade delay
+        const delay = index * 80;
         setTimeout(() => {
           element.classList.add('is-visible');
         }, delay);
       },
-      true // Repeat on each viewport entry
+      true
     );
 
     features.forEach((feature) => {
@@ -321,7 +295,6 @@ class ScrollAnimations {
   }
 
   initSection5Badges() {
-    // Group 1: cards and badges 1 and 2 (first)
     const group1 = [
       ...document.querySelectorAll('.section-5 .wb-card--section-5-1'),
       ...document.querySelectorAll('.section-5 .wb-card--section-5-2'),
@@ -329,19 +302,16 @@ class ScrollAnimations {
       ...document.querySelectorAll('.section-5 .advantage-card--2')
     ];
     
-    // Group 2: badge 3 and cream.png (second)
     const group2 = [
       ...document.querySelectorAll('.section-5 .advantage-card--3'),
       ...document.querySelectorAll('.section-5 .section-5__product-img--cream')
     ];
     
-    // Group 3: badge 4 and cream-2.png (third)
     const group3 = [
       ...document.querySelectorAll('.section-5 .advantage-card--4'),
       ...document.querySelectorAll('.section-5 .section-5__product-img--cream-2')
     ];
     
-    // Combine all elements
     const allElements = [...group1, ...group2, ...group3];
     
     allElements.forEach((element) => {
@@ -349,23 +319,25 @@ class ScrollAnimations {
     });
 
     const observer = this.createObserver(
-      { threshold: 0.1, rootMargin: '100px 0px' },
+      { 
+        threshold: 0.1, 
+        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+      },
       (element) => {
-        // Determine which group the element belongs to
         let delay = 0;
         if (group1.includes(element)) {
           delay = 0;
         } else if (group2.includes(element)) {
-          delay = 300; // 300ms after group 1
+          delay = 300;
         } else if (group3.includes(element)) {
-          delay = 600; // 600ms after group 1 (300ms after group 2)
+          delay = 600;
         }
         
         setTimeout(() => {
           element.classList.add('is-visible');
         }, delay);
       },
-      true // Repeat on each viewport entry
+      true
     );
 
     allElements.forEach((element) => {
@@ -374,22 +346,23 @@ class ScrollAnimations {
   }
 
   initProductCards() {
-    // All wb-card elements on the page (except section-5 which are already animated)
     const productCards = document.querySelectorAll('.wb-card:not(.section-5 .wb-card)');
     
     productCards.forEach((card) => {
-      // Skip if already has animation class
       if (!card.classList.toString().match(/animate-/)) {
         card.classList.add('animate-badge-section-5');
       }
     });
 
     const observer = this.createObserver(
-      { threshold: 0.1, rootMargin: '100px 0px' },
+      { 
+        threshold: 0.1, 
+        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+      },
       (element) => {
         element.classList.add('is-visible');
       },
-      true // Repeat on each viewport entry
+      true
     );
 
     productCards.forEach((card) => {
@@ -398,22 +371,23 @@ class ScrollAnimations {
   }
 
   initCardsOnce() {
-    // Other cards that should animate on each viewport entry (excluding section-2, section-4, section-7 cards and wb-card which are handled separately)
     const cards = document.querySelectorAll('[class*="card"]:not(.section-2 [class*="card"]):not(.section-7__card):not(.section-4 [class*="card"]):not(.wb-card)');
     
     cards.forEach((card) => {
-      // Skip if already has animation class
       if (!card.classList.toString().match(/animate-/)) {
         card.classList.add('animate-card-once');
       }
     });
 
     const observer = this.createObserver(
-      { threshold: 0.1, rootMargin: '100px 0px' },
+      { 
+        threshold: 0.1, 
+        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+      },
       (element) => {
         element.classList.add('is-visible');
       },
-      true // Repeat on each viewport entry
+      true
     );
 
     cards.forEach((card) => {

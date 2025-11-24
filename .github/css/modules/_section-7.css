@@ -59,20 +59,24 @@
     color: #858595;
     transition: all 0.3s ease;
     padding: 0;
+    /* Используем filter: drop-shadow для внешних теней - они не обрезаются overflow: hidden */
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15)) 
+            drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.12)) 
+            drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1));
+    /* Inset тени через box-shadow - они внутри элемента и не обрезаются */
     box-shadow: 
-        0px 4px 20px 0px rgba(0, 0, 0, 0.15),
-        0px 8px 32px 0px rgba(0, 0, 0, 0.12),
-        0px 2px 8px 0px rgba(0, 0, 0, 0.1),
         0px 10px 10px 0px #FFFFFF40 inset,
         0px -10px 10px 0px #FFFFFF40 inset;
 }
 .section-7__slider-btn:hover {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(217, 217, 217, 0.35) 100%);
     transform: scale(1.05);
+    /* Используем filter: drop-shadow для внешних теней при hover */
+    filter: drop-shadow(0px 6px 24px rgba(0, 0, 0, 0.2)) 
+            drop-shadow(0px 12px 40px rgba(0, 0, 0, 0.15)) 
+            drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.12));
+    /* Inset тени через box-shadow */
     box-shadow: 
-        0px 6px 24px 0px rgba(0, 0, 0, 0.2),
-        0px 12px 40px 0px rgba(0, 0, 0, 0.15),
-        0px 4px 12px 0px rgba(0, 0, 0, 0.12),
         0px 10px 10px 0px #FFFFFF50 inset,
         0px -10px 10px 0px #FFFFFF50 inset;
 }
@@ -93,6 +97,10 @@
 .section-7__slider-btn:disabled:hover {
     transform: scale(1);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(217, 217, 217, 0.25) 100%);
+    /* Возвращаем обычные тени для disabled состояния */
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15)) 
+            drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.12)) 
+            drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1));
 }
 .section-7__slider-btn svg {
     width: clamp(20px, 2.5vw, 28px);
@@ -116,7 +124,7 @@
     padding-left: max(clamp(20px, 5vw, 100px), clamp(110px, 11vw, 130px));
 }
 .section-7__subtitle {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 500;
     font-size: clamp(14px, 1.5vw, 20px);
     line-height: 130%;
@@ -127,7 +135,7 @@
     text-align: left;
 }
 .section-7__title {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 700;
     font-size: clamp(32px, 4.5vw, 55px);
     line-height: 130%;
@@ -174,8 +182,8 @@
     height: clamp(300px, 35.5vw, 509px);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(217, 217, 217, 0.4) 100%);
     border-radius: 50px;
-    backdrop-filter: blur(45.82278823852539px) saturate(180%);
-    -webkit-backdrop-filter: blur(45.82278823852539px) saturate(180%);
+    backdrop-filter: var(--backdrop-blur) saturate(180%);
+    -webkit-backdrop-filter: var(--backdrop-blur) saturate(180%);
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
@@ -233,7 +241,7 @@
     width: clamp(120px, 14.6vw, 240px);
 }
 .section-7__card-title {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 700;
     font-size: clamp(18px, 2vw, 30px);
     line-height: 130%;
@@ -285,7 +293,7 @@
 }
 .section-7__card-service .section-7__card-label,
 .section-7__card-reviews .section-7__card-label {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 500;
     font-size: clamp(12px, 1.2vw, 17px);
     line-height: 150%;
@@ -293,7 +301,7 @@
     color: #1C1C1C;
 }
 .section-7__card-service .section-7__card-value {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: clamp(14px, 1.4vw, 20px);
     line-height: 130%;
@@ -301,7 +309,7 @@
     color: #1C1C1C;
 }
 .section-7__card-reviews .section-7__card-value {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 700;
     font-size: clamp(16px, 1.8vw, 24px);
     line-height: 135%;
@@ -315,7 +323,7 @@
     margin-left: clamp(-3px, -0.3vw, -5px);
 }
 .section-7__card-result .section-7__card-label {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: clamp(12px, 1.2vw, 17px);
     line-height: 150%;
@@ -329,7 +337,7 @@
 }
 .section-7__card-desc-short,
 .section-7__card-desc-full {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 500;
     font-size: clamp(12px, 1.2vw, 17px);
     line-height: 150%;
@@ -354,7 +362,7 @@
     display: block;
 }
 .section-7__card-read-more {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 700;
     font-size: clamp(12px, 1.2vw, 17px);
     line-height: 150%;
@@ -384,7 +392,7 @@
     margin-top: auto;
 }
 .section-7__card-rating .section-7__card-label {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: clamp(12px, 1.2vw, 17px);
     line-height: 150%;
@@ -398,7 +406,7 @@
     justify-content: flex-end;
 }
 .section-7__card-rating-old {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 500;
     font-size: clamp(14px, 1.4vw, 20px);
     line-height: 130%;
@@ -407,7 +415,7 @@
     text-decoration: line-through;
 }
 .section-7__card-rating-new {
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: clamp(24px, 2.8vw, 40px);
     line-height: 100%;
@@ -770,5 +778,211 @@
   }
   .section-7__button {
     margin-top: clamp(18px, 2.8vw, 48px);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-7 {
+    width: 100%; /* Используем 100% вместо 100vw на мобильных, чтобы избежать горизонтального скролла */
+    margin-left: 0; /* Убираем отрицательный margin на мобильных */
+    border-radius: var(--border-radius-mobile);
+    height: auto; /* Автоматическая высота для динамического подстраивания */
+    min-height: clamp(820px, 117vw, 1220px);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+    overflow-y: visible; /* Разрешаем вертикальный overflow для раскрытого контента */
+    position: relative; /* Убеждаемся, что позиционирование корректно */
+  }
+  .section-7__card-service {
+    margin-top: clamp(20px, 2.4vw, 35px);
+    font-size: clamp(9px, 1vw, 18px);
+  }
+  .section-7__card-reviews {
+    margin-top: clamp(20px, 2.4vw, 35px);
+    font-size: clamp(9px, 1vw, 21px);
+  }
+  .section-7:has(.section-7__card.is-expanded) {
+    min-height: clamp(950px, 130vw, 1400px); /* Увеличиваем минимальную высоту при раскрытии */
+  }
+  
+  .section-7__balls-layer {
+    background-image: url('../../img/balls-sec-7-mobile.png');
+    background-size: 200%;
+    background-position: 45% 0%;
+  }
+  
+  .section-7__content {
+    order: 1;
+    align-items: center;
+    padding: 0 clamp(20px, 5vw, 40px);
+    padding-left: clamp(20px, 5vw, 40px);
+  }
+  .section-7__subtitle {
+    text-align: center;
+    margin-left: 0;
+    margin-top: clamp(50px, 8vw, 80px);
+  }
+  .section-7__title {
+    text-align: center;
+    margin-left: 0;
+    font-size: clamp(30px, 6vw, 60px);
+  }
+  
+  .section-7__slider-nav {
+    order: 2;
+    position: relative;
+    top: auto;
+    right: auto;
+    justify-content: center;
+    margin-top: clamp(20px, 4vw, 40px);
+    margin-bottom: clamp(20px, 4vw, 40px);
+  }
+  
+  /* Убираем все тени на мобильных и добавляем серую рамку */
+  .section-7__slider-btn {
+    filter: none; /* Убираем drop-shadow */
+    box-shadow: none; /* Убираем inset тени */
+    border: 1px solid rgba(156, 156, 156, 0.4); /* Серая рамка на мобильных */
+    border-image: none; /* Убираем border-image для обычной рамки */
+  }
+  
+  .section-7__slider-btn:hover {
+    filter: none; /* Убираем drop-shadow при hover */
+    box-shadow: none; /* Убираем inset тени при hover */
+    border-color: rgba(156, 156, 156, 0.5); /* Немного темнее рамка при hover */
+  }
+  
+  .section-7__slider-btn:disabled:hover {
+    filter: none; /* Убираем drop-shadow */
+    box-shadow: none; /* Убираем inset тени */
+  }
+  
+  .section-7__slider {
+    order: 3;
+  }
+  
+  /* Слайдер - видна одна карточка по центру */
+  .section-7__slider {
+    padding: clamp(10px, 2.5vw, 20px) 0;  
+    margin-top: 0;
+    overflow: hidden; /* Скрываем все карточки кроме центральной */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Центрируем содержимое */
+    align-items: flex-start; /* Изменено для динамической высоты */
+    height: auto; /* Автоматическая высота для динамического подстраивания */
+    min-height: clamp(400px, 117vw, 500px);
+    position: relative;
+    touch-action: pan-y; /* Разрешаем только вертикальный скролл, блокируем горизонтальный */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Увеличиваем минимальную высоту слайдера при раскрытии */
+  .section-7__slider:has(.section-7__card.is-expanded) {
+    min-height: clamp(500px, 130vw, 600px);
+  }
+  .section-7__slider-track {
+    gap: clamp(20px, 5vw, 40px); /* Gap между карточками, чтобы предыдущие и следующие не были видны */
+    width: auto; /* Автоматическая ширина для правильного позиционирования */
+    min-width: 100%; /* Минимальная ширина для центрирования */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    position: relative;
+    will-change: transform;
+    touch-action: none; /* Полностью контролируем touch события для трека */
+  }
+  .section-7__slider-item {
+    width: clamp(300px, 92vw, 380px); /* Адаптивная ширина карточки на мобильном */
+    flex: 0 0 clamp(300px, 92vw, 380px);
+    max-width: clamp(300px, 92vw, 380px);
+    box-sizing: border-box;
+    min-width: 0;
+    height: auto; /* Автоматическая высота для динамического подстраивания */
+    min-height: clamp(400px, 117vw, 500px);
+    margin: 0; /* Убираем margin, центрирование происходит через transform трека */
+    overflow: visible;
+  }
+  
+  /* Увеличиваем минимальную высоту элемента слайдера при раскрытии */
+  .section-7__slider-item:has(.section-7__card.is-expanded) {
+    min-height: clamp(500px, 130vw, 600px);
+  }
+  
+  .section-7__card {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* Автоматическая высота для динамического подстраивания */
+    min-height: clamp(400px, 117vw, 500px);
+    box-sizing: border-box;
+    overflow: visible; /* Изменено с hidden на visible, чтобы контент не обрезался */
+    padding-bottom: clamp(20px, 2.5vw, 40px); /* Добавляем отступ снизу для раскрытого контента */
+  }
+  
+  /* Увеличиваем отступ снизу для карточки при раскрытии */
+  .section-7__card.is-expanded {
+    padding-bottom: clamp(60px, 8vw, 100px) !important; /* Больше места снизу для рейтинга и раскрытого контента */
+  }
+  
+  /* Увеличиваем белое пространство от CTA до края карточки */
+  .section-7__card-product .wb-card--section-5 {
+    padding-bottom: clamp(17px, 2.5vw, 25px);
+  }
+  
+  /* Чуть уменьшаем изображение (на 5px) */
+  .section-7__card-product .wb-card--section-5 .wb-card__img {
+    width: clamp(95px, 12.2vw, 195px);
+    height: clamp(85px, 10.9vw, 175px);
+  }
+  
+  /* Перемещаем результаты под карточку товаров от левого края карточки слайдера */
+  .section-7__card-result {
+    position: absolute !important;
+    width: 100%;
+    left: clamp(-180px, -5.5vw, -135px);
+    top: calc(clamp(20px, 2.5vw, 40px) + clamp(18px, 2vw, 30px) + clamp(15px, 1.8vw, 30px) + clamp(95px, 12.2vw, 195px) + clamp(10px, 2.5vw, 16px) + clamp(17px, 2.5vw, 25px)) !important;
+    margin: 0 !important;
+    margin-top: clamp(10px, 2vw, 15px) !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Убираем троеточия для описания на мобильных - показываем полный текст */
+  .section-7__card-desc-short {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    display: block !important;
+  }
+  
+  /* Перемещаем рейтинги в правый нижний угол карточки */
+  .section-7__card-rating {
+    position: absolute;
+    right: clamp(20px, 2.5vw, 40px);
+    bottom: clamp(-240px, -10.5vw, -190px);
+    margin: 0;
+    margin-top: 0 !important;
+    align-items: flex-end;
+    text-align: right;
+    z-index: 10;
+  }
+  
+  /* Дополнительная защита от горизонтального скролла */
+  .section-7__content,
+  .section-7__slider-nav {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .section-7__button {
+    order: 4;
+    padding: clamp(10px, 2.5vw, 20px) clamp(20px, 5vw, 40px);
+    margin-top: clamp(30px, 6vw, 60px);
+    margin-bottom: clamp(30px, 6vw, 60px);
+    display: block;
+    width: auto;
   }
 }

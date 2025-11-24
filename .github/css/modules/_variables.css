@@ -48,6 +48,16 @@
   --gradient-glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(217, 217, 217, 0.8) 100%);
   --gradient-conic-border: conic-gradient(from 102.75deg at 50% 52.91%, rgba(249, 249, 249, 0.5) -32.95deg, rgba(156, 156, 156, 0.5) 10.52deg, rgba(156, 156, 156, 0.35) 32.12deg, rgba(255, 255, 255, 0.5) 60.28deg, rgba(255, 255, 255, 0.5) 107.79deg, rgba(156, 156, 156, 0.35) 187.59deg, #F9F9F9 207.58deg, rgba(255, 255, 255, 0.5) 287.31deg, rgba(249, 249, 249, 0.5) 327.05deg, rgba(156, 156, 156, 0.5) 370.52deg);
   
+  /* Effects */
+  --backdrop-blur: blur(45.82px);
+  --backdrop-blur-small: blur(12px);
+  --border-radius-mobile: clamp(40px, 10vw, 60px);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.8s ease;
+  
   /* Responsive scaling coefficients for desktop breakpoints */
   --scale-ipad-pro: 0.949;    /* 1366/1440 */
   --scale-ipad-air: 0.819;    /* 1180/1440 */

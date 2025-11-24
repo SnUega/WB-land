@@ -1,12 +1,12 @@
 @import url('modules/_variables.css');
-@import url('modules/_responsive-desktop.css');
 @import url('modules/_reset.css');
 @import url('modules/_base.css');
-@import url('modules/_animations.css');
 @import url('modules/_container.css');
 @import url('modules/_header.css');
 @import url('modules/_mobile-menu.css');
 @import url('modules/_modal.css');
+@import url('modules/_tablet-portrait-overlay.css');
+@import url('modules/_back-to-top.css');
 @import url('modules/_hero.css');
 @import url('modules/_section-2.css');
 @import url('modules/_section-3.css');
@@ -17,4 +17,5 @@
 @import url('modules/_section-8.css');
 @import url('modules/_section-9.css');
 @import url('modules/_footer.css');
-@import url('modules/_back-to-top.css');
+@import url('modules/_animations.css');
+@import url('modules/_responsive-desktop.css');

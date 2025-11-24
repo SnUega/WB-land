@@ -185,5 +185,7 @@
   }
   .header__burger {
     display: flex;
+    /* Настройка правого отступа у burger - измените margin-right */
+    margin-right: clamp(20px, 4vw, 40px);
   }
 }

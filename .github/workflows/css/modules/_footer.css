@@ -22,7 +22,7 @@
 }
 
 .footer__logo {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(40px, 6vw, 80px);
   line-height: 120%;
@@ -137,7 +137,7 @@
 }
 
 .footer__desc {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(14px, 1.5vw, 18px);
   line-height: 140%;
@@ -148,7 +148,7 @@
 }
 
 .footer__phone {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(24px, 3vw, 36px);
   line-height: 140%;
@@ -204,7 +204,7 @@
   display: flex;
   align-items: center;
   gap: clamp(8px, 1vw, 10px);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(14px, 1.5vw, 18px);
   line-height: 140%;
@@ -233,7 +233,7 @@
   margin: 0;
   margin-top: clamp(40px, 4vw, 50px);
   margin-bottom: 0;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(11px, 1.2vw, 13px);
   line-height: 150%;
@@ -243,7 +243,7 @@
 }
 
 .footer__legal-text {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(11px, 1.2vw, 13px);
   line-height: 150%;
@@ -253,7 +253,7 @@
 }
 
 .footer__copyright {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(11px, 1.2vw, 13px);
   line-height: 150%;
@@ -272,7 +272,7 @@
 }
 
 .footer__link {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(11px, 1.2vw, 13px);
   line-height: 150%;
@@ -303,7 +303,7 @@
 }
 
 .footer__link-separator {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(11px, 1.2vw, 13px);
   line-height: 150%;
@@ -312,7 +312,7 @@
 }
 
 .footer__disclaimer {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(11px, 1.2vw, 13px);
   line-height: 150%;
@@ -320,5 +320,49 @@
   color: rgba(255, 255, 255, 0.25);
   margin: 0;
   max-width: clamp(280px, 80vw, 600px);
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .footer__desc {
+    font-size: clamp(16px, 2vw, 18px);
+  }
+  
+  .footer__phone {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+  
+  .footer__contact-link {
+    font-size: clamp(16px, 2vw, 18px);
+  }
+  
+  .footer__contact-icon {
+    width: clamp(20px, 2.5vw, 20px);
+    height: clamp(20px, 2.5vw, 20px);
+  }
+  
+  .footer__legal {
+    font-size: clamp(13px, 1.8vw, 15px);
+  }
+  
+  .footer__legal-text {
+    font-size: clamp(13px, 1.8vw, 15px);
+  }
+  
+  .footer__copyright {
+    font-size: clamp(13px, 1.8vw, 15px);
+  }
+  
+  .footer__link {
+    font-size: clamp(13px, 1.8vw, 15px);
+  }
+  
+  .footer__link-separator {
+    font-size: clamp(13px, 1.8vw, 15px);
+  }
+  
+  .footer__disclaimer {
+    font-size: clamp(13px, 1.8vw, 15px);
+  }
 }
 

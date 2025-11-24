@@ -4,16 +4,17 @@ import './modules/burger-menu/index.js';
 import './modules/modal/index.js';
 import './modules/ghost-words/index.js';
 import './modules/form-dropdown/index.js';
+import TabletPortraitOverlay from './modules/tablet-portrait-overlay/index.js';
 import SmoothScroll from './modules/smooth-scroll/index.js';
 import BackToTop from './modules/back-to-top/index.js';
-// import SectionHeadingsAnimation from './modules/section-headings-animation/index.js';
 import Section3Animation from './modules/section-3-animation/index.js';
 import Section4Slider from './modules/section-4-slider/index.js';
+import Section2Slider from './modules/section-2-slider/index.js';
+import Section5Slider from './modules/section-5-slider/index.js';
 import Section7Cards from './modules/section-7-cards/index.js';
 import Section7Slider from './modules/section-7-slider/index.js';
 import Section8Toggle from './modules/section-8-toggle/index.js';
 import Section9Accordion from './modules/section-9-accordion/index.js';
-// import ScrollAnimations from './modules/scroll-animations/index.js';
 import AppearAnimations from './modules/appear-animations/index.js';
 let lenis;
 function initLenis() {
@@ -48,17 +49,11 @@ function initLenis() {
   }
 }
 function initAnimations() {
-  // Плавная прокрутка через Lenis
   new SmoothScroll();
-  
-  // Кнопка "Вернуться наверх"
   new BackToTop();
-  
-  // Новые анимации появления
   new AppearAnimations();
   
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    // new SectionHeadingsAnimation();
     new Section3Animation();
   } else {
     setTimeout(initAnimations, 100);
@@ -70,6 +65,9 @@ function initAnimations() {
   new Section7Slider();
   new Section8Toggle();
   new Section9Accordion();
+  new TabletPortraitOverlay();
+  new Section2Slider();
+  new Section5Slider();
 }
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {

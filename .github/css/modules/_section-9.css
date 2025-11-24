@@ -45,7 +45,7 @@
 }
 
 .section-9__title {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(14px, 1.5vw, 20px);
   line-height: 130%;
@@ -56,7 +56,7 @@
 }
 
 .section-9__desc {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(32px, 4.5vw, 55px);
   line-height: 130%;
@@ -94,8 +94,8 @@
   height: clamp(70px, 8.5vw, 98px);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(217, 217, 217, 0.25) 100%);
   border-radius: 50px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: var(--backdrop-blur-small);
+  -webkit-backdrop-filter: var(--backdrop-blur-small);
   box-shadow: 
     0px 10px 10px 0px #FFFFFF40 inset,
     0px -10px 10px 0px #FFFFFF40 inset,
@@ -145,7 +145,7 @@
   display: flex;
   align-items: center;
   background: transparent;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(16px, 1.8vw, 20px);
   line-height: 130%;
@@ -161,7 +161,7 @@
   padding: 0;
   padding-right: clamp(15px, 2.5vw, 30px);
   padding-left: clamp(0px, 1.5vw, 15px);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: clamp(16px, 1.8vw, 20px);
   line-height: 130%;
@@ -199,6 +199,7 @@
   padding-right: clamp(20px, 2.5vw, 30px);
   margin: 0;
   box-sizing: border-box;
+  color: #323232;
 }
 
 .section-9__accordion-item[data-accordion-open] .section-9__accordion-answer {
@@ -211,11 +212,86 @@
 }
 
 .section-9__accordion-answer p {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(14px, 1.5vw, 17px);
   line-height: 150%;
   letter-spacing: 0.02em;
   color: #595959;
   margin: 0;
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .section-9 {
+    width: 100%;
+    margin-left: 0;
+    border-radius: var(--border-radius-mobile);
+    padding: clamp(30px, 6vw, 60px) clamp(20px, 5vw, 40px);
+    margin-bottom: clamp(20px, 4vw, 30px);
+    min-height: auto;
+  }
+  
+  .section-9::before {
+    bottom: clamp(20px, 4vw, 60px);
+    left: clamp(20px, 4vw, 80px);
+    width: clamp(120px, 20vw, 300px);
+    height: clamp(90px, 15vw, 225px);
+  }
+  
+  .section-9__content {
+    gap: clamp(10px, 1.5vw, 20px);
+  }
+  
+  .section-9__title {
+    margin: 0 0 clamp(-5px, -0.8vw, -12px) 0;
+  }
+  
+  .section-9__accordion {
+    gap: clamp(15px, 2.5vw, 20px);
+    margin-top: clamp(15px, 2.5vw, 35px);
+  }
+  
+  .section-9__accordion-item-btn {
+    height: clamp(60px, 8vw, 90px);
+    padding-left: clamp(15px, 2vw, 25px);
+    border-radius: clamp(30px, 8vw, 45px);
+  }
+  
+  .section-9__accordion-item-btn::before {
+    border-radius: clamp(30px, 8vw, 45px);
+  }
+  
+  .section-9__accordion-question {
+    font-size: clamp(14px, 1.6vw, 18px);
+  }
+  
+  .section-9__accordion-number {
+    padding-right: clamp(12px, 2vw, 25px);
+    padding-left: clamp(0px, 1.2vw, 12px);
+    font-size: clamp(14px, 1.6vw, 18px);
+  }
+  
+  .section-9__accordion-icon {
+    width: clamp(35px, 4.5vw, 55px);
+    height: clamp(35px, 4.5vw, 55px);
+    margin-left: clamp(12px, 1.8vw, 20px);
+    margin-right: clamp(15px, 2vw, 20px);
+  }
+  
+  .section-9__accordion-answer {
+    padding-left: clamp(15px, 2vw, 25px);
+    padding-right: clamp(15px, 2vw, 25px);
+  }
+  
+  .section-9__accordion-item[data-accordion-open] .section-9__accordion-answer {
+    min-height: clamp(60px, 8.5vw, 100px);
+    padding-top: clamp(15px, 2vw, 25px);
+    padding-bottom: clamp(15px, 2vw, 25px);
+    margin-top: clamp(8px, 1.2vw, 12px);
+  }
+  
+  .section-9__accordion-answer p {
+    font-size: clamp(13px, 1.4vw, 16px);
+  }
 }

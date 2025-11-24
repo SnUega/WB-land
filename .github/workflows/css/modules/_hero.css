@@ -79,7 +79,7 @@
   gap: clamp(15px, 1.67vw, 32px);
 }
 .hero__title {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(28px, 3.33vw, 64px);
   line-height: 120%;
@@ -92,7 +92,7 @@
 }
 .hero__desc {
   max-width: min(44.79vw, 860px);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: clamp(12px, 0.94vw, 16px);
   line-height: 145%;
@@ -189,7 +189,7 @@
   flex-shrink: 0;
 }
 .lg-card__title {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   text-align: center;
   font-weight: 700;
   font-size: clamp(14px, 1.56vw, 30px);
@@ -213,7 +213,7 @@
   flex-shrink: 0;
 }
 .lg-card__list {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   display: flex;
   flex-direction: column;
   gap: clamp(4px, 0.52vw, 10px);
@@ -331,7 +331,7 @@
 .hero__ghost--w {
   left: clamp(30px, 35vw, 670px);
   top: clamp(280px, 43vw, 860px);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-style: normal;
   font-size: clamp(40px, 5.21vw, 100px);
@@ -349,7 +349,7 @@
 .hero__ghost--otzyvy {
   left: clamp(490px, 63vw, 1250px);
   top: clamp(90px, 11vw, 200px);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   color: var(--white-25);
   font-weight: 700;
   font-size: clamp(14px, 1.56vw, 30px);
@@ -359,7 +359,7 @@
 .hero__ghost--reyting {
   right: clamp(75px, 9.5vw, 240px);
   top: clamp(50px, 6vw, 150px);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-family);
   color: var(--white-25);
   font-weight: 700;
   font-size: clamp(30px, 3.65vw, 70px);
@@ -545,9 +545,8 @@
   z-index: 3;
   pointer-events: none;
 }
-/* Адаптация карточек для разных брейкпоинтов */
 
-/* MacBook (1440px - 1600px) - горизонтальная ориентация */
+@media (min-width: 1440px) and (max-width: 1600px) and (orientation: landscape) {
 @media (min-width: 1440px) and (max-width: 1600px) and (orientation: landscape) {
   .hero-bg {
     min-height: clamp(100vh, 108vh, 112vh);
@@ -774,5 +773,116 @@
   .wb-card--big,
   .hero__boots-img {
     display: none;
+  }
+}
+
+/* Только мобильные устройства (не планшеты) */
+@media (max-width: 768px) {
+  /* Убираем верхний отступ для hero секции */
+  .hero-section {
+    margin-top: 0;
+  }
+  
+  /* Подменяем фоновое изображение на мобильное */
+  .hero-bg {
+    background-image: url('../../img/bg-hero-section/portrait/bg-hero-mobile.png');
+    /* Уменьшаем высоту, чтобы убрать пустой хвост */
+    min-height: auto;
+    height: 110vh;
+    width: 100%;
+    padding-bottom: clamp(40px, 8vw, 80px);
+  }
+  
+  /* Подменяем balls на мобильные */
+  .hero-bg__balls-layer {
+    background-image: url('../../img/bg-hero-section/portrait/balls-hero-mobile.png');
+    background-position: 45% 75%;
+    background-size: auto 75%;
+    z-index: 0;
+  }
+  
+  /* Увеличиваем z-index для hero__decor, чтобы ghost-слова были поверх balls */
+  .hero__decor {
+    z-index: 3;
+  }
+  
+  .hero__ghost {
+    z-index: 3;
+  }
+  
+  /* Скрываем wb-card и ghost-слово "Прибыль" */
+  .wb-card {
+    display: none;
+  }
+  
+  .hero__ghost--p {
+    display: none;
+  }
+  
+  /* Меняем расположение на колонку */
+  .hero__wrapper {
+    flex-direction: column;
+  }
+  
+  .hero__left {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  
+  .hero__right {
+    flex: 1 1 auto;
+    width: 100%;
+    position: relative;
+    gap: 0; /* Убираем gap, чтобы убрать отступ между кнопкой и lg-card */
+    /* Поднимаем hero__right вверх с помощью отрицательного margin-top */
+
+  }
+  
+  /* Убираем absolute позиционирование у lg-card и делаем обычным блоком */
+  .lg-card {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 90%;
+    max-width: 100%;
+    padding-top: 7.5%;
+    margin-top: clamp(20px, 2.5vw, 40px);
+  }
+  
+  .hero__content {
+    margin-left: 0;
+    padding-left: clamp(20px, 4vw, 40px);
+    padding-right: clamp(20px, 4vw, 40px);
+  }
+  
+  /* Увеличиваем размер шрифта заголовков на мобильных */
+  .hero__title {
+    font-size: clamp(40px, 8vw, 68px);
+  }
+
+  .hero__desc {
+    font-size: clamp(16px, 3vw, 14px);
+    max-width: 100%;
+  }
+  /* Уменьшаем ширину кнопки на мобильных */
+  .section-6__button {
+    width: clamp(200px, 70vw, 280px);
+  }
+  
+
+  .hero__ghost--w {
+    top: clamp(910px, 90.2vw, 1120px);
+    font-size: clamp(36px, 8vw, 64px);
+  }
+  
+  .hero__ghost--otzyvy {
+    left: clamp(40px, 10vw, 120px);
+    top: clamp(530px, 61vw, 570px);
+
+  }
+  
+  .hero__ghost--reyting {
+    right: clamp(20px, 5vw, 80px);
+    top: clamp(465px, 62.2vw, 550px);
   }
 }
