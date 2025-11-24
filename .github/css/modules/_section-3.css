@@ -85,7 +85,10 @@
 .section-3__chart-grid-line:nth-child(1) { 
   left: 0%; 
   width: clamp(2px, 0.3vw, 3px);
-  background-color: #BD60EF;
+  background: linear-gradient(180deg, 
+    rgba(189, 96, 239, 0.6) 0%, 
+    rgba(189, 96, 239, 0.4) 100%);
+  box-shadow: 0 0 4px rgba(189, 96, 239, 0.3);
   top: 0;
   bottom: 0;
 }
@@ -168,11 +171,44 @@
   }
 .chart-item__bar {
   height: clamp(20px, 2.5vw, 30px);
-  background: #BD60EF;
+  background: linear-gradient(180deg, 
+    rgba(189, 96, 239, 0.5) 0%, 
+    rgba(189, 96, 239, 0.35) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 0 5px 5px 0;
   transition: width 0.8s ease-out;
   min-width: 2px;
   transform-origin: left center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(189, 96, 239, 0.25),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.chart-item__bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0 5px 5px 0;
+  padding: 1px;
+  background: conic-gradient(from 102.75deg at 50% 52.91%, 
+    rgba(189, 96, 239, 0.7) -32.95deg, 
+    rgba(173, 58, 231, 0.6) 10.52deg, 
+    rgba(173, 58, 231, 0.5) 32.12deg, 
+    rgba(189, 96, 239, 0.6) 60.28deg, 
+    rgba(189, 96, 239, 0.6) 107.79deg, 
+    rgba(173, 58, 231, 0.5) 187.59deg, 
+    rgba(189, 96, 239, 0.7) 207.58deg, 
+    rgba(189, 96, 239, 0.6) 287.31deg, 
+    rgba(189, 96, 239, 0.7) 327.05deg, 
+    rgba(173, 58, 231, 0.6) 370.52deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
 }
 .chart-item__bar[data-percent="83.7"] {
   transform: scaleX(0.96);
@@ -356,6 +392,15 @@
   
   .chart-item__bar {
     height: clamp(12px, 3vw, 18px);
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .chart-item__bar::before {
+    border-radius: 0 3px 3px 0;
+    padding: 0.5px;
+  }
+  
+  .chart-item__bar::after {
     border-radius: 0 3px 3px 0;
   }
   

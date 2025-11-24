@@ -158,10 +158,9 @@
   height: clamp(40px, 5vw, 58px);
   border-radius: 50%;
   border: none;
-  border-image-source: conic-gradient(from 102.75deg at 50% 52.91%, rgba(249, 249, 249, 0.5) -32.95deg, rgba(156, 156, 156, 0.5) 10.52deg, rgba(156, 156, 156, 0.35) 32.12deg, rgba(255, 255, 255, 0.5) 60.28deg, rgba(255, 255, 255, 0.5) 107.79deg, rgba(156, 156, 156, 0.35) 187.59deg, #F9F9F9 207.58deg, rgba(255, 255, 255, 0.5) 287.31deg, rgba(249, 249, 249, 0.5) 327.05deg, rgba(156, 156, 156, 0.5) 370.52deg);
-  border-image-slice: 1;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(217, 217, 217, 0.25) 100%);
-  backdrop-filter: blur(35px);
+  background: var(--gradient-glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -169,22 +168,32 @@
   color: #858595;
   transition: all 0.3s ease;
   padding: 0;
-  box-shadow: 
-    0px 4px 20px 0px rgba(0, 0, 0, 0.15),
-    0px 8px 32px 0px rgba(0, 0, 0, 0.12),
-    0px 2px 8px 0px rgba(0, 0, 0, 0.1),
-    0px 10px 10px 0px #FFFFFF40 inset,
-    0px -10px 10px 0px #FFFFFF40 inset;
+  position: relative;
+  box-shadow: var(--glass-shadow);
+}
+
+.section-4__slider-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: var(--gradient-conic-border);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-4__slider-btn > * {
+  position: relative;
+  z-index: 2;
 }
 .section-4__slider-btn:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(217, 217, 217, 0.35) 100%);
   transform: scale(1.05);
-  box-shadow: 
-    0px 6px 24px 0px rgba(0, 0, 0, 0.2),
-    0px 12px 40px 0px rgba(0, 0, 0, 0.15),
-    0px 4px 12px 0px rgba(0, 0, 0, 0.12),
-    0px 10px 10px 0px #FFFFFF50 inset,
-    0px -10px 10px 0px #FFFFFF50 inset;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(217, 217, 217, 0.35) 100%);
 }
 .section-4__slider-btn:active {
   transform: scale(0.95);
@@ -196,7 +205,7 @@
 }
 .section-4__slider-btn:disabled:hover {
   transform: scale(1);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(217, 217, 217, 0.25) 100%);
+  background: var(--gradient-glass-bg);
 }
 .section-4__slider-btn svg {
   width: clamp(20px, 2.5vw, 28px);
