@@ -13,6 +13,7 @@
   flex-direction: column;
   padding: 20px;
   box-sizing: border-box;
+  pointer-events: none;
 }
 
 .tablet-portrait-overlay.is-visible {
@@ -105,9 +106,20 @@
   }
 }
 
+/* Скрываем для мобильных устройств */
+@media (max-width: 480px) {
+  .tablet-portrait-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+  }
+}
+
 /* Показываем только для планшетов в портретной ориентации */
 @media (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
-  .tablet-portrait-overlay {
+  .tablet-portrait-overlay.is-visible {
     display: flex;
   }
   
@@ -117,8 +129,7 @@
 }
 
 /* Скрываем для всех остальных устройств */
-@media (max-width: 480px),
-       (min-width: 1025px),
+@media (min-width: 1025px),
        (orientation: landscape) {
   .tablet-portrait-overlay {
     display: none !important;

@@ -26,6 +26,12 @@ class TabletPortraitOverlay {
     const isPortrait = height > width;
     
     const isTablet = width >= 481 && width <= 1024;
+    const isMobile = width <= 480;
+    
+    if (isMobile) {
+      this.hide();
+      return;
+    }
     
     if (isTablet && isPortrait) {
       this.show();
