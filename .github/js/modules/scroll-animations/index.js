@@ -138,7 +138,7 @@ class ScrollAnimations {
       });
     }, { 
       threshold: 0.1, 
-      rootMargin: window.innerWidth <= 768 ? '150px 0px' : '50px 0px' 
+      rootMargin: window.innerWidth <= 768 ? '400px 0px' : '50px 0px' 
     });
 
     headings.forEach((heading) => {
@@ -184,7 +184,7 @@ class ScrollAnimations {
       });
     }, { 
       threshold: 0.1, 
-      rootMargin: window.innerWidth <= 768 ? '150px 0px' : '50px 0px' 
+      rootMargin: window.innerWidth <= 768 ? '400px 0px' : '50px 0px' 
     });
 
     section3Elements.forEach((el) => {
@@ -202,7 +202,7 @@ class ScrollAnimations {
     const observer = this.createObserver(
       { 
         threshold: 0.1, 
-        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+        rootMargin: window.innerWidth <= 768 ? '500px 0px' : '100px 0px' 
       },
       (element) => {
         element.classList.add('is-visible');
@@ -276,7 +276,7 @@ class ScrollAnimations {
     const observer = this.createObserver(
       { 
         threshold: 0.1, 
-        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+        rootMargin: window.innerWidth <= 768 ? '500px 0px' : '100px 0px' 
       },
       (element) => {
         const features = Array.from(document.querySelectorAll('.section-6__feature'));
@@ -321,7 +321,7 @@ class ScrollAnimations {
     const observer = this.createObserver(
       { 
         threshold: 0.1, 
-        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+        rootMargin: window.innerWidth <= 768 ? '500px 0px' : '100px 0px' 
       },
       (element) => {
         let delay = 0;
@@ -357,7 +357,7 @@ class ScrollAnimations {
     const observer = this.createObserver(
       { 
         threshold: 0.1, 
-        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+        rootMargin: window.innerWidth <= 768 ? '500px 0px' : '100px 0px' 
       },
       (element) => {
         element.classList.add('is-visible');
@@ -382,7 +382,7 @@ class ScrollAnimations {
     const observer = this.createObserver(
       { 
         threshold: 0.1, 
-        rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px' 
+        rootMargin: window.innerWidth <= 768 ? '500px 0px' : '100px 0px' 
       },
       (element) => {
         element.classList.add('is-visible');

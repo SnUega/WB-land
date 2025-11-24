@@ -48,7 +48,7 @@ class SectionHeadingsAnimation {
         const isMobile = window.innerWidth <= 768;
         ScrollTrigger.create({
           trigger: section,
-          start: isMobile ? 'top 85%' : 'top 75%',
+          start: isMobile ? 'top 100%' : 'top 75%',
           end: 'bottom 25%',
           onEnter: () => {
             if (tl.progress() === 0) {

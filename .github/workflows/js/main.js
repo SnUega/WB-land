@@ -16,6 +16,7 @@ import Section7Slider from './modules/section-7-slider/index.js';
 import Section8Toggle from './modules/section-8-toggle/index.js';
 import Section9Accordion from './modules/section-9-accordion/index.js';
 import AppearAnimations from './modules/appear-animations/index.js';
+import PreventHorizontalScroll from './modules/prevent-horizontal-scroll/index.js';
 let lenis;
 function initLenis() {
   if (typeof Lenis !== 'undefined') {
@@ -52,6 +53,7 @@ function initAnimations() {
   new SmoothScroll();
   new BackToTop();
   new AppearAnimations();
+  new PreventHorizontalScroll();
   
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     new Section3Animation();

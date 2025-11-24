@@ -111,7 +111,7 @@ class Section7Slider {
   
   setupSwipeListeners() {
     this.slider.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
-    this.slider.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: true });
+    this.slider.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
     this.slider.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
     
     // Mouse события для тестирования на десктопе (опционально)
@@ -155,6 +155,7 @@ class Section7Slider {
       return;
     }
     
+    e.preventDefault();
     const newTranslateX = this.currentTranslateX + deltaX;
     this.track.style.transform = `translateX(${newTranslateX}px)`;
   }

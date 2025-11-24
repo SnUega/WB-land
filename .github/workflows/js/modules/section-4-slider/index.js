@@ -361,7 +361,7 @@ class Section4Slider {
       });
     }, {
       threshold: 0.1,
-      rootMargin: window.innerWidth <= 768 ? '200px 0px' : '100px 0px'
+      rootMargin: window.innerWidth <= 768 ? '500px 0px' : '100px 0px'
     });
     this.items.forEach(item => {
       const card = item.querySelector('.slider-card');

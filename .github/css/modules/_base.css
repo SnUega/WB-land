@@ -4,6 +4,7 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
   max-width: 100vw;
+  touch-action: pan-y;
 }
 
 body {
@@ -17,12 +18,27 @@ body {
   background-color: #ffffff;
   color: var(--white);
   max-width: 100vw;
+  touch-action: pan-y;
 }
 
 *,
 *::before,
 *::after {
   max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  section:not(.section-4):not(.section-7):not(.section-5),
+  .hero-section,
+  .sections-container {
+    touch-action: pan-y;
+  }
+  
+  .section-4__slider,
+  .section-7__slider,
+  .section-5__slider {
+    touch-action: pan-x pan-y;
+  }
 }
 
 .section-4__slider,

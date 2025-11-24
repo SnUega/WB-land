@@ -25,7 +25,7 @@ class AppearAnimations {
 
   createAnimationHandler(config) {
     const isMobile = window.innerWidth <= 768;
-    const defaultTriggerStart = isMobile ? 'top 90%' : 'top 80%';
+    const defaultTriggerStart = isMobile ? 'top 100%' : 'top 80%';
     
     const {
       element,
@@ -93,13 +93,14 @@ class AppearAnimations {
   }
 
   animateHeadersCascade(headers, config = {}) {
+    const isMobile = window.innerWidth <= 768;
     const {
       direction = 'bottom', // 'bottom' or 'right'
       distance = null, // Can be number or function that returns number
       duration = 1.2,
       ease = 'power2.out',
       cascadeDelay = 0.25,
-      triggerStart = 'top 85%',
+      triggerStart = isMobile ? 'top 100%' : 'top 85%',
       triggerEnd = 'top top', // Reset when top of element reaches top of viewport (completely out)
       triggerElement = null // If provided, use this as trigger instead of first header
     } = config;
@@ -212,10 +213,11 @@ class AppearAnimations {
     const cats = lgCard.querySelector('.lg-card__cats');
     const title = lgCard.querySelector('.lg-card__title');
     
+    const isMobile = window.innerWidth <= 768;
     this.animateHeadersCascade([cats, title], {
       direction: 'bottom',
       cascadeDelay: 0.25,
-      triggerStart: 'top 85%',
+      triggerStart: isMobile ? 'top 100%' : 'top 85%',
       triggerEnd: 'top top',
       duration: 1.0
     });
@@ -224,11 +226,12 @@ class AppearAnimations {
     listItems.forEach((item, index) => {
       const distance = window.innerWidth < 768 ? -30 : window.innerWidth > 1920 ? -40 : -35;
       
+      const isMobile = window.innerWidth <= 768;
       this.createAnimationHandler({
         element: item,
         initialProps: { opacity: 0, x: distance },
         animateProps: { opacity: 1, x: 0, duration: 1.2, ease: 'power2.out' },
-        triggerStart: 'top 85%',
+        triggerStart: isMobile ? 'top 100%' : 'top 85%',
         triggerEnd: 'bottom top',
         delay: index * 0.2,
         once: false,
@@ -296,9 +299,10 @@ class AppearAnimations {
       });
     };
     
+    const isMobile = window.innerWidth <= 768;
     ScrollTrigger.create({
       trigger: barsContainer,
-      start: 'top 85%',
+      start: isMobile ? 'top 100%' : 'top 85%',
       end: 'bottom top',
       onEnter: animateBars,
       onEnterBack: animateBars,
@@ -320,7 +324,7 @@ class AppearAnimations {
         element: card,
         initialProps: { opacity: 0, scale: 0.2 },
         animateProps: { opacity: 1, scale: 1, duration: 1.8, ease: 'back.out(1.4)' },
-        triggerStart: 'top 85%',
+        triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
         triggerEnd: 'top top',
         delay: 0.3,
         once: false,
@@ -383,7 +387,7 @@ class AppearAnimations {
         element: card,
         initialProps: { opacity: 0, scale: 1.1, y: distance },
         animateProps: { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'power2.out' },
-        triggerStart: 'top 85%',
+        triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
         triggerEnd: 'bottom top',
         once: false,
         onEnterCallback: () => this.animateSection2CardContent(card, 0.2),
@@ -443,7 +447,7 @@ class AppearAnimations {
     this.animateHeadersCascade(headers, {
       direction: 'bottom',
       cascadeDelay: 0.3,
-      triggerStart: 'top 85%',
+      triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
       triggerEnd: 'top top',
       duration: 1.2
     });
@@ -469,7 +473,7 @@ class AppearAnimations {
     this.animateHeadersCascade(headers, {
       direction: 'bottom',
       cascadeDelay: 0.3,
-      triggerStart: 'top 85%',
+      triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
       triggerEnd: 'top top',
       duration: 1.2
     });
@@ -487,7 +491,7 @@ class AppearAnimations {
         element: card,
         initialProps: { opacity: 0, scale: 0.2 },
         animateProps: { opacity: 1, scale: 1, duration: 1.8, ease: 'back.out(1.6)' },
-        triggerStart: 'top 85%',
+        triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
         triggerEnd: 'top top',
         delay: index * 0.08,
         once: true
@@ -514,7 +518,7 @@ class AppearAnimations {
     this.animateHeadersCascade(headers, {
       direction: 'bottom',
       cascadeDelay: 0.3,
-      triggerStart: 'top 85%',
+      triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
       triggerEnd: 'top top',
       duration: 1.2
     });
@@ -541,7 +545,7 @@ class AppearAnimations {
         element: element,
         initialProps: { opacity: 0, scale: 0.2 },
         animateProps: { opacity: 1, scale: 1, duration: 1.8, ease: 'back.out(1.4)' },
-        triggerStart: 'top 85%',
+        triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
         triggerEnd: 'top top',
         delay: delay,
         once: false,
@@ -576,7 +580,7 @@ class AppearAnimations {
     this.animateHeadersCascade(headers, {
       direction: 'bottom',
       cascadeDelay: 0.3,
-      triggerStart: 'top 85%',
+      triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
       triggerEnd: 'top top',
       duration: 1.2
     });
@@ -624,9 +628,10 @@ class AppearAnimations {
       });
     };
 
+    const isMobile = window.innerWidth <= 768;
     ScrollTrigger.create({
       trigger: featuresContainer,
-      start: 'top 85%',
+      start: isMobile ? 'top 100%' : 'top 85%',
       onEnter: animateFeatures,
       once: true
     });
@@ -665,7 +670,7 @@ class AppearAnimations {
       direction: 'right',
       distance: getHeroDistance,
       cascadeDelay: 0.25,
-      triggerStart: 'top 85%',
+      triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
       triggerEnd: 'top top',
       duration: 1.2
     });
@@ -689,7 +694,7 @@ class AppearAnimations {
           ease: 'back.out(1.0)',
           delay: index * 0.08
         },
-        triggerStart: 'top 85%',
+        triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
         once: true
       });
     });
@@ -713,7 +718,7 @@ class AppearAnimations {
           ease: 'back.out(1.4)',
           delay: 0.3
         },
-        triggerStart: 'top 85%',
+        triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 85%',
         once: true
       });
     });
@@ -731,9 +736,10 @@ class AppearAnimations {
         clipPath: 'inset(100% 0 0 0)' // Fully hidden from bottom
       });
 
+      const isMobile = window.innerWidth <= 768;
       ScrollTrigger.create({
         trigger: title,
-        start: 'top 90%',
+        start: isMobile ? 'top 100%' : 'top 90%',
         onEnter: () => {
           // Check if title is already animated (has data attribute)
           if (title.dataset.animated === 'true') return;
@@ -785,9 +791,10 @@ class AppearAnimations {
         });
       };
 
+      const isMobile = window.innerWidth <= 768;
       ScrollTrigger.create({
         trigger: resultsContainer,
-        start: 'top 90%',
+        start: isMobile ? 'top 100%' : 'top 90%',
         onEnter: animateResults,
         once: true
       });
@@ -848,7 +855,7 @@ class AppearAnimations {
         element: item,
         initialProps: { opacity: 0, scale: 0.2 },
         animateProps: { opacity: 1, scale: 1, duration: 1.8, ease: 'back.out(1.4)' },
-        triggerStart: 'top 90%',
+        triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 90%',
         triggerEnd: 'top top',
         delay: delay,
         once: true,
@@ -882,7 +889,7 @@ class AppearAnimations {
         element: element,
         initialProps: { opacity: 0, y: -20, scale: 0.95 },
         animateProps: { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power2.out' },
-        triggerStart: 'top 90%',
+        triggerStart: window.innerWidth <= 768 ? 'top 100%' : 'top 90%',
         triggerEnd: 'top top',
         delay: delay,
         once: true

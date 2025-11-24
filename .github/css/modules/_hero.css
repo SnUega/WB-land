@@ -547,7 +547,6 @@
 }
 
 @media (min-width: 1440px) and (max-width: 1600px) and (orientation: landscape) {
-@media (min-width: 1440px) and (max-width: 1600px) and (orientation: landscape) {
   .hero-bg {
     min-height: clamp(100vh, 108vh, 112vh);
   }
@@ -769,6 +768,7 @@
   }
 }
 
+/* Только мобильные устройства (не планшеты) */
 @media (max-width: 768px) {
   .wb-card--big,
   .hero__boots-img {
@@ -776,8 +776,8 @@
   }
 }
 
-/* Только мобильные устройства (не планшеты) */
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait),
+       (max-width: 480px) {
   /* Убираем верхний отступ для hero секции */
   .hero-section {
     margin-top: 0;
