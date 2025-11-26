@@ -482,7 +482,7 @@ class Translations {
         'form.placeholder.name': 'Ivanov Ivan Ivanovich',
         'form.placeholder.email': 'info@mail.ru',
         'form.placeholder.phone': '+7',
-        'form.placeholder.company': 'LLC "Romashka"',
+        'form.placeholder.company': 'LLC "Your Sales Partner"',
         'form.placeholder.telegram': '@user',
         'form.placeholder.quantity': 'Minimum order - 5 purchases',
         'form.placeholder.message': 'Your message',

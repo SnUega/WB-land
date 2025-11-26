@@ -28,7 +28,7 @@
   font-size: clamp(14px, 1.4vw, 20px);
   line-height: 120%;
   letter-spacing: 0.02em;
-  color: #B0B0B0;
+  color: #1C1C1C;
   margin: 0 0 clamp(12px, 1.2vw, 18px);
   text-align: center;
 }
@@ -48,7 +48,7 @@
 .section-3__responses {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(14px, 1.2vw, 17px);
+  font-size: clamp(16px, 1.4vw, 20px);
   line-height: 140%;
   color: #1C1C1C;
   margin: 0 0 clamp(25px, 3vw, 45px);
@@ -116,7 +116,7 @@
 .section-3__chart-axis-label {
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: clamp(12px, 1.4vw, 17px);
+  font-size: clamp(14px, 1.6vw, 20px);
   line-height: 140%;
   color: rgb(0, 0, 0);
   position: absolute;
@@ -139,7 +139,7 @@
 .chart-item__label {
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: clamp(12px, 1.2vw, 17px);
+  font-size: clamp(14px, 1.4vw, 20px);
   line-height: 140%;
   color: var(--black);
   width: clamp(90px, 13vw, 240px);
@@ -225,7 +225,7 @@
 .chart-item__value {
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: clamp(12px, 1.4vw, 17px);
+  font-size: clamp(14px, 1.6vw, 20px);
   line-height: 140%;
   color: #323232;
   white-space: nowrap;
@@ -338,7 +338,7 @@
   }
   
   .section-3__title {
-    font-size: clamp(12px, 3vw, 16px);
+    font-size: clamp(14px, 3.2vw, 19px);
     margin-bottom: clamp(8px, 2vw, 12px);
   }
   
@@ -348,8 +348,7 @@
   }
   
   .section-3__responses {
-    font-size: clamp(12px, 2.8vw, 16px);
-    margin-bottom: clamp(20px, 5vw, 35px);
+    display: none;
   }
   
   .section-3__chart {
@@ -377,7 +376,7 @@
   }
   
   .section-3__chart-axis-label {
-    font-size: clamp(10px, 2.2vw, 14px);
+    font-size: clamp(12px, 2.4vw, 17px);
   }
   
   .chart-item {
@@ -385,7 +384,7 @@
   }
   
   .chart-item__label {
-    font-size: clamp(6px, 1.8vw, 10px);
+    font-size: clamp(8px, 2vw, 12px);
     width: clamp(75px, 18.5vw, 125px);
     padding-right: clamp(6px, 1.5vw, 10px);
   }
@@ -421,7 +420,7 @@
   }
   
   .chart-item__value {
-    font-size: clamp(10px, 2.5vw, 14px);
+    font-size: clamp(12px, 2.7vw, 17px);
     min-width: clamp(75px, 18vw, 110px);
     margin-left: clamp(4px, 1vw, 8px);
   }

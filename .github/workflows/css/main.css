@@ -19,3 +19,7 @@
 @import url('modules/_footer.css');
 @import url('modules/_animations.css');
 @import url('modules/_responsive-desktop.css');
+
+html {
+    font-size: 120%;
+}

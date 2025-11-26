@@ -29,7 +29,7 @@
   --font-size-price: clamp(28px, 2.8vw, 40px);
   --font-size-currency: clamp(16px, 1.5vw, 20px);
   --font-size-minimum: clamp(18px, 1.8vw, 24px);
-  --font-size-toggle-option: clamp(14px, 1.2vw, 17px);
+  --font-size-toggle-option: clamp(16px, 1.4vw, 20px);
   
   /* Spacing clamp values */
   --spacing-section-padding: clamp(40px, 5.3vw, 80px);

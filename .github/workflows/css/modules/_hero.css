@@ -94,7 +94,7 @@
   max-width: min(44.79vw, 860px);
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(12px, 0.94vw, 16px);
+  font-size: clamp(14px, 1.1vw, 20px);
   line-height: 145%;
   letter-spacing: 0.02em;
   color: var(--white);
@@ -218,7 +218,7 @@
   flex-direction: column;
   gap: clamp(4px, 0.52vw, 10px);
   font-weight: 600;
-  font-size: clamp(12px, 0.89vw, 17px);
+  font-size: clamp(14px, 1.05vw, 20px);
   letter-spacing: 0.02em;
   margin: 0;
   padding: 0;

@@ -235,7 +235,7 @@
   margin-bottom: 0;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(13px, 1.4vw, 16px);
   line-height: 150%;
   letter-spacing: 0.02em;
   text-align: center;
@@ -245,7 +245,7 @@
 .footer__legal-text {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(13px, 1.4vw, 16px);
   line-height: 150%;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.25);
@@ -255,7 +255,7 @@
 .footer__copyright {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(13px, 1.4vw, 16px);
   line-height: 150%;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.25);
@@ -274,7 +274,7 @@
 .footer__link {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(13px, 1.4vw, 16px);
   line-height: 150%;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.25);
@@ -305,7 +305,7 @@
 .footer__link-separator {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(13px, 1.4vw, 16px);
   line-height: 150%;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.25);
@@ -314,7 +314,7 @@
 .footer__disclaimer {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(13px, 1.4vw, 16px);
   line-height: 150%;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.25);

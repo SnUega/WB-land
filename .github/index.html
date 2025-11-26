@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   
   <title>Prodsfera - Укрепление рейтинга и доверия | Управление репутацией на Wildberries</title>
   <meta name="title" content="Управление репутацией на Wildberries | Prodsfera - Укрепление рейтинга и доверия">
@@ -1711,7 +1711,7 @@
             id="feedback-company" 
             name="company" 
             class="form__input" 
-            placeholder='ООО "Ромашка"'
+            placeholder='ООО "Партнер Ваших Продаж"'
             data-i18n-placeholder="form.placeholder.company"
             required
             data-validate
@@ -1867,5 +1867,129 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
   <script type="module" src="js/main.js" defer></script>
+  <script>
+    // Фиксация масштаба для предотвращения изменения макета
+    (function() {
+      let testElement = null;
+      let baseZoom = 1;
+      let isInitialized = false;
+      
+      function createTestElement() {
+        if (!testElement && document.body) {
+          testElement = document.createElement('div');
+          testElement.id = '__zoom_test__';
+          testElement.style.cssText = 'width:100px;height:1px;position:fixed;top:-9999px;left:0;visibility:hidden;pointer-events:none;z-index:-9999;';
+          document.body.appendChild(testElement);
+        }
+      }
+      
+      function getBrowserZoom() {
+        // Точное определение через измерение реального размера элемента
+        if (testElement) {
+          const rect = testElement.getBoundingClientRect();
+          const measuredWidth = rect.width;
+          const expectedWidth = 100;
+          
+          if (measuredWidth > 0) {
+            return measuredWidth / expectedWidth;
+          }
+        }
+        
+        // Резервный метод через devicePixelRatio
+        return window.devicePixelRatio || 1;
+      }
+      
+      function fixZoom() {
+        if (!isInitialized) return;
+        
+        const currentZoom = getBrowserZoom();
+        
+        // Компенсируем изменение масштаба относительно базового значения
+        if (Math.abs(currentZoom - baseZoom) > 0.01) {
+          const compensation = baseZoom / currentZoom;
+          
+          // Используем CSS zoom для компенсации
+          if ('zoom' in document.documentElement.style) {
+            document.documentElement.style.zoom = compensation;
+          } else {
+            // Fallback для Firefox
+            document.body.style.transform = `scale(${compensation})`;
+            document.body.style.transformOrigin = 'top left';
+            document.body.style.width = (100 / compensation) + '%';
+          }
+        }
+      }
+      
+      function init() {
+        if (document.body && !isInitialized) {
+          createTestElement();
+          if (testElement) {
+            // Небольшая задержка для правильного измерения
+            setTimeout(function() {
+              baseZoom = getBrowserZoom();
+              isInitialized = true;
+              fixZoom();
+            }, 50);
+          }
+        }
+      }
+      
+      // Запуск при загрузке
+      if (document.body) {
+        init();
+      } else if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+      
+      window.addEventListener('load', function() {
+        if (!isInitialized) {
+          init();
+        }
+      });
+      
+      // Отслеживание изменения размера (включая масштабирование)
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(fixZoom, 100);
+      });
+      
+      // Предотвращение жестов масштабирования
+      document.addEventListener('gesturestart', function(e) {
+        e.preventDefault();
+      });
+      document.addEventListener('gesturechange', function(e) {
+        e.preventDefault();
+      });
+      document.addEventListener('gestureend', function(e) {
+        e.preventDefault();
+        setTimeout(fixZoom, 100);
+      });
+      
+      // Предотвращение масштабирования колесом мыши с Ctrl
+      document.addEventListener('wheel', function(e) {
+        if (e.ctrlKey) {
+          e.preventDefault();
+          setTimeout(fixZoom, 100);
+        }
+      }, { passive: false });
+      
+      // Предотвращение двойного тапа для масштабирования
+      let lastTouchEnd = 0;
+      document.addEventListener('touchend', function(e) {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          e.preventDefault();
+        }
+        lastTouchEnd = now;
+        setTimeout(fixZoom, 100);
+      }, false);
+      
+      // Периодическая проверка и фиксация
+      setInterval(fixZoom, 500);
+    })();
+  </script>
 </body>
 </html>
