@@ -81,7 +81,7 @@
 .hero__title {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: clamp(28px, 3.33vw, 64px);
+  font-size: clamp(30px, 3.3vw, 64px);
   line-height: 120%;
   letter-spacing: 0.02em;
   color: var(--white);
@@ -94,7 +94,7 @@
   max-width: min(44.79vw, 860px);
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: clamp(14px, 1.1vw, 20px);
+  font-size: clamp(16px, 1.3vw, 23px);
   line-height: 145%;
   letter-spacing: 0.02em;
   color: var(--white);
@@ -505,12 +505,15 @@
   font-size: clamp(7px, 0.48vw, 9px);
   line-height: 140%;
   letter-spacing: -0.02em;
-  color: var(--black);
   display: flex;
   align-items: center;
   gap: clamp(1px, 0.24vw, 4px);
   white-space: nowrap;
-  overflow: hidden;
+}
+.wb-card__title .blur-text {
+  color: rgba(39, 39, 39, 0.6) !important;
+  filter: blur(2px) !important;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5) !important;
 }
 .wb-card--big .wb-card__title-check {
   width: clamp(7px, 0.48vw, 9px);
